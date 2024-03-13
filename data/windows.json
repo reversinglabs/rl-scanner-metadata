@@ -1,0 +1,2394 @@
+{
+    "SQ14101": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 5,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "critical code packing issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files packed with runtime packers that reduce or nullify the effects of vulnerability mitigation protections.",
+                    "description": "Windows executable files can be converted to self-extracting applications that rebuild their own code during execution. Algorithms that process the executable format, and act as the operating system loader, are typically written in the low-level assembly code. As re-implementations of core system functionalities, they are often an imperfect simulation of complex application loading procedures. Most runtime packers are incompatible with the baseline vulnerability mitigation options that operating systems provide. Therefore, it's a common practice that various security features get silently disabled during this type of software packing. Packed applications typically continue to run without visible software defects, and they can even pass rigorous quality assurance testing. However, such tests rarely evaluate vulnerability mitigation effectiveness.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "When this issue is reported, it is common to find additional compatibility issues that the runtime packing has introduced. You should deprecate the use of runtime packers or enforce digital rights management via less intrusive ways that still preserve compatibility with vulnerability mitigation options.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14102": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "baseline mitigations missing",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that do not implement the DEP vulnerability mitigation protection.",
+                    "description": "Data Execution Prevention (DEP/NX) is a vulnerability mitigation option that prevents data from being interpreted as code anywhere within the application. This mitigation protects the application stack, heap and other memory data ranges. Executable files that fail to implement this mitigation expose the user to increased risks of malicious code injection.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "It's highly recommended to enable this option for all software components used at security boundaries, or those that process user controlled inputs.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "To enable this mitigation, refer to your programming language linker documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable DEP mitigation by setting the linker option /NXCOMPAT to ON.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14103": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "ineffective mitigations found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that try to implement DEP but declare all sections as executable thus nullifying the vulnerability mitigation protection.",
+                    "description": "Data Execution Prevention (DEP/NX) is a vulnerability mitigation option that protects the application stack, heap and other memory data ranges from being interpreted as code and executed. This mitigation is detected as enabled, but rendered ineffective due to configured memory access privileges. It is unlikely that an executable file only consists of code without any data sections. Since all file sections are declared as executable, this is raised as an issue that violates the code and data separation rule enforced by DEP.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review the programming language linker options.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14104": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "ineffective mitigations found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that convert process heap to RWE thus nullifying the DEP vulnerability mitigation protection.",
+                    "description": "Data Execution Prevention (DEP/NX) is a vulnerability mitigation option that protects the application stack, heap and other memory data ranges from being interpreted as code and executed. This mitigation is detected as enabled, but rendered ineffective due to configured global loader flags. Application explicitly asks the operating system to mark the heap as executable. Such configuration violates the code and data separation rules enforced by DEP.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review the programming language linker options.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14105": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "baseline mitigations missing",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that do not implement the ASLR vulnerability mitigation protection.",
+                    "description": "Address Space Layout Randomization (ASLR) is a vulnerability mitigation option that forces software components to load on a different memory base address each time they are used. This makes the memory layout unpredictable, and it is therefore harder for malicious code to be reliably injected during application runtime.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "It's highly recommended to enable this option for all software components used at security boundaries, or those that process user controlled inputs. For best results, use ASLR together with Data Execution Prevention (DEP/NX).",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "To enable this mitigation, refer to your programming language linker documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable ASLR mitigation by setting the linker option /DYNAMICBASE to ON.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14106": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "mitigation effectiveness issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that do not implement the high entropy ASLR vulnerability mitigation protection.",
+                    "description": "High Entropy Address Space Layout Randomization (HEASLR) is a vulnerability mitigation option that forces software components to load on a different memory base address each time they are used. This makes the memory layout unpredictable, and it is therefore harder for malicious code to be reliably injected during application runtime. Memory space that 64-bit applications have at their disposal is significantly larger, but the application needs to opt in to take the advantage.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "It's highly recommended to enable this option for all 64-bit software components used at security boundaries, or those that process user controlled inputs. For best results, use HEASLR together with Data Execution Prevention (DEP/NX).",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "To enable this mitigation, refer to your programming language linker documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable HEASLR mitigation by setting the linker option /HIGHENTROPYVA to ON.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14107": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "ineffective mitigations found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that try to implement ASLR but do not have relocations to support that vulnerability mitigation protection.",
+                    "description": "Address Space Layout Randomization (ASLR) is a vulnerability mitigation option that forces software components to load on a different memory base address each time they are used. This mitigation is detected as enabled, but rendered ineffective due to the lack of code relocations necessary for layout randomization. This issue is reported for native 32-bit applications that contain code and opt in to use ASLR. Reasons for relocation absence include forcing software component load on a fixed address, removing relocations post-build, and using non-ASLR-compliant executable packing solutions.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review the programming language linker documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, make sure the linker option /FIXED is disabled (set to OFF).",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14108": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "mitigation effectiveness issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that rely on the ineffective ASLR vulnerability mitigation enforcement option.",
+                    "description": "Address Space Layout Randomization (ASLR) is a vulnerability mitigation option that forces software components to load on a different memory base address each time they are used. This makes the memory layout unpredictable, and it is therefore harder for malicious code to be reliably injected during application runtime. Although enabling ASLR is an opt-in setting during program linking, some operating system configurations can still enforce its use if the vulnerability mitigation requirements are met. This is possible even if the application hasn't been explicitly marked as ASLR-compatible. While this generally improves security posture, the limitation of ASLR enforcement is that the application load addresses are not truly randomized. In most cases, the application load base is different than the default, but it remains the same for the entire duration of device uptime.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "In Microsoft VisualStudio, you should explicitly enable ASLR mitigation by setting the linker option /DYNAMICBASE to ON.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14109": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "mitigation effectiveness issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that trigger ASLR compatibility mode and reduce its effectiveness.",
+                    "description": "Address Space Layout Randomization (ASLR) is a vulnerability mitigation option that forces software components to load on a different memory base address each time they are used. This mitigation is detected as enabled, but rendered ineffective since the set load base address forces the 64-bit image to load within the lower 32-bit memory range. Having a smaller memory range makes ASLR more predictable, and it is therefore easier for malicious code to bypass it.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review the programming language linker options.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you should check if the linker option /BASE is set to a value lesser than 4GB.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14110": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "low",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 3,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "critical code linking issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that negate ASLR by forcing predicable relocation to first granularity base.",
+                    "description": "Address Space Layout Randomization (ASLR) is a vulnerability mitigation option that forces software components to load on a different memory base address each time they are used. This mitigation is detected as enabled, but rendered ineffective due to highly predictable memory base assignment. When the memory base address is unspecified by being set to zero, the operating system predictably loads the image on the first memory granularity base. That completely negates the ASLR mitigation.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review the programming language linker options.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you should check if the linker option /BASE is set to zero, and change the value accordingly.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14111": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "mitigation effectiveness issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that are not large address aware while trying to use high entropy ASLR.",
+                    "description": "High Entropy Address Space Layout Randomization (HEASLR) is a vulnerability mitigation option that forces software components to load on a different memory base address each time they are used. This mitigation is detected as enabled, but rendered ineffective due to image not being large address aware. For HEASLR to work properly on 64-bit images, it is required that they know how to handle addresses above the lowest 2 GB memory range. If they can't use the larger address space, they should not opt in to high entropy address randomization.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review the programming language linker options.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable HEASLR mitigation by setting the linker option /LARGEADDRESSAWARE to ON.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14112": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": null,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files with bound imports that will be ignored due to enabled ASLR vulnerability mitigation protection.",
+                    "description": "Address Space Layout Randomization (ASLR) is a vulnerability mitigation option that forces software components to load on a different memory base address each time they are used. Bound imports are a way for the operating system to speed up application startup time. However, binding an image makes it consistently load on the default base address. That is incompatible with ASLR, which is why bound imports will be ignored.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "This is a minor code quality issue. To resolve it, review the programming language linker options.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can safely remove EDITBIN /BIND from your post-link procedure, and set the /ALLOWBIND option to NO.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14113": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "outdated toolchain issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that do not implement protection from integer based memory allocation overflow attacks.",
+                    "description": "Protection from integer-based memory allocation overflow attacks is a vulnerability mitigation implemented by the programming language compiler. It enables enforcement of memory allocation limits during code execution. This is achieved by instrumenting each memory allocation instance (through the programming language keyword 'new') and validating its parameters. Should an application try to allocate a maximum number of elements via a single call to 'new', the execution will be terminated. This vulnerability mitigation is designed to protect against resource exhaustion and improper handling of memory allocation failures.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Microsoft VisualStudio users can take advantage of this configuration-free vulnerability mitigation by updating to a newer compiler version. With this update, additional vulnerability mitigation options will also become available.",
+                            "type": "update"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14114": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "baseline mitigations missing",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that do not implement the buffer overrun vulnerability mitigation protection.",
+                    "description": "Buffer overrun protection (Stack Guard) is a vulnerability mitigation option that prevents stack-based memory corruptions. Special values, called stack cookies, are inserted in the stack immediately before the return address value. Code flow protection is achieved by monitoring for unexpected stack cookie value changes. When a function is suspected to return to an address other than the calling one, the vulnerability mitigation triggers and terminates the application execution. This is a runtime mitigation option that selectively protects functions deemed to be at risk from memory corruption attacks by the programming language toolchain.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable buffer overrun protection mitigation by setting the linker option /GS to ON.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14115": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "ineffective mitigations found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that try to implement buffer overrun vulnerability mitigation without the appropriate security cookie.",
+                    "description": "Buffer overrun protection (Stack Guard) is a vulnerability mitigation option that prevents stack-based memory corruptions. Special values, called stack cookies, are inserted in the stack immediately before the return address value. Code flow protection is achieved by monitoring for unexpected stack cookie value changes. The application does try to implement buffer overrun protection, but the stack cookie it depends on is absent from the headers.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review the programming language linker options, or consider using a different executable packing solution.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable buffer overrun protection mitigation by setting the linker option /GS to ON.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14116": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "mitigation effectiveness issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that might ineffectively generate the security cookie value.",
+                    "description": "Buffer overrun protection (Stack Guard) is a vulnerability mitigation option that prevents stack-based memory corruptions. Special values, called stack cookies, are inserted in the stack immediately before the return address value. Code flow protection is achieved by monitoring for unexpected stack cookie value changes. The stack cookie value initialization is delegated to an application-defined function. That is not a recommended practice, as the protection effectiveness depends on the random number generator strength.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Revert the stack cookie value initialization back to the operating system-defined implementation. This will reduce the chance that a predictable stack cookie value could be used during an application run.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14117": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "ineffective mitigations found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that might not cover the entire application with buffer overrun vulnerability mitigation.",
+                    "description": "Buffer overrun protection (Stack Guard) is a vulnerability mitigation option that prevents stack-based memory corruptions. This mitigation is detected as enabled, but the application reports zero surface coverage in its internal data structures. Based on the self-reported data, it is probable that the vulnerability mitigation option has not been enabled. Modern applications usually have some functions that need to be protected against buffer overflows. Therefore, it is likely that protection coverage gaps exist.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable buffer overrun protection mitigation by setting the linker option /GS to ON.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "If the issue persists, you should review the linker options in any static libraries that the application links with.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14118": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "ineffective mitigations found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that might not cover all statically linked libraries with buffer overrun vulnerability mitigation.",
+                    "description": "Buffer overrun protection (Stack Guard) is a vulnerability mitigation option that prevents stack-based memory corruptions. This mitigation is detected as enabled, but its effectiveness is impacted by the use of outdated precompiled code. It was determined that the application had been linked against static libraries produced by multiple toolchain versions. Because some of them predate the general availability of the buffer overrun vulnerability mitigation, it is likely that protection coverage gaps exist.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Re-compile statically linked libraries with the same programming language toolchain version.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable buffer overrun protection mitigation by setting the linker option /GS to ON.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14119": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "baseline mitigations missing",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that do not implement the safe exception handling vulnerability mitigation protection.",
+                    "description": "Safe Exception Handling (/SAFESEH) protects the code flow integrity by ensuring that exceptions are handled only by vetted functions. This mitigation protects dynamically constructed exception chains by checking the function targets prior to their execution. Because the code flow integrity is verified during runtime, malicious code is less likely to be able to hijack trusted execution paths. It's highly recommended to enable this option for all software components used at security boundaries, or those that process user controlled inputs. However, this option is only effective on systems that dynamically resolve exception handlers. Most notably, this option is recommended for 32-bit Windows applications that target the Intel x86 platform. Other operating system and platform combinations mitigate exception hijacking risks through the use of statically generated read-only tables.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "To enable this mitigation, refer to your programming language toolchain documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable safe exception handling mitigation by passing the /SAFESEH parameter to the linker.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14120": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": false,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that do not implement language specific guarded exception handling.",
+                    "description": "Control Flow Guard (CFG/CFI) protects the code flow integrity by ensuring that indirect calls are made only to vetted functions. This mitigation protects dynamically resolved function targets by instrumenting the code responsible for transferring execution control. Higher level programming languages implement structured exception handling by managing their own code flow execution paths. As such, they are subject to code flow hijacking during runtime. Language-specific exception handling mitigation enforces execution integrity by instrumenting calls to exception code dispatching. Any deviation from the known and trusted code flow paths will cause the application to terminate. This makes malicious code less likely to execute.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "It's highly recommended to enable this option for all software components used at security boundaries, or those that process user-controlled inputs.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "To enable this mitigation, refer to your programming language toolchain documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable CFG mitigation by passing /guard:cf and /guard:ehcont parameters to the compiler and linker.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14121": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "ineffective mitigations found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that might not cover all statically linked libraries with safe exception handling vulnerability mitigation.",
+                    "description": "Safe Exception Handling (/SAFESEH) protects the code flow integrity by ensuring that exceptions are handled only by vetted functions. This mitigation is detected as enabled, but its effectiveness is impacted by the use of outdated precompiled code. It was determined that the application had been linked against static libraries produced by multiple toolchain versions. Because some of them predate the general availability of the safe exception handlers, it is likely that protection coverage gaps exist.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Recompile statically linked libraries with the same programming language toolchain version.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable safe exception handling mitigation by passing the /SAFESEH parameter to the linker.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14122": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "hardening mitigations missing",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that do not implement CFG vulnerability mitigation protection.",
+                    "description": "Control Flow Guard (CFG/CFI) protects the code flow integrity by ensuring that indirect calls are made only to vetted functions. This mitigation protects dynamically resolved function targets by instrumenting the code responsible for transferring execution control. Because the code flow integrity is verified during runtime, malicious code is less likely to be able to hijack trusted execution paths.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "It's highly recommended to enable this option for all software components used at security boundaries, or those that process user controlled inputs.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "To enable this mitigation, refer to your programming language toolchain documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable CFG mitigation by passing the /guard:cf parameter to the compiler and linker.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14123": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": null,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that might ineffectively implement CFG vulnerability mitigation protection.",
+                    "description": "Control Flow Guard (CFG/CFI) protects the code flow integrity by ensuring that dynamic calls are made only to vetted functions. This mitigation is detected as enabled, but its effectiveness is impacted by unexpected function alignment. For optimal protection, guarded functions must be aligned to the 16-byte boundary. Any misalignment leaves a small window for the malicious code to take advantage of an improperly secured code flow path.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "There are currently no programming language toolchain options to force proper function alignment. If this warning is issued for a file, it is likely that a future build, with some code changes, will make the compiler order the application code differently and eliminate the CFG coverage gaps.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14124": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "hardening effectiveness issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that might not cover all statically linked libraries with CFG vulnerability mitigation protection.",
+                    "description": "Control Flow Guard (CFG/CFI) protects the code flow integrity by ensuring that indirect calls are made only to vetted functions. This mitigation is detected as enabled, but its effectiveness is impacted by the use of outdated precompiled code. It was determined that the application had been linked against static libraries produced by multiple toolchain versions. Because some of them predate the general availability of the control flow guard vulnerability mitigation, it is likely that protection coverage gaps exist.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Recompile statically linked libraries with the same programming language toolchain version.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable CFG mitigation by passing the /guard:cf parameter to the compiler and linker.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14125": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows shared library files that do not suppress exports which reduces CFG vulnerability mitigation protection effectiveness.",
+                    "description": "Control Flow Guard (CFG/CFI) protects the code flow integrity by ensuring that dynamic calls are made only to vetted functions. Trusted execution paths rely on the ability of the operating system to build a list of valid function targets. Certain functions can intentionally be disallowed to prevent malicious code from deactivating vulnerability mitigation features. A list of such invalid function targets can include publicly exported symbols. Applications that enhance control flow integrity through export suppression rely on libraries to mark their publicly visible symbols as suppressed. This is done for all symbols that are considered to be sensitive functions, and to which access should be restricted. It is considered dangerous to mix applications that perform export suppression with libraries that do not.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "To enable this mitigation on library code, refer to your programming language toolchain documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable CFG mitigation by passing the /guard:cf parameter to the compiler and linker.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14126": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": false,
+            "priority": null,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that do not implement XFG vulnerability mitigation protection.",
+                    "description": "Extreme Control Flow Guard (XFG) protects the code flow integrity by ensuring that indirect calls are made only to vetted functions. This mitigation protects dynamically resolved function targets by instrumenting the code responsible for transferring execution control. Because the code flow integrity is verified during runtime, malicious code is less likely to be able to hijack trusted execution paths.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "This mitigation option is considered an improvement to the existing control flow guard, but it is not a replacement for it. Both vulnerability mitigations can coexist in the same application, with the control flow guard mitigation used as a fallback on operating systems that do not support its extreme version. The difference between these two mitigations is most noticeable in higher-level programming languages that can discern between function pointers based on their respective signatures. In this case, the extreme control flow guard offers fine-grained code execution control.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "This vulnerability mitigation option has not yet been made available to Microsoft VisualStudio users.",
+                            "type": "consult"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14127": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that do not implement long jump control flow vulnerability mitigation protection.",
+                    "description": "Control Flow Guard (CFG/CFI) protects the code flow integrity by ensuring that indirect calls are made only to vetted functions. This mitigation protects dynamically resolved function targets by instrumenting the code responsible for transferring execution control. Higher-level programming languages implement structured exception handling by managing their own code flow execution paths. As such, they are subject to code flow hijacking during runtime. Language-specific exception handling mitigation enforces execution integrity by instrumenting calls to manage execution context switching. Any deviation from the known and trusted code flow paths will cause the application to terminate. This makes malicious code less likely to execute.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "It's highly recommended to enable this option for all software components used at security boundaries, or those that process user controlled inputs.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "To enable this mitigation, refer to your programming language toolchain documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable CFG mitigation by passing the /guard:cf parameter to the compiler and linker.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14128": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that do not implement delayed import function hijacking mitigation protection.",
+                    "description": "Control Flow Guard (CFG/CFI) protects the code flow integrity by ensuring that indirect calls are made only to vetted functions. This mitigation protects dynamically resolved function targets by instrumenting the code responsible for transferring execution control. Function pointers that get resolved through import and delayed import address tables do not need to be monitored during application runtime. Instead, it is expected that modern programming language toolchains place those pointers in read-only memory locations. However, the delayed import functions are resolved as they are needed during runtime. To ensure the function pointers remain read-only, the operating system must be made aware if it is safe to re-protect the memory pages that hold them. Modern toolchains typically separate import data from other application regions for this very reason.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "To enable this mitigation, refer to your programming language toolchain documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable CFG mitigation by passing the /guard:cf parameter to the compiler and linker.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14129": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": false,
+            "priority": null,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that do not implement static cast vulnerability mitigation protection.",
+                    "description": "Static Cast Guard (CastGuard) protects the code flow integrity by preventing type confusion issues that may occur during pointer cast operation. Higher-level programming languages organize code into classes that may inherit types and interfaces from other classes. To keep track of this complex hierarchy of type inheritance, a special table called Virtual Function Table (vftable) is created during compilation. This mitigation option reorganizes the vftable entries into a list that is sorted by class inheritance relationships. To enforce safe type casting during application runtime, each pointer cast operation is range-checked to ensure that the type conversion is only done for compatible types. Any detected type incompatibility during casting will cause the application to terminate. This makes malicious code less likely to execute.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "To enable this mitigation, refer to your programming language toolchain documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable cast guard mitigation by passing the /d2CastGuard parameter to the compiler and linker.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14130": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": false,
+            "priority": null,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that might not cover all statically linked libraries with static cast vulnerability mitigation protection.",
+                    "description": "Static Cast Guard (CastGuard) protects the code flow integrity by preventing type confusion issues that may occur during pointer cast operation. This mitigation is detected as enabled, but its effectiveness is impacted by the use of outdated precompiled code. It was determined that the application had been linked against static libraries produced by multiple toolchain versions. Because some of them predate the general availability of the static cast guard vulnerability mitigation, it is likely that protection coverage gaps exist.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Recompile statically linked libraries with the same programming language toolchain version.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable cast guard mitigation by passing the /d2CastGuard parameter to the compiler and linker.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14131": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": false,
+            "priority": null,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that do not implement retpoline vulnerability mitigation protection.",
+                    "description": "Retpoline vulnerability mitigation protects sensitive user data from being accessed by untrusted code. This family of security issues is caused by speculative instruction order execution at the hardware level. Speculative execution is a processor feature meant to improve the speed of code execution. By executing possible indirect function call targets in parallel, the processor can have an answer ready regardless of the path taken by the application. Since possible branches get executed, the processor branch predictor can be forced to access data for which the lower privilege code does not have access rights.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "It's highly recommended to enable this option for all software components used across security privilege boundaries, such as isolated processes, or for user-to-kernel mode transitions. Although there is still a performance impact to having this vulnerability mitigation enabled, those side-effects have been greatly reduced in newer operating system versions.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "To enable this mitigation, refer to your programming language toolchain documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable retpoline mitigation by passing the /Qspectre parameter to the compiler and linker.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14132": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": false,
+            "priority": null,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that do not implement Intel CET vulnerability mitigation protection.",
+                    "description": "Intel Control-flow Enforcement Technology (CET) protects the code flow integrity by ensuring that indirect calls are made only to vetted functions, and that the functions return only to their respective callers. This mitigation protects dynamically resolved function targets by instrumenting the code responsible for transferring execution control. It is implemented at the hardware level, but the applications need to opt in. Special processor instructions are implemented to track indirect branch execution, while the function returns are verified through the use of a shadow stack. Any deviation from the known and trusted code flow paths will cause the application to terminate. This makes malicious code less likely to execute.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "It's highly recommended to enable this option for all software components used at security boundaries, or those that process user controlled inputs.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "To enable this mitigation, refer to your programming language toolchain documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable CET mitigation by passing the /CETCOMPAT parameter to the linker.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14133": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": false,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that implement relaxed Intel CET vulnerability mitigation protection.",
+                    "description": "Intel Control-flow Enforcement Technology (CET) protects the code flow integrity by ensuring that indirect calls are made only to vetted functions, and that the functions return only to their respective callers. This mitigation protects dynamically resolved function targets by instrumenting the code responsible for transferring execution control. It is implemented at the hardware level, but the applications need to opt in. Special processor instructions are implemented to track indirect branch execution, while the function returns are verified through the use of a shadow stack. Any deviation from the known and trusted code flow paths will cause the application to terminate. This makes malicious code less likely to execute. The mitigation was detected as enabled, but its effectiveness has been reduced by allowing exceptions to its enforcement.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "It's highly recommended to enable this option for all software components used at security boundaries, or those that process user controlled inputs.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "To enable this mitigation, refer to your programming language toolchain documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable CET mitigation by passing the /CETCOMPAT parameter to the linker.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14134": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": null,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that implement now deprecated RFG vulnerability mitigation protection.",
+                    "description": "Return Flow Guard (RFG) protects the code flow integrity by ensuring that functions return only to their respective callers. This was an experimental vulnerability mitigation protection that was deprecated due to efficacy concerns. Since the mitigation was a in-software implementation of a more advanced hardware-level protection (designed by Intel), the feature was completely removed from tooling support. Applications that still contain instrumentation for return flow protection continue to work correctly, without significant performance impact, on all operating system versions.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Re-compile the application with a newer version of the programming language toolchain. This will remove the deprecated functionality from the resulting executable, and allow for its replacement with a more secure Intel CET vulnerability mitigation protection.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14135": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": null,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that implement now deprecated MPX vulnerability mitigation protection.",
+                    "description": "Intel Memory Protection eXtensions (MPX) was a hardware-level vulnerability mitigation option designed to prevent stack-based memory corruptions. This was an experimental vulnerability mitigation protection that was deprecated due to performance and efficacy concerns. It was implemented as a conjunction of software and hardware features, with the processor being ultimately responsible for its enforcement. Due to design choices, there was a significant performance impact. This impact manifests even on processors that did not have this vulnerability mitigation option.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Re-compile the application with a newer version of the programming language toolchain. This will remove the deprecated functionality from the resulting executable, and eliminate its residual performance penalties.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14136": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": false,
+            "priority": null,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that are not built with file reproducibility.",
+                    "description": "Reproducible builds allow programming language toolchains to deterministically produce binary artifacts on each run. They are used to verify artifact integrity by repeating the build process sequence on two or more isolated machines. Any discrepancies between these independently created outputs could indicate a software supply chain attack against the build infrastructure.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "To be able to efficiently compare independent outputs, all your build artifacts should be reproducible. To configure the build process, refer to your programming language toolchain documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio .NET, you can enable this feature by passing the option /deterministic to the linker.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14137": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "low",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 3,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that enforce image integrity while missing a digital signature.",
+                    "description": "Enforced image integrity checking ensures that Windows executable files are only allowed to run after their digital signatures are verified. This security mechanism ensures that the tampered and corrupted applications are prohibited from running. Additionally, access to certain operating system functions may require applications to enable enforced integrity checks. This requirement reduces harm that the malicious code may cause once executed. It is common to find operating system code and kernel drivers that use enforced integrity checks for security purposes.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "To confirm detection accuracy, check for presence of any security catalogues that may be used as the software component signatures.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "With Microsoft SignTool, re-sign the software component or create a security catalogue that acts as its signature.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14138": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "vulnerability mitigation issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that were compiled without following the recommended SDL process.",
+                    "description": "Security Development Lifecycle (SDL) is a group of enhanced compile-time checks that report common coding mistakes as errors, preventing them from reaching production. These checks minimize the number of security issues by enforcing strict memory access checks. They also prevent the use of hard-to-secure string and memory manipulation functions. To prove the binary has been compiled with these checks enabled, the compiler emits a special debug object. Removing the debug table eliminates this proof. Therefore, this check only applies to binaries that still have their debug tables.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "You should keep the debug table to prove that the SDL process has been followed.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "To enable these checks, refer to your programming language toolchain documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable this feature by setting the compiler option /SDL to ON.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14139": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "vulnerability mitigation issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files compiled without following the SDL best practices while using banned memory functions.",
+                    "description": "Security Development Lifecycle (SDL) is a group of enhanced compile-time checks that report common coding mistakes as errors. These checks prevent the use of hard-to-secure memory manipulation functions. They enforce static memory access checks, and allow only the use of range-verified memory access functions. While these checks do not prevent every memory corruption issue by themselves, they do help reduce the likelihood.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "It's highly recommended to enable these checks for all software components used at security boundaries, or those that process user controlled inputs.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "To enable these checks, refer to your programming language toolchain documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable this feature by setting the compiler option /SDL to ON.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14140": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "vulnerability mitigation issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files compiled without following the SDL best practices while using banned string functions.",
+                    "description": "Security Development Lifecycle (SDL) is a group of enhanced compile-time checks that report common coding mistakes as errors. These checks prevent the use of hard-to-secure string manipulation functions. They enforce static memory access checks, and allow only the use of range-verified string parsing functions. While these checks do not prevent every memory corruption issue by themselves, they do help reduce the likelihood.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "It's highly recommended to enable these checks for all software components used at security boundaries, or those that process user controlled inputs.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "To enable these checks, refer to your programming language toolchain documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable this feature by setting the compiler option /SDL to ON.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14141": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that might have SDL process enforcement coverage gaps.",
+                    "description": "Security Development Lifecycle (SDL) is a group of enhanced compile-time checks that report common coding mistakes as errors, preventing them from reaching production. These checks were detected as enabled, but their effectiveness was impacted by the use of outdated precompiled code. It was determined that the application had been linked against static libraries produced by multiple toolchain versions. Because some of them predate the general availability of the security development lifecycle checks, it is likely that protection coverage gaps exist.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Recompile statically linked libraries with the same programming language toolchain version.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable the feature by setting the compiler option /SDL to ON.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14142": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 4,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "critical code linking issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files with sections that map header information to their own address space, which may lead to misuse of header information.",
+                    "description": "Windows executable files are mapped in memory as a sequence of allocated pages backed by its physical content. Programming language toolchains typically order these sections linearly both on disk and in memory. Starting executable file memory regions are reserved for the Portable Executable (PE) header. The operating system uses this information to correctly map the executable file in memory. Overlapping the header, its fields and tables with the rest of the executable is not recommended. Depending on the extent of the data overlap, this may lead to exposing critical security data to overwrites, tampering, and complete bypasses of vulnerability mitigations. This issue is typically reported when a software publisher uses a low quality executable packing solution.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "You should deprecate the use of runtime packers or enforce digital rights management via less intrusive ways that preserve compatibility with vulnerability mitigation options.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14143": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "outdated toolchain issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that have a BSS region with executable attributes.",
+                    "description": "Windows executable files are mapped in memory as a sequence of allocated pages. The pages are grouped into sections with defined access rights. Block Starting Symbol (BSS) is a section of memory whose contents are reserved for variables that get their initial values assigned during runtime. Access rights for this section should not include the ability to execute stored data as code, with the accounted exception of incremental linking that merges code and data segments for improved build times. Using unsafe section access rights may lead to exposing critical security data to overwrites, tampering, and complete bypasses of vulnerability mitigations. This issue is typically reported when a software publisher uses a low quality executable packing solution. ",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "You should deprecate the use of runtime packers, or enforce digital rights management via less intrusive ways that preserve compatibility with vulnerability mitigation options.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "If you use incremental builds during development, the release image should be built in a single linker pass.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14144": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 3,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "critical code linking issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that utilize the outdated and unsafe shared section model for inter process communication.",
+                    "description": "Windows executable files are mapped in memory as a sequence of allocated pages backed by its physical content. The pages are grouped into sections with defined access rights. For data synchronization purposes, sharing section contents across process boundaries is allowed. Any executable file instance, regardless of its privilege level, has access to the same shared section data during runtime. This makes it possible to access, overwrite, tamper with, or completely bypass security mechanisms.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Shared data sections are considered unsafe, and their use should be deprecated.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Update data synchronization to use mapped sections. Mapped sections are named objects (created during runtime) with strictly defined security descriptors. These additional security features enable fine-grained control, and mitigate the shared section access issues.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14145": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 4,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "critical code linking issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that convert read-only access to writable or executable as a side-effect of their alignment and memory layout.",
+                    "description": "Windows executable files are mapped in memory as a sequence of allocated pages. The pages are grouped into sections that can expand their virtual memory footprints, and exceed the size of the physical content backing them. Virtual memory requirements for each section are rounded up by the section alignment value. When this alignment value is lesser than the memory allocation granularity, applying correct section access rights becomes challenging. When read-only sections share the memory page with writable or executable content, the access rights get expanded to satisfy all access requirements. Therefore, it is possible that a bad memory layout can cause the operating system to nullify the read-only section attributes. Using unsafe section access rights may lead to exposing critical security data to overwrites, tampering, and complete bypasses of vulnerability mitigations.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Re-compile the affected application with the latest programming language toolchain, and adjust the alignment to match the memory allocation granularity.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "In Microsoft VisualStudio, you can adjust the alignment value by passing it through the /ALIGN option to the linker.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14146": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 4,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "critical code linking issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that have no sections causing the headers to gain RWE attributes allowing any code to change them in memory.",
+                    "description": "Windows executable files are mapped in memory as a sequence of allocated pages backed by its physical content. The pages are grouped into sections with defined access rights. Starting executable file memory regions are reserved for the Portable Executable (PE) header, which has read-only access rights due to its criticality. However, when the number of code and data sections is zero, the operating system assumes the code exists and that it resides in the headers. For that reason, the entire header section in memory is given full access rights. In such cases, the header content can self-modify and execute if necessary. This combination of header access rights is unsafe, as it may lead to exposing critical security data to overwrites, tampering, and complete bypasses of vulnerability mitigations. This issue is typically reported when a software publisher uses a low quality executable packing solution.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "You should deprecate the use of runtime packers, or enforce digital rights management via less intrusive ways that preserve compatibility with vulnerability mitigation options.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14147": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 5,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "critical code linking issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files with the entry point residing in a writable section making it possible to change code while executing.",
+                    "description": "Windows executable files are mapped in memory as a sequence of allocated pages. The pages are grouped into sections with defined access rights. Main executable code section is referenced by the entry point address. When the entry point section requests a combination of write and execute access rights attributes, it gets allowed to self-modify its code during runtime. Vulnerability mitigations are implemented with the assumption that the executable code sections are read-only, or immutable. Using unsafe executable section access rights may lead to exposing critical security data to overwrites, tampering, and complete bypasses of vulnerability mitigations. This issue is typically reported when a software publisher uses a low quality executable packing solution.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "You should deprecate the use of runtime packers, or enforce digital rights management via less intrusive ways that preserve compatibility with vulnerability mitigation options.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14148": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "outdated toolchain issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows driver files with the entry point residing in a writable section making it possible to change code while executing.",
+                    "description": "Windows kernel drivers are mapped in memory as a sequence of allocated pages. The pages are grouped into sections with defined access rights. Main executable code section is referenced by the entry point address. When the entry point section requests a combination of write and execute access rights attributes, it gets allowed to self-modify its code during runtime. Vulnerability mitigations are implemented with the assumption that the executable code sections are read-only, or immutable. Using unsafe executable section access rights may lead to exposing critical security data to overwrites, tampering, and complete bypasses of vulnerability mitigations. Older programming language toolchains are known to compile drivers with self-modifying initialization sections.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Although the risk in this case is limited, it is recommended to re-compile the affected driver with a newer toolchain version.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14149": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 5,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "critical code linking issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files with the entry point residing in headers causing data and code to overlap.",
+                    "description": "Windows executable files are mapped in memory as a sequence of allocated pages. The pages are grouped into sections with defined access rights. Main executable code section is referenced by the entry point address. However, the operating system does not differentiate between memory locations found within sections and headers. It is therefore possible to instruct the operating system to begin the code execution from a memory address residing within the headers. Since the header is intended to be a read-only data memory region, any code execution from there should be strictly prohibited. Having dual-use memory regions violates the code and data separation policies. This issue is typically reported when a software publisher uses a low quality executable packing solution.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "You should deprecate the use of runtime packers, or enforce digital rights management via less intrusive ways that preserve compatibility with vulnerability mitigation options.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14150": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 4,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "critical code linking issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that implicitly modify headers during loading with function code or relocations.",
+                    "description": "Windows executable files are mapped in memory as a sequence of allocated pages backed by its physical content. The pages are grouped into sections with defined access rights. Starting executable file memory regions are reserved for the Portable Executable (PE) header, which has read-only access rights due to its criticality. Even the operating system should not implicitly modify the header contents. No operation during the image load sequence should write its results, nor relocate any data, to and from the headers. Vulnerability mitigations are implemented with the assumption that the headers are read-only, or immutable. Allowing headers to self-modify may lead to exposing critical security data to overwrites, tampering, and complete bypasses of vulnerability mitigations. This issue is typically reported when a software publisher uses a low quality executable packing solution.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "You should deprecate the use of runtime packers, or enforce digital rights management via less intrusive ways that preserve compatibility with vulnerability mitigation options.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14151": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 3,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "unsafe dependency references",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that load dynamic libraries from network or remote server location.",
+                    "description": "Windows applications reference shared functions from the operating system (and other libraries) by importing their publicly available symbols. This modularization greatly reduces the time required to develop software, as common operations can be referenced without having to rewrite them every time they are needed. Applications can load additional libraries during their initialization sequence or their execution. In both cases, the Portable Executable (PE) file format provides the mechanisms to acquire required libraries and their public symbols. Since those libraries contain code, they must be loaded from a trusted source. If the libraries are hosted on a remote server, their code could be changed or intercepted by a malicious binary planting attack.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Ensure that your application loads all required libraries from the same machine where the application itself resides.",
+                            "type": "investigate"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14152": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "vulnerability mitigation issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that do not require dependency isolation.",
+                    "description": "Isolated Applications and Side-by-Side Assemblies are a solution to lessen the impact of dependency version conflicts. When an application depends on a common operating system component with multiple incompatible versions, it must reference the correct one. This type of isolation provides a mechanism for versioned applications and dependencies to run simultaneously without conflicts. Modern applications (and their dependencies) should always be isolation-aware. When a dependency is isolated, the operating system becomes responsible for its context activation, and it ensures the environment of the hosting application is not perturbed. Disabling isolation makes components responsible for their own context activation, which may lead to incorrect software behaviors, runtime issues, and unexpected crashes.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable isolation by passing the option /ALLOWISOLATION to the linker.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14153": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "vulnerability mitigation issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that opt out of dependency isolation while including a manifest that specifies how dependency loading should be performed.",
+                    "description": "Isolated Applications and Side-by-Side Assemblies are a solution to lessen the impact of dependency version conflicts. When an application depends on a common operating system component with multiple incompatible versions, it must reference the correct one. This type of isolation provides a mechanism for versioned applications and dependencies to run simultaneously without conflicts. The operating system is informed of the correct dependency versions to load through an application manifest. It can be found within application resources or supplied as a standalone file. Using such a manifest implies that the application is isolation-aware. However, it was detected that the application was compiled to opt out of dependency isolation while also including a manifest resource. This was likely an oversight during application upgrade to include isolation capabilities.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "In Microsoft VisualStudio, you can enable isolation by passing the option /ALLOWISOLATION to the linker.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14154": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 4,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "critical code linking issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files with different data tables overlapping with each other or with file headers.",
+                    "description": "Windows executable files consist of various data tables that help the operating system loader provide the information necessary for the application to run. The tables contain references to memory layouts, function symbols the application uses and provides, configurations of security features, and fulfill various other execution needs. Due to their sensitivity, all data tables should be isolated from each other. At no point should one table be allowed to directly modify another. Vulnerability mitigations are implemented with the assumption that the data tables are read-only, or immutable. Allowing data tables and application headers to self-modify may lead to exposing critical security data to overwrites, tampering, and complete bypasses of vulnerability mitigations. This issue is typically reported when a software publisher uses a low quality executable packing solution.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "You should deprecate the use of runtime packers, or enforce digital rights management via less intrusive ways that preserve compatibility with vulnerability mitigation options.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14155": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "execution hijacking risks",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files with exported symbols susceptible to pointer hijacking.",
+                    "description": "Sensitive executable memory regions should be kept as read-only to protect the integrity of trusted execution code flow paths. Exported symbol addresses are pointers to the functions that implement them. If those pointers are changed by malicious code, execution paths can be redirected to unintended locations. Most modern programming language toolchains protect those memory regions appropriately. These issues are commonly reported for outdated linkers and non-compliant executable packing solutions.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review the programming language linker options, and consider a build toolchain update.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14156": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "execution hijacking risks",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files with imported functions susceptible to pointer hijacking.",
+                    "description": "Sensitive executable memory regions should be kept as read-only to protect the integrity of trusted execution code flow paths. Imported function addresses are pointers to the symbols that implement the application-required functionality. If those pointers are changed by malicious code, execution paths can be redirected to unintended locations. Most modern programming language toolchains protect those memory regions appropriately. These issues are commonly reported for outdated linkers and non-compliant executable packing solutions.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review the programming language linker options, and consider a build toolchain update.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14157": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "execution hijacking risks",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files with delay import functions susceptible to pointer hijacking.",
+                    "description": "Sensitive executable memory regions should be kept as read-only to protect the integrity of trusted execution code flow paths. Imported function addresses are pointers to the symbols that implement the application-required functionality. If those pointers are changed by malicious code, execution paths can be redirected to unintended locations. Most modern programming language toolchains protect those memory regions appropriately. Newest linker versions isolate delay imports into their own protected memory region for extra security. These issues are commonly reported for outdated linkers and non-compliant executable packing solutions.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review the programming language linker options, and consider a build toolchain update.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14158": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "execution hijacking risks",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files with TLS callbacks susceptible to pointer hijacking.",
+                    "description": "Sensitive executable memory regions should be kept as read-only to protect the integrity of trusted execution code flow paths. Thread local storage (TLS) callbacks are pointers to code initialization and resource release functions. If those pointers are changed by malicious code, execution paths can be redirected to unintended locations. Most modern programming language toolchains protect those memory regions appropriately. These issues are commonly reported for outdated linkers and non-compliant executable packing solutions.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review the programming language linker options, and consider a build toolchain update.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14159": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": null,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "execution hijacking risks",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files with exception handlers susceptible to pointer hijacking.",
+                    "description": "Sensitive executable memory regions should be kept as read-only to protect the integrity of trusted execution code flow paths. Exception handlers are pointers to functions that implement the error-handling logic. If those pointers are changed by malicious code, execution paths can be redirected to unintended locations. Most modern programming language toolchains protect those memory regions appropriately. Newest linker versions also track programming language-specific handlers and protect them from runtime manipulation. These issues are commonly reported for outdated linkers and non-compliant executable packing solutions.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review the programming language linker options, and consider a build toolchain update.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14160": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "outdated toolchain issues",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that embed PDB files whose integrity is verified with an insecure hashing algorithm.",
+                    "description": "Program database (PDB) files are typically only used during software development. They contain private debug symbols that make it significantly easier to reverse engineer a closed-source application. In some cases, having a program database file is equivalent to having access to the source code. Presence of program databases could indicate that one or more software components have been built using a debug profile, instead of the release.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Private debug database files should not be embedded within executables, and you should remove them from the software package before releasing it.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "The integrity verification of the embedded database files should not be done with insecure hashing algorithms. SHA1 and MD5 hashes should be deprecated throughout the application, and a more secure SHA256 algorithm should be used instead.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14161": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": 4,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files that are not using a cryptographically secure GUID for their PDB identifier.",
+                    "description": "Program database (PDB) files are typically only used during software development. They contain private debug symbols that make it significantly easier to determine the root cause of a software quality issue. Applications built to support debugging link to their program databases through Globally Unique Identifiers (GUIDs). This sequence of pseudo-random numbers is guaranteed to be uniquely generated. As this is the main verification that the correct debugging symbols have been loaded, it is important that the identifier has been generated securely. Using non-cryptographically secure algorithms for their generation increases the odds of identifier collisions.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Since some programming language toolchains use unsafe GUIDs, you should maintain a list of trusted debugging servers for the development environment.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ14162": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "execution hijacking risks",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hardening",
+            "localization": [
+                {
+                    "label": "Detected Windows executable files with security mitigation tables susceptible to pointer hijacking.",
+                    "description": "Sensitive executable memory regions should be kept as read-only to protect the integrity of trusted execution code flow paths. Security mitigation functions and reference addresses are critical ranges that must be protected from runtime changes. If those pointers are changed by malicious code, execution paths can be redirected to unintended locations. Most modern programming language toolchains protect those memory regions appropriately. These issues are commonly reported for outdated linkers and non-compliant executable packing solutions.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review the programming language linker options, and consider a build toolchain update.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

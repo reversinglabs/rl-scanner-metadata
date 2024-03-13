@@ -1,0 +1,1053 @@
+{
+    "SQ20101": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that have been countersigned for time-stamping an excessive number of times.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures verify the origin and the integrity of the object they apply to. For application signatures, or digital code signing, it is recommended to countersign the signatures for time-stamping. Countersigned software components have their signature period validity extended past the signing certificate expiration date. Such signatures are considered valid indefinitely. However, time-stamping only needs to be done once per signature. Applying an excessive number of countersignatures may cause validation issues and availability outages.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Consult the certificate authority code signing documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "With Microsoft SignTool, you can specify the trusted remote time-stamping server using the /t or /tr parameter.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20102": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that have not been countersigned for time-stamping.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures verify the origin and the integrity of the object they apply to. For application signatures, or digital code signing, it is recommended to countersign the signatures for time-stamping. Countersigned software components have their signature period validity extended past the signing certificate expiration date. Such signatures are considered valid indefinitely. Failing to countersign software components may result in application errors and availability outages.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Consult the certificate authority code signing documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "With Microsoft SignTool, you can specify the trusted remote time-stamping server using the /t or /tr parameter.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20103": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected reproducibly compiled applications that have not been countersigned for time-stamping.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures verify the origin and the integrity of the object they apply to. For application signatures, or digital code signing, it is recommended to countersign the signatures for time-stamping. Countersigned software components have their signature period validity extended past the signing certificate expiration date. Such signatures are considered valid indefinitely. Reproducibly compiled software should always be countersigned for time-stamping, as the build process eliminates forensic information about the exact time the component was built. Failing to countersign software components may result in application errors and availability outages.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Consult the certificate authority code signing documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "With Microsoft SignTool, you can specify the trusted remote time-stamping server using the /t or /tr parameter.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20104": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 2,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "signature compliance mistakes",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that used an expired certificate during signing.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. Certificates have a validity period during which they can be used to create signatures. After the validity period has expired, the certificate is considered invalid and should not be used for signing. This warning means we detected that an already expired certificate was used to create a digital signature. Failing to comply with the established code signing best practices may result in application errors and availability outages.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Obtain a new code signing certificate and re-sign the software component.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20105": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": false,
+            "priority": null,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures with an expired signing certificate.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. Certificates have a validity period during which they can be used to create signatures. For application signatures, or digital code signing, it is recommended to countersign the signatures for time-stamping. Countersigned software components have their signature period validity extended past the signing certificate expiration date. Such signatures are considered valid indefinitely. The detected signature is still considered valid, but one or more certificates that were used to make it are now expired. This could indicate the application is relying on outdated components.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Check for available software component updates.",
+                            "type": "update"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20106": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected expired digital signatures that have not been countersigned for time-stamping.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. Certificates have a validity period during which they can be used to create signatures. For application signatures, or digital code signing, it is recommended to countersign the signatures for time-stamping. Countersigned software components have their signature period validity extended past the signing certificate expiration date. Such signatures are considered valid indefinitely. We detected that the digital signature was not countersigned for time-stamping, and that the signing certificate has expired. Failing to countersign software components may result in application errors and availability outages.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Acquire a new certificate and re-sign the software component.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Apply the optional time-stamping countersignature during signing.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "With Microsoft SignTool, you can specify the trusted remote time-stamping server using the /t or /tr parameter.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20107": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "revoked certificates detected",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that contain a revoked certificate.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. Certificates have a validity period during which they can be used to create signatures. Certificates can be revoked by the certificate authority that issued them. While there can be multiple reasons for revocation, users are advised against using software applications signed with revoked certificates. This warning indicates the signing certificate was revoked after the signature had been made. Releasing software components signed with revoked certificates may result in application errors and availability outages.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Acquire a new certificate and re-sign the software component, then publish the software package again.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20108": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 4,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "revoked certificates detected",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that were made with a revoked certificate.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. Certificates have a validity period during which they can be used to create signatures. Certificates can be revoked by the certificate authority that issued them. While there can be multiple reasons for revocation, users are advised against using software applications signed with revoked certificates. This warning indicates the signing certificate was revoked before the signature had been made. Releasing software components signed with revoked certificates may result in application errors and availability outages.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Acquire a new certificate and re-sign the software component, then publish the software package again.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20109": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "revoked certificates detected",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that contain a certificate revoked due to the private key compromise.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. Certificates have a validity period during which they can be used to create signatures. Certificates can be revoked by the certificate authority that issued them. While there can be multiple reasons for revocation, users are advised against using software applications signed with revoked certificates. This warning indicates the signing certificate was revoked due to the private key compromise. Releasing software components signed with revoked certificates may result in application errors and availability outages.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Acquire a new certificate and re-sign the software component, then publish the software package again.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20110": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "blacklisted certificates found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that contain a blacklisted certificate.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. Information security companies actively monitor how digital certificates get used. Incidents where the signer's identity is misused to place an authenticity record on a malicious file (subverting user trust) could lead to certificate blacklisting. When this happens, the presence of such a certificate is enough to mark the content it was applied to as malicious. Therefore, the users are less likely to trust such files.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Acquire a new certificate and re-sign the software component, then publish the software package again.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20111": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures made with a certificate issued by an unknown certificate authority.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. Lists of trusted certificate authorities can typically be found in certificate stores in your operating system or internet browser. Unless the digital signature ends its signing chain with a trusted certificate, it is not considered to be trustworthy. Releasing software components signed with such certificates may result in application errors and availability outages.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Acquire a new certificate and re-sign the software component, then publish the software package again.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20112": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": null,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures made with a certificate issued by the signing party.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. However, self-issued certificates can't be easily trusted. They only prove the possession of a private key that was used to generate a signature. Any other identity information within such certificates can easily be impersonated by a third party. Certificate authorities must verify the identity of a subject that they issue the certificates to. Software users rely on certificate authorities to confirm the accuracy of the information contained within the signature. Therefore, the users are less likely to trust files signed by an unverified party.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Acquire a new certificate and re-sign the software component, then publish the software package again.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20113": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "impersonated signatures found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that contain a certificate trying to impersonate a trusted publisher.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. However, self-issued certificates can't be easily trusted. Without independent identity validation provided by a reputable certificate authority, any information contained by the digital signature can at best be considered questionable. Identity information within self-issued certificates can easily be impersonated by a third party. We detected that the digital signature refers to a trusted software publisher identity. Since the certificate used to make this digital signature is self-issued, it can't be considered trustworthy. Most software packages that report identity impersonation attempts have malicious intent.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Acquire a new certificate and re-sign the software component, then publish the software package again.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20114": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "low",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 2,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malformed signatures detected",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected malformed or damaged digital signatures.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures verify the origin and the integrity of the object they apply to. To validate the package integrity, the digital signature itself must be verified first. This ensures the signature is intact and there were no attempts to tamper with the data it contains. When signatures can't be successfully parsed and validated, there are two possible reasons. Either the signature got damaged during network transport, or there was an attempt to tamper with its contents. Discerning between the two is impossible without manually inspecting the affected packages.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Inspect the software package for malicious software supply chain tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If there is no evidence of tampering, re-sign and re-publish the software component.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20115": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "tampered signatures detected",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that are failing integrity validation check.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures verify the origin and the integrity of the object they apply to. Signatures contain a cryptographic hash of the object they are signing. Any mismatch between the expected and computed hashes is reported as an integrity validation failure. This can happen for a few reasons. Either the software package got damaged during network transport, or a post-signing process changed some of the package contents, or there was an attempt to tamper with the package. Discerning between these cases is impossible without manually inspecting the affected packages.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Inspect the software package for malicious software supply chain tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If there is no evidence of tampering, re-sign and re-publish the software component.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "If there are any post-signing processes that might modify the software package, move them to an earlier point in the release process.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20116": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "partially signed components",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that only partially validate the integrity of signed content.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures verify the origin and the integrity of the object they apply to. Some digital signing methods are designed to allow for additional data to be appended after the signature. This appended content is purposefully excluded from signature validation so that it can be changed after a signature has been made. However, presence of such data makes it impossible to determine if the file integrity has been compromised.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Take a closer look at these kinds of files, because malware commonly tries to go unnoticed by hiding within these validation gaps.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Some software vendors use this approach in a non-malicious context to insert unique package information for tracking purposes after packaging. Using such non-verifiable data segments is considered an insecure practice, and you should deprecate it in your processes.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20117": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "partially signed components",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures with object IDs whose content is excluded from integrity validation.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. Certificates consist of various object fields, some of which are enumerated by unique object identifiers called OIDs. Certificate specification allows for extensions through a set of reserved OIDs that can have arbitrary binary data as their value. That content is purposefully excluded from signature validation so that it can be changed after a signature has been made. However, presence of such data makes it impossible to determine if the file integrity has been compromised.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Take a closer look at these kinds of files, because malware commonly tries to go unnoticed by hiding within these validation gaps.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Some software vendors use this approach in a non-malicious context to insert unique package information for tracking purposes after packaging. Using non-verifiable OIDs is considered an insecure practice, and you should deprecate it in your processes.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20118": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that rely on a weak cryptography algorithm for integrity validation.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures verify the origin and the integrity of the object they apply to. The integrity validation relies on the cryptographic strength of the encryption and the hash verification algorithm. If either of the two is considered weak by current standards, there is a chance the signed object could be maliciously modified, without triggering the integrity failure check.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Create signatures with strong ECC key-length of at least 224 bits, or RSA key-length of at least 2048 bits, and use SHA256 as the hashing algorithm. While encryption key-length upgrade does require you to obtain a new certificate, the hashing algorithm can freely be selected during signing.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "With Microsoft SignTool, you can specify the hashing algorithm using the /fd SHA256 parameter.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20119": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that rely on a weak digest algorithm for integrity validation.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures verify the origin and the integrity of the object they apply to. The integrity validation relies on the cryptographic strength of the encryption and the hash verification algorithm. If either of the two is considered weak by current standards, there is a chance the signed object could be maliciously modified, without triggering the integrity failure check.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Create signatures with strong ECC key-length of at least 224 bits, or RSA key-length of at least 2048 bits, and use SHA256 as the hashing algorithm. While encryption key-length upgrade does require you to obtain a new certificate, the hashing algorithm can freely be selected during signing.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "With Microsoft SignTool, you can specify the hashing algorithm using the /fd SHA256 parameter.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20120": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "integrity enforcement errors",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that use Elliptic Curve Cryptography parameters that could be easily spoofed.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures verify the origin and the integrity of the object they apply to. The integrity validation relies on the cryptographic strength of the encryption and the hash verification algorithm. When Elliptic Curve Cryptography (ECC) is used, its parameters should be secured to prevent digital signature spoofing. Weak selection of parameters could allow a third-party to misrepresent its identity by matching the one in the signing certificate.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Have the signing certificate re-issued.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "For more technical information, refer to CVE-2020-0601.",
+                            "type": "consult"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20121": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": null,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that have not been performed with an extended validation certificate.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. When a certificate is purchased from a certificate authority, the subject that requests it goes through an identity validation process. Depending on the certificate type, those checks can be basic or extended. Confirming the subject identity is a multi-step process, and the requesting subject can be mapped to its legal entity name only through extended validation of submitted documents. Extended identity validation typically costs more, and it takes longer for a certificate to be issued when this process is correctly followed.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Consider the benefits of acquiring extended validation certificates. Operating systems tend to be more trusting of software packages signed in this way. Certain security warnings and prompts might also be automatically suppressed. This reduces the number of support tickets for organizations that opt to use extended validation certificates.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20122": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 2,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures used for code signing that do not have code signing listed for their intended use.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. Certificates consist of various object fields, some of which describe the allowed certificate uses. Digital certificates can only be used for code signing if that property is found in its list of extended key usage policies. It is possible to mistakenly use an SSL certificate as a code signing certificate during software publishing.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review the certificate information passed to the code signing application.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the problem persists, re-sign the software component with a newly acquired certificate, then publish the software package again.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20123": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 2,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures missing extensions required for code integrity validation while trying to enforce it.",
+                    "description": "Enforced image integrity checking ensures that Windows executable files are only allowed to run after their digital signatures are verified. This security mechanism ensures that the tampered and corrupted applications are prohibited from running. Additionally, access to certain operating system functions may require applications to enable enforced integrity checks. Integrity enforcement reduces harm that the malicious code may cause once executed. One or more software components that require integrity enforcement were found to be digitally signed without the mandatory page hash validation data. Operating system will refuse to load files linked with the /INTEGRITYCHECK option unless they are digitally signed with signatures that include the page hash validation data.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review the certificate information passed to the code signing application.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "With Microsoft SignTool, you can enforce the page hash integrity verification using the /ph parameter.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20124": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": null,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that contain a certificate with a short and predictable serial number.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. When purchased from a certificate authority, a certificate must conform to industry standards and best practices. One such requirement is that certificate serial numbers should not be a short or a sequential integer. Every certificate authority must generate a unique serial number on each issuance. That number should not be predictable, as attackers may leverage this to create forged certificates with identical or similar attributes. While a commercial certificate authority is unlikely to go against these recommendations, some policy deviations can occur in practice.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Communicate the detected issue to your certificate issuer, and have a new certificate created to resolve it.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Re-sign the software component with your newly issued certificate.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20125": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that contain a certificate that is missing some of the common fields in its issuer property.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. When purchased from a certificate authority, a certificate must conform to industry standards and best practices. One such requirement is that certificate issuer identity includes either common name or organization name. This is required to distinguish between multiple similar identities a certificate authority might use to identify itself. While a commercial certificate authority is unlikely to go against these recommendations, some policy deviations can occur in practice.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Communicate the detected issue to your certificate issuer, and have a new certificate created to resolve it.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Use your newly issued certificate to re-sign the software component.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20126": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that contain a certificate that is missing some of the common fields in its subject property.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. When purchased from a certificate authority, a certificate must conform to industry standards and best practices. One such requirement is that certificate subject identity includes either common name or organization name. This is required to distinguish between multiple similar identities to which a certificate might be issued to. Even if those similar identities belong to the same organization, they might need to represent different business units. While a commercial certificate authority is unlikely to go against these recommendations, some policy deviations can occur in practice.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Communicate the detected issue to your certificate issuer, and have a new certificate created to resolve it.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Use your newly issued certificate to re-sign the software component.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20127": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that contain a certificate that does not belong to any certificate chains.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can be either purchased from certificate authorities or be self-issued. Typically, certificates are issued by other parties that have higher user trust. This hierarchy of certificate issuance creates digital certificate chains, which start at the signing certificate and end with the certificate authority root. Digital signatures can contain multiple signing chains. Additionally, individual certificates that don't belong to any signing chains can be embedded. This is typically done by mistake during signing.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "While there's no direct security impact, the issue might point to larger lapses in the digital signing process. Consult the certificate authority code signing documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "If you're using Microsoft SignTool, you should check whether you are using the /ac parameter incorrectly.",
+                            "type": "investigate"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20128": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that do not contain a reference to a certificate revocation server.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. When purchased from a certificate authority, a certificate must conform to industry standards and best practices. One such requirement is that a certificate authority must be able revoke a certificate if its misuse was reported and independently confirmed. Software users rely on the certificate revocation process to defend from malicious actors that might be controlling a certificate issued to a trusted publisher. Operating systems periodically refresh local copies of certificate revocation lists. If the signature does not include a hyperlink to the certificate revocation server, its status cannot be checked. While a commercial certificate authority is unlikely to omit this information, some policy deviations can occur in practice.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Communicate the detected issue to your certificate issuer, and have a new certificate created to resolve it.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Use your newly issued certificate to re-sign the software component.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20129": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": null,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that chain to the deprecated cross-signature authorities.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures verify the origin and the integrity of the object they apply to. Cross-certificates are digital certificates issued by one certificate authority, and then used to sign the public key for the root certificate of another certificate authority. Cross-certificates allow creating a chain of trust from a single and trusted root certificate authority to multiple others. This digital signing program was used primarily for Windows kernel drivers. However, this signing program has now been deprecated. Existing driver packages that were timestamped before the expiration date of their signing certificates will continue working without any user or software publisher intervention.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Communicate the detected issue to your certificate issuer, and have a new certificate created to resolve it.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Use your newly issued certificate to re-sign the software component.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20130": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 4,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected expired certificates within the list of digital signatures that were cross-signed.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures verify the origin and the integrity of the object they apply to. Cross-certificates are digital certificates issued by one certificate authority, and then used to sign the public key for the root certificate of another certificate authority. Cross-certificates allow creating a chain of trust from a single and trusted root certificate authorities to multiple others. This digital signing program was used primarily for Windows kernel drivers. However, this signing program has now been deprecated. Existing driver packages that were not timestamped, or those with signatures made after the expiration date of their issuing certificates, are no longer supported by the operating system. Failing to comply with the cross-signing requirements may result in application errors and availability outages.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Obtain a new code signing certificate, migrate to the new Windows Hardware Program, and re-sign the software component.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20131": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 2,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that used an expired certificate during cross-signing.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. These signatures verify the origin and the integrity of the object they are applied to. Cross-certificates are digital certificates issued by one certificate authority that get used to sign the public key for the root certificate of another certificate authority. Cross-certificates provide a means to create a chain of trust from a single, trusted, root certificate authorities to multiple others. This digital signing program was used primarily for Windows kernel drivers. However, this signing program has now been deprecated. Existing driver packages that were not timestamped, or those with signatures made after the expiration date of their issuing certificates, are no longer supported by the operating system. Failing to comply with the cross-signing requirements may result in application errors and availability outages.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Obtain a new code signing certificate, migrate to the new Windows Hardware Program, and re-sign the software component.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

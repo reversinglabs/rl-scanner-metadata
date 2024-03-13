@@ -1,0 +1,43 @@
+{
+    "SQ12101": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "licenses",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "copyleft licensed components",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "licenses",
+            "localization": [
+                {
+                    "label": "Detected presence of software components distributed with copyleft licenses.",
+                    "description": "Software license is a legal instrument that governs the use and distribution of software source code and its binary representation. Software publishers have the freedom to choose any commonly used or purposefully written license to publish their work under. While some licenses are liberal and allow almost any kind of distribution, with or without code modification, other licenses are more restrictive and impose rules for their inclusion in other software projects. Copyleft licenses in particular impose substantial restrictions on the licensee. They typically require that any derived works, and even software code that merely interacts with copyleft code, be licensed under the same license. Since copyleft licenses are commonly open source licenses, their inclusion requires that the entire software package becomes open sourced. For commercial applications, this is typically undesirable. Therefore, the inclusion of copyleft code is commonly avoided or even prohibited by the organization policy.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate if the software publisher provides this component under a non-copyleft license.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider replacing the software component with an alternative that offers a license compatible with commercial use.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

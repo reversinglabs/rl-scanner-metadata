@@ -1,0 +1,305 @@
+{
+    "SQ31101": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 2,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "vulnerabilities",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "patch mandated vulnerabilities",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "vulnerabilities",
+            "localization": [
+                {
+                    "label": "Detected presence of patch mandated vulnerabilities.",
+                    "description": "Software composition analysis has identified a component with one or more known vulnerabilities. Available threat intelligence telemetry has confirmed that the reported vulnerabilities are actively being exploited by malicious actors. Regulatory body or a government agency has issued a patching mandate for all software components affected by the identified vulnerabilities.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "We strongly advise updating the component to the latest version.",
+                            "type": "update"
+                        },
+                        {
+                            "content": "If the update can't resolve the issue, create a plan to isolate or replace the affected component.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ31102": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 4,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "vulnerabilities",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "actively exploited vulnerabilities",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "vulnerabilities",
+            "localization": [
+                {
+                    "label": "Detected presence of actively exploited vulnerabilities.",
+                    "description": "Software composition analysis has identified a component with one or more known vulnerabilities. Available threat intelligence telemetry has confirmed that the reported vulnerabilities are actively being exploited by malicious actors.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "We strongly advise updating the component to the latest version.",
+                            "type": "update"
+                        },
+                        {
+                            "content": "If the update can't resolve the issue, create a plan to isolate or replace the affected component.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ31103": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 3,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "vulnerabilities",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malware exploited vulnerabilities",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "vulnerabilities",
+            "localization": [
+                {
+                    "label": "Detected presence of malware-exploited vulnerabilities.",
+                    "description": "Software composition analysis has identified a component with one or more known vulnerabilities. Available threat intelligence telemetry has confirmed that the reported vulnerabilities are actively being exploited by malicious actors. Malware code that propagates through these vulnerabilities has been created. This increases the chance of automated malware attacks affecting the software component users.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "We strongly advise updating the component to the latest version.",
+                            "type": "update"
+                        },
+                        {
+                            "content": "If the update can't resolve the issue, create a plan to isolate or replace the affected component.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ31104": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 5,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "vulnerabilities",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "critical severity vulnerabilities",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "vulnerabilities",
+            "localization": [
+                {
+                    "label": "Detected presence of critical severity vulnerabilities.",
+                    "description": "Software composition analysis has identified a component with one or more known vulnerabilities. Based on the CVSS scoring, these vulnerabilities have been marked as critical severity.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Perform impact analysis for the reported CVEs.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "We strongly advise updating the component to the latest version.",
+                            "type": "update"
+                        },
+                        {
+                            "content": "If the update can't resolve the issue, create a plan to isolate or replace the affected component.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ31105": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "vulnerabilities",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "high severity vulnerabilities",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "vulnerabilities",
+            "localization": [
+                {
+                    "label": "Detected presence of high severity vulnerabilities.",
+                    "description": "Software composition analysis has identified a component with one or more known vulnerabilities. Based on the CVSS scoring, these vulnerabilities have been marked as high severity.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Perform impact analysis for the reported CVEs.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Update the component to the latest version.",
+                            "type": "update"
+                        },
+                        {
+                            "content": "If the update can't resolve the issue, create a plan to isolate or replace the affected component.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ31106": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "vulnerabilities",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "medium severity vulnerabilities",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "vulnerabilities",
+            "localization": [
+                {
+                    "label": "Detected presence of medium severity vulnerabilities.",
+                    "description": "Software composition analysis has identified a component with one or more known vulnerabilities. Based on the CVSS scoring, these vulnerabilities have been marked as medium severity.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Perform impact analysis for the reported CVEs.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Update the component to the latest version.",
+                            "type": "update"
+                        },
+                        {
+                            "content": "If the update can't resolve the issue, create a plan to isolate or replace the affected component.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ31107": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "vulnerabilities",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "low severity vulnerabilities",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "vulnerabilities",
+            "localization": [
+                {
+                    "label": "Detected presence of low severity vulnerabilities.",
+                    "description": "Software composition analysis has identified a component with one or more known vulnerabilities. Based on the CVSS scoring, these vulnerabilities have been marked as low severity.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Perform impact analysis for the reported CVEs.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Update the component to the latest version.",
+                            "type": "update"
+                        },
+                        {
+                            "content": "Lower severity vulnerabilities can be resolved with less urgency, but you should still make a plan to do so.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

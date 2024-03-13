@@ -1,0 +1,418 @@
+{
+    "SQ40101": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "containers",
+            "localization": [
+                {
+                    "label": "Detected container images configured to run with administrative privileges.",
+                    "description": "Containers are a simple, yet powerful approach to process and filesystem isolation. When configured correctly, a container runs a set of processes isolated from their host system. Containers typically run as executables or as services, but regardless of their use, they must be properly secured. One security concept that fosters isolation is the principle of least privilege, meaning that a container should be given only those privileges needed to complete its task. Containers without a configured user identity will run as root, meaning that any kind of container compromise (both remote and local) will give administrative access to the entire container, its processes, and filesystem.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "If a service can run without privileges, create a specific user (with commands like 'groupadd' and 'useradd' on Linux, and 'net user' on Windows), and then switch to the non-root user with the 'USER' Dockerfile instruction.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ40102": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "containers",
+            "localization": [
+                {
+                    "label": "Detected container images that contain files with setuid or setgid permissions.",
+                    "description": "Containers are a simple, yet powerful approach to process and filesystem isolation. When configured correctly, a container runs a set of processes isolated from their host system. Containers typically run as executables or as services, but regardless of their use, they must be properly secured. One security concept that fosters isolation is the principle of least privilege, meaning that a container should be given only those privileges needed to complete its task. Executables with setuid or setgid permissions can increase the attack surface for privilege escalation attacks.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "When possible, remove any unnecessary permissions on executable files, e.g. by running 'chmod' near the end of your Dockerfile.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ40103": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "containers",
+            "localization": [
+                {
+                    "label": "Detected container images that might expose the FTP port.",
+                    "description": "Containers are a simple, yet powerful approach to process and filesystem isolation. When configured correctly, a container runs a set of processes isolated from their host system. Containers typically run as executables or as services, but regardless of their use, they must be properly secured. Although it might seem practical for data sharing, FTP is an insecure protocol that transmits unencrypted credentials, and can inadvertently expose sensitive files if not configured properly. Additionally, containers should only mount volumes with data required by containerized services during their execution, and are typically not used for long-term storage.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "You should not run FTP in containers.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Check if there's a running FTP daemon or service in the container's process list bound to port 21, or if one is executed on startup, and remove it.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ40104": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "containers",
+            "localization": [
+                {
+                    "label": "Detected container images that might expose the SSH port.",
+                    "description": "Containers are a simple, yet powerful approach to process and filesystem isolation. When configured correctly, a container runs a set of processes isolated from their host system. Containers typically run as executables or as services, but regardless of their use, they must be properly secured. Although remote access services (such as SSH) might seem practical for administration, their use can lead to bad practices like hard-coded credentials and keys, and can additionally increase the attack surface by providing an obvious entry point in an environment.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Avoid running remote access services such as SSH.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Check if there's a running SSH daemon or service in the container's process list bound to port 22, or if one is executed on startup, and remove it.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ40105": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "containers",
+            "localization": [
+                {
+                    "label": "Detected container images that might expose the Telnet port.",
+                    "description": "Containers are a simple, yet powerful approach to process and filesystem isolation. When configured correctly, a container runs a set of processes isolated from their host system. Containers typically run as executables or as services, but regardless of their use, they must be properly secured. Although Telnet might seem practical for administration, it is an insecure protocol that transmits unencrypted credentials, and can additionally increase the attack surface by providing an obvious entry point in an environment.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Avoid running remote access services such as Telnet.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Check if there's a running Telnet daemon or service in the container's process list bound to port 23, or if one is executed on startup, and remove it.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ40106": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "containers",
+            "localization": [
+                {
+                    "label": "Detected container images that might expose the rlogin port.",
+                    "description": "Containers are a simple, yet powerful approach to process and filesystem isolation. When configured correctly, a container runs a set of processes isolated from their host system. Containers typically run as executables or as services, but regardless of their use, they must be properly secured. Although rlogin might seem practical for administration, it is an insecure protocol that transmits unencrypted credentials, and can additionally increase the attack surface by providing an obvious entry point in an environment.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Avoid running remote access services such as rlogin.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Check if there's a running rlogin daemon or service in the container's process list bound to port 513, or if one is executed on startup, and remove it.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ40107": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "containers",
+            "localization": [
+                {
+                    "label": "Detected container images that might expose the Remote Shell (rsh) port.",
+                    "description": "Containers are a simple, yet powerful approach to process and filesystem isolation. When configured correctly, a container runs a set of processes isolated from their host system. Containers typically run as executables or as services, but regardless of their use, they must be properly secured. Although rsh might seem practical for administration, it is an insecure protocol that transmits unencrypted credentials, and can additionally increase the attack surface by providing an obvious entry point in an environment.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Avoid running remote access services such as rsh.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Check if there's a running rsh daemon or service in the container's process list bound to port 514, or if one is executed on startup, and remove it.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ40108": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "containers",
+            "localization": [
+                {
+                    "label": "Detected container images that might expose the Microsoft Terminal Server (RDP) port.",
+                    "description": "Containers are a simple, yet powerful approach to process and filesystem isolation. When configured correctly, a container runs a set of processes isolated from their host system. Containers typically run as executables or as services, but regardless of their use, they must be properly secured. While Remote Desktop Protocol might seem practical for administration, it is commonly brute-forced and abused by ransomware actors, and can increase the attack surface by providing an obvious entry point in an environment.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Avoid running remote access services such as RDP.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Check if there's a running RDP service in the container's process list bound to port 3389, or if one is executed on startup, and remove it.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ41101": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "containers",
+            "localization": [
+                {
+                    "label": "Detected container images that lack HEALTHCHECK instructions.",
+                    "description": "Containers typically run in one of two modes, as executables or as services. Regardless of how they are used, it's important to monitor the availability of a container, and executables or services running within it. This is also referred to as checking the container's health. The Dockerfile is a sequence of instructions that defines how an image should be built, and the HEALTHCHECK instruction can be used to define such periodic checks. In other words, depending on how the container is used, it should be possible to check that the container environment and applications within it are still running, and behaving as expected. It is important to check and monitor both, because in some situations, the running executable or service may stop working, while the container environment remains active. By failing to monitor availability, service outages may go unnoticed, which can have a significant business impact.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Make use of the HEALTHCHECK instruction in your Dockerfile, and define a set of checks to verify at regular intervals that both the container and all business-critical services within the container are running.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ41102": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "containers",
+            "localization": [
+                {
+                    "label": "Detected container images that use ADD instructions.",
+                    "description": "Containers typically run in one of two modes, as executables or as services. Regardless of how they are used, they typically require one or more executable, data and configuration files, and other dependencies and environment-related files required to run the containerized application or service. The Dockerfile is a sequence of instructions that defines how an image should be built, and ADD or COPY instructions are used to include external content in an image layer. However, the ADD instruction, apart from simple copy functionality, can also fetch data from remote destinations and unpack compressed files (such as filesystem images). It's possible for remote destinations to change ownership, and become excellent targets for supply chain compromise. By separating the download phase from the inclusion phase, it introduces a way to review what has been downloaded before the image is built. The only exception here should be the inclusion of the base filesystem layer (usually the root filesystem). Otherwise, it's a better practice to use the COPY instruction, as it's more transparent, and doesn't include implicit but possibly unwanted side effects.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Inspect your Dockerfile for any ADD instructions unrelated to the base filesystem, and change them. Pay special attention to any ADD instructions that refer to remote destinations.",
+                            "type": "investigate"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ41103": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "containers",
+            "localization": [
+                {
+                    "label": "Detected container images that use CMD instructions in shell form.",
+                    "description": "Containers typically run in one of two modes, as executables or as services. Regardless of how they are used, they are usually configured with a default command to be executed when instantiated, to run a particular program or start a service. The Dockerfile is a sequence of instructions that defines how an image should be built, and the default command can be set with the CMD instruction. The CMD command accepts two forms: shell and exec. When the CMD instruction is used in shell form, it will be executed within a new shell instance. This can cause problems with container and process signal handling, or cause inadvertent shell processing, such as variable substitution or expansion. It is recommended to use the exec form.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Convert the CMD instruction into its exec form.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ41104": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "containers",
+            "localization": [
+                {
+                    "label": "Detected container images with multiple CMD instructions.",                    
+                    "description": "Containers typically run in one of two modes, as executables or as services. Regardless of how they are used, they are usually configured with a default command to be executed when instantiated, to run a particular program or start a service. The Dockerfile is a sequence of instructions that defines how an image should be built, and the default command can be set with the CMD instruction. It's enough to specify it once. If there are multiple CMD instructions in a Dockerfile, only the last one takes effect, but the Dockerfile gets harder to read and maintain.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Remove any duplicate CMD instructions from your Dockerfile.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ41105": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "containers",
+            "localization": [
+                {
+                    "label": "Detected container images with multiple ENTRYPOINT instructions.",
+                    "description": "Containers typically run in one of two modes, as executables or as services. Regardless of how they are used, they are usually configured with a default command to be executed when instantiated, to run a particular program or start a service. The Dockerfile is a sequence of instructions that defines how an image should be built. The ENTRYPOINT instruction allows you to configure the container to run as an executable, or in other words, to execute a program when instantiated. It's enough to specify it once. If there are multiple ENTRYPOINT instructions in a Dockerfile, only the last one takes effect, but the Dockerfile gets harder to read and maintain.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Remove any duplicate ENTRYPOINT instructions from your Dockerfile.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ41106": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "containers",
+            "localization": [
+                {
+                    "label": "Detected container images with COPY commands to relative path target without the WORKDIR set",
+                    "description": "Containers typically run in one of two modes, as executables or as services. Regardless of how they are used, they typically require one or more executables, data and configuration files, and other dependencies and environment-related files required to run the executables. The Dockerfile is a sequence of instructions that defines how an image should be built. ADD or COPY instructions are used to include external content in an image layer, while the WORKDIR instruction is used to set the working directory for instructions. When using the COPY instruction, it's recommended to set the current working directory using the WORKDIR instruction, and to avoid using relative paths that are hard to read, troubleshoot and maintain.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Inspect your Dockerfile for any loose working directory change commands (such as 'RUN cd ..'), and change them to use WORKDIR instead.",
+                            "type": "investigate"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

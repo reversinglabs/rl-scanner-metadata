@@ -1,0 +1,846 @@
+{
+    "SQ30101": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": false,
+            "priority": null,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "antivirus false positives detected",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected possible false positive detections by third-party scanners.",
+                    "description": "False positive detections may cause users to hesitate from deploying a software package. One or more third-party software security solutions have flagged parts of the package as malicious. While these are individual malicious code detection reports, there is no industry-wide consensus that confirms these suspicions. This may happen when a third-party scanner is running the advanced detection heuristics with a higher false positive rate. However, there is a small chance this detection is true positive, and an early indication of a software supply chain attack.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to malicious behavior, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30102": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "riskware applications found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of software components commonly abused for malicious application loading.",
+                    "description": "Some software components may allow arbitrary code execution. Due to their design, applications may not check the type of content they are tasked to load or execute. Failing to enforce such checks may even lead to elevated privilege execution of unverified code. In those cases, malicious code can achieve stealth by being invoked through digitally signed and highly trusted applications. Those software components are known as Living of the Land binaries (LOLBins) among security professionals.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Whenever possible, release software packages without components commonly abused by attackers.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "This policy may also detect script language interpreters and compilers. In such cases, you should review runtime code generation and allow it only when strictly required by the application.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30103": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 2,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "undesirable applications found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of potentially unwanted applications.",
+                    "description": "Potentially unwanted applications (PUAs) can be considered a risk by some software package users. These threat types are typically used for collecting private user data, or in more extreme cases, for security mechanism tampering. Most threat prevention solutions detect and block PUAs. Software packages that trigger security solution detections also tend to increase the number of support calls and open tickets from users.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Revise the use of components that raise these alarms. If you can't deprecate those components, make sure they are well-documented.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30104": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malicious components found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of malicious files by a dedicated signature.",
+                    "description": "Proprietary ReversingLabs malware detection algorithms have determined that the software package contains one or more malicious files. The detection was made by either a static byte signature or a complete file hash. This malware detection method is considered highly accurate, and can typically identify the malware family by name.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "If the software intent does not relate to malicious behavior, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Avoid using this software package.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30105": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "supply chain attack artifacts",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of known software supply chain attack artifacts.",
+                    "description": "Proprietary ReversingLabs malware detection algorithms have determined that the software package contains one or more malicious components. The detection was made by either a static byte signature, software component identity, or a complete file hash. This malware detection method is considered highly accurate, and can typically attribute malware to previously discovered software supply chain attacks. It is common to have multiple supply chain attack artifacts that relate to a single malware incident.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "If the software intent does not relate to malicious behavior, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Avoid using this software package.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30106": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malicious components found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of malicious files by a YARA signature.",
+                    "description": "Proprietary ReversingLabs malware detection algorithms have determined that the software package contains one or more malicious files. The detection was made by a static YARA signature. This malware detection method is considered highly accurate, and can typically identify the malware family by name.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "If the software intent does not relate to malicious behavior, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Avoid using this software package.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30107": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malicious components found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of malicious files by a heuristic signature.",
+                    "description": "Proprietary ReversingLabs malware detection algorithms have determined that the software package contains one or more malicious files. The detection was made by a heuristic signature. This malware detection method is considered proactive, and can typically identify the malware family or at least the threat type.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "If the software intent does not relate to malicious behavior, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Avoid using this software package.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30108": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malicious components found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of malicious files by a machine learning algorithm.",
+                    "description": "Proprietary ReversingLabs malware detection algorithms have determined that the software package contains one or more malicious files. The detection was made by a machine learning model. This malware detection method is considered proactive, and can typically identify the malware threat type. The detection is strongly influenced by behaviors that software components exibit. Behaviors similar to previously discovered malware and software supply chain attacks may cause some otherwise benign components to be detected as malicious.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Inspect behaviors exibited by the detected software components.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software behaviors differ from expected, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider rewriting code that may have triggered the detection due to its malware similarity.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30109": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malicious components found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of malicious files through analyst-vetted file reputation.",
+                    "description": "Threat researchers have manually inspected the software package and determined that it contains one or more malicious files. The detection was made by a hash-based file reputation lookup. This malware detection method is considered highly accurate, and can typically identify the malware family by name.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "If the software intent does not relate to malicious behavior, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Avoid using this software package.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30110": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malicious components found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of malicious files through file reputation or third-party scanners.",
+                    "description": "Third-party malware detection algorithms have determined that the software package contains one or more malicious files. The detection was made by a hash-based file reputation lookup. This malware detection method is considered accurate, and can typically identify the malware family by name.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "If the software intent does not relate to malicious behavior, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Avoid using this software package.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30111": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "suspicious components found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of suspicious files through file reputation or third-party scanners.",
+                    "description": "Third-party malware detection algorithms have determined that the software package contains one or more suspicious files. The detection was made by a hash-based file reputation lookup. This malware detection method is considered predictive, and can typically identify the malware family by name.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Suspicious detections are a lower confidence detection, so you should first review them for malicious intent.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to malicious behavior, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Proceed with increased caution when using this software package.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30112": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "suspicious components found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of suspicious files by a heuristic or machine learning algorithm.",
+                    "description": "Proprietary ReversingLabs malware detection algorithms have determined that the software package contains one or more suspicious files. The detection was made by either a heuristic algorithm, or a machine learning model. This malware detection method is considered predictive, and can typically identify the malware family by name.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Suspicious detections are a lower confidence detection, so you should first review them for malicious intent.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to malicious behavior, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Proceed with increased caution when using this software package.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30113": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "tampered signatures detected",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of suspicious files due to failure in signed integrity validation checks.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures verify the origin and the integrity of the object they apply to. Signatures contain a cryptographic hash of the object they are signing. Any mismatch between the expected and computed hashes is reported as an integrity validation failure. This can happen for a few reasons. Either the software package got damaged during network transport, or a post-signing process changed some of its contents, or there was an attempt to tamper with the package. Discerning between these cases is impossible without manually inspecting affected packages.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Inspect the software package for malicious software supply chain tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If there is no evidence of tampering, re-sign and re-publish the software package.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "If there are any post-signing processes that might modify the software package, move them to an earlier point in the release process.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30114": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 2,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "signing process abuses detected",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of suspicious files due to the digital signing process abuse.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures verify the origin and the integrity of the object they apply to. Code signing process must adhere to a strict set of rules to assure software users that the signatures are trustworthy. No signature should be made with a certificate that has expired, was revoked, or whose contents cannot be validated. Failing to comply with the established code signing best practices may result in application errors and availability outages. Software packages that abuse the digital code signing process also tend to increase the number of support calls and open tickets from users.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Obtain a new code signing certificate and re-sign the software component.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30115": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "suspicious components found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of suspicious file formats.",
+                    "description": "Proprietary ReversingLabs malware detection algorithms have determined that the software package contains one or more suspicious files. The detection was caused by a suspicious file format. This malware detection method is considered predictive, and can typically identify unknown threats based on the file formats they use.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Suspicious detections are a lower confidence detection, so you should first review them for malicious intent.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to malicious behavior, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Proceed with increased caution when using this software package.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30116": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": null,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "pass",
+            "localization": [
+                {
+                    "label": "risky components ignored",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of malicious files that were ignored due to configured analysis options.",
+                    "description": "Proprietary ReversingLabs malware detection algorithms have determined that the software package contains one or more malicious files. Those detections were automatically suppressed by configured analysis options. Threat types that can have their detection suppressed are: adware, riskware, hacking tools, spyware, dual use packers, and spam.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "If your organization policies do not allow these threat types, adjust the scanning profile configuration.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30117": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": null,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "pass",
+            "localization": [
+                {
+                    "label": "risky components ignored",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of suspicious files that were ignored due to configured analysis options.",
+                    "description": "Proprietary ReversingLabs malware detection algorithms have determined that the software package contains one or more suspicious files. Those detection were automatically suppressed by the configured analysis options. Threat types that can have their detection suppressed are: adware, riskware, hacking tools, spyware, dual use packers, and spam.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "If your organization policies do not allow these threat types, adjust the scanning profile configuration.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30118": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malformed components found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of structural file format exploits.",
+                    "description": "File formats are either textual or binary structured object streams. Programs that work with them, called parsers, depend on understanding the format structure. Intentional deviations from the expected file format structure can cause parsing issues, and trigger unintended code execution. Some of these malformations can be linked to abuses of known format parsing vulnerabilities. Such specially crafted files are detected as malicious exploits, and are typically labeled by the vulnerability they are abusing.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "If the software intent does not relate to file format validation, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Proceed with increased caution when using this software package.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30119": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "malformed components found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of suspicious file structure malformations.",
+                    "description": "File formats are either textual or binary structured object streams. Programs that work with them, called parsers, depend on understanding the format structure. Intentional deviations from the expected file format structure can cause parsing issues, and trigger unintended code execution. During the scan, supported file formats have their specification conformance validated. While some deviations are allowed due to how widespread they are, most are subject to advanced heuristics that can detect attempts to cause format parsing issues.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "When such detections occur, you should first review them for accuracy and assign vulnerability labels upon confirmation.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to file format validation, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Proceed with increased caution when using this software package.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30120": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 2,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "protestware components found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of software components with political protest messages.",
+                    "description": "Authors of open source software may decide to use their projects to spread political messages. Running software packages that include protestware code may trigger protest-related functions when executed in the targeted environments or geographies. Protest-motivated code is commonly implemented as a simple display of harmless messages that call for peace. However, over time protestware may evolve to include code that performs excessive logging, issues denial of service, or even deletes user files. Software packages that contain protestware code are considered to be potentially unwanted applications. When political activism escalates to inclusion of destructive code, additional malware detection policies trigger to flag malicious intent.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Inspect behaviors exibited by the detected software components.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software behaviors differ from expected, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Revise the use of components that raise these alarms. If you can't deprecate those components, make sure they are well-documented.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
