@@ -1,0 +1,3062 @@
+{
+    "TH15101": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "restricted application behaviors",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files with behaviors that were marked to issue a warning.",
+                    "description": "Software components contain executable code that performs actions implemented during its development. These actions are called behaviors. In the analysis report, behaviors are presented as human-readable descriptions that best match the underlying code intent. While most behaviors are commonly found in software, some can be intentionally declared as undesirable through the organization policy. This issue is reported for files exhibiting behaviors that were explicitly marked to issue a warning.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review the audit section to better understand the organization security policy.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH15102": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "restricted application behaviors",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files with behaviors that were explicitly restricted.",
+                    "description": "Software components contain executable code that performs actions implemented during its development. These actions are called behaviors. In the analysis report, behaviors are presented as human-readable descriptions that best match the underlying code intent. While most behaviors are commonly found in software, some can be intentionally restricted through the organization policy. This issue is reported for files exhibiting behaviors that were explicitly marked as restricted.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review the audit section to better understand the organization security policy.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH15103": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files with behaviors commonly used by malicious software.",
+                    "description": "Software components contain executable code that performs actions implemented during its development. These actions are called behaviors. In the analysis report, behaviors are presented as human-readable descriptions that best match the underlying code intent. While most behaviors are benign, some are commonly abused by malicious software with the intent to cause harm. When a software package shares behavior traits with malicious software, it may become flagged by security solutions. Any detection from security solutions can cause friction for the end-users during software deployment. While the behavior is likely intended by the developer, there is a small chance this detection is true positive, and an early indication of a software supply chain attack.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to the reported behavior, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH15104": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malware-like behaviors found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files with behaviors exclusively used by malicious software.",
+                    "description": "Software components contain executable code that performs actions implemented during its development. These actions are called behaviors. In the analysis report, behaviors are presented as human-readable descriptions that best match the underlying code intent. While most behaviors are benign, some are exclusively used by malicious software with the intent to cause harm. When a software package matches behavior traits of malicious software, it becomes flagged by security solutions. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "In the case this behavior is intended, rewrite the flagged code without using the malware-like behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH15105": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malware-like behaviors found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files with behaviors that match the hacktool malware profile.",
+                    "description": "Software components contain executable code that performs actions implemented during its development. These actions are called behaviors. In the analysis report, behaviors are presented as human-readable descriptions that best match the underlying code intent. While most behaviors are benign, some are exclusively used by malicious software with the intent to cause harm. When a software package matches behavior traits of malicious software, it becomes flagged by security solutions. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider. Detected threat type matches the behaviors typically exhibited by the hacktool malware profile. Hacking tools are commonly used by malicious actors to bypass security solutions, exploit system weaknesses, collect personal information, and exfiltrate data. However, due to high-privilege access requirements, some security solutions may also trigger this detection when analyzed.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to the reported behavior, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "In the case this behavior is intended, rewrite the flagged code without using the malware-like behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH15106": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malware-like behaviors found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files with behaviors that match the backdoor malware profile.",
+                    "description": "Software components contain executable code that performs actions implemented during its development. These actions are called behaviors. In the analysis report, behaviors are presented as human-readable descriptions that best match the underlying code intent. While most behaviors are benign, some are exclusively used by malicious software with the intent to cause harm. When a software package matches behavior traits of malicious software, it becomes flagged by security solutions. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider. Detected threat type matches the behaviors typically exhibited by the backdoor malware profile. Backdoors are commonly used by malicious actors to gain unauthorized access to exposed computer systems over the internet. However, due to high-privilege access requirements, some security solutions may also trigger this detection when analyzed.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to the reported behavior, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "In the case this behavior is intended, rewrite the flagged code without using the malware-like behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH15107": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malware-like behaviors found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files with behaviors that match the coinminer malware profile.",
+                    "description": "Software components contain executable code that performs actions implemented during its development. These actions are called behaviors. In the analysis report, behaviors are presented as human-readable descriptions that best match the underlying code intent. While most behaviors are benign, some are exclusively used by malicious software with the intent to cause harm. When a software package matches behavior traits of malicious software, it becomes flagged by security solutions. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider. Detected threat type matches the behaviors typically exhibited by the coinminer malware profile. Coinminers are commonly used by financially motivated attackers to abuse available hardware resources of exposed computer systems for unauthorized cryptocurrency mining.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "In the case this behavior is intended, rewrite the flagged code without using the malware-like behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16101": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of obfuscated software components.",
+                    "description": "Obfuscation is a process of mangling the software code legibility. Obfuscation can be applied to both the application source and its compiled code counterpart. In both cases, obfuscation can interfere with the accuracy of security and software quality assessment solutions. For this reason, obfuscation is a technique commonly used by malicious actors as a means of bypassing security solutions and avoiding detection. While presence of obfuscation does not imply malicious intent, all of its uses in a software package should be documented and approved. One example of acceptable use for code obfuscation is minimizing the size of script files that are not intended to be read by humans. In such a case, the trade-off between file size and code legibility is considered acceptable.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1027 - Obfuscated Files or Information.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider an alternative to code obfuscation to lower the risk of being mistakenly flagged by security solutions.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16102": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 4,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing bidirectional Unicode control characters.",
+                    "description": "Unicode is a text encoding standard designed to support the use of text written in all of the major languages and writing systems. While most languages are written from left to right, some are written in alternative directions. To accommodate encoding text written in such languages, the Unicode standard includes a number of special characters that allow the text direction to be specified. However, changing text direction can have adverse effects on how the encoded text is displayed and interpreted. For this reason, bidirectional Unicode control characters are commonly abused by malicious actors as a means of bypassing security solutions and avoiding detection. While presence of special Unicode characters does not imply malicious intent, all of its uses in a software package should be documented and approved. One example of acceptable use for these special characters is in script files that parse, validate, and transform Unicode-encoded text.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1036.002 - Masquerading: Right-to-Left Override.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consult publicly available materials on the Trojan Source vulnerability.",
+                            "type": "consult"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16103": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files that dynamically execute Base-encoded data.",
+                    "description": "Attackers commonly hide their malicious payloads in layers of packing and code obfuscation. Base-encoding is a common data transformation technique used to convert binary payloads into text. Detected software behaviors indicate that the code has the ability to decode and execute Base-encoded data. While presence of dynamic code execution does not imply malicious intent, all of its uses in a software package should be documented and approved. When a software package has behavior traits similar to malicious software, it may become flagged by security solutions. One example of acceptable use for dynamic Base-encoded data execution is transfer of software components over the network.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1027 - Obfuscated Files or Information.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16104": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files that dynamically execute compressed data.",
+                    "description": "Attackers commonly hide their malicious payloads in layers of packing and code obfuscation. Compression is a common data transformation technique used to reduce binary data size. Detected software behaviors indicate that the code has the ability to execute data upon its decompression. While presence of dynamic code execution does not imply malicious intent, all of its uses in a software package should be documented and approved. When a software package has behavior traits similar to malicious software, it may become flagged by security solutions. One example of acceptable use for dynamic compressed data execution is transfer of software components over the network.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1027 - Obfuscated Files or Information.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16105": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files that use hex-encoded module import directive.",
+                    "description": "Programming languages allow developers to extend functionality of their code by importing additional modules. Each programming language has their own way of achieving this, but it is common to declare reliance on external modules by using the import directive. This declaration is typically done at the source code level, where developers write the names of the modules their code requires. It is expected that names of external modules are written as regular, simple to understand text. However, some programming languages allow the names of external modules to be hex-encoded. This can be used as a form of code obfuscation. Due to this, the feature is commonly abused by attackers to confuse security tools and avoid detection. While presence of hex-encoded imports does not imply malicious intent, all of its uses in a software package should be documented and approved. One example of acceptable use for hex-encoded import directives is loading modules with non-ASCII names.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1027 - Obfuscated Files or Information.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider renaming the imported module names.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16106": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files that collect and exfiltrate user information.",
+                    "description": "Software components contain executable code that performs actions implemented during its development. These actions are called behaviors. In the analysis report, behaviors are presented as human-readable descriptions that best match the underlying code intent. While most behaviors are benign on their own, some might become important for analysis when observed alongside other capabilities the component exhibits. This issue is reported for files that can enumerate user information and make HTTP requests. While presence of this behavior combination does not imply malicious intent, it is advised that the reported files are reviewed. One example of acceptable use for this type of data collection is the opt-in telemetry for software debugging purposes.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1033 - System Owner/User Discovery.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider limiting the collection of user information to a minimum.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16107": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files that embed a Base-encoded executable.",
+                    "description": "Attackers commonly hide their malicious payloads in layers of packing and code obfuscation. Base-encoding is a common data transformation technique used to convert Windows executable files into textual payloads. Detected software behaviors indicate that the code has the ability to decode and execute Base-encoded executables. While presence of dynamic code execution does not imply malicious intent, all of its uses in a software package should be documented and approved. When a software package has behavior traits similar to malicious software, it may become flagged by security solutions. One example of acceptable use for embedding Base-encoded Windows executables is the intent to transfer the software components over the network.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1027 - Obfuscated Files or Information.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider an alternative delivery mechanism for software packages.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16108": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files that embed a raw encrypted executable file.",
+                    "description": "Attackers commonly hide their malicious payloads in layers of packing and code obfuscation. Encryption is a common data transformation technique used to obfuscate the presence of Windows executable files. Detected software behaviors indicate that the code has the ability to execute executables once decrypted. While presence of dynamic code execution does not imply malicious intent, all of its uses in a software package should be documented and approved. When a software package has behavior traits similar to malicious software, it may become flagged by security solutions. One example of acceptable use for embedding raw encrypted Windows executables is the intent to install or deploy software components.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1027 - Obfuscated Files or Information.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider an alternative delivery mechanism for software packages.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16109": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files that embed a raw compressed executable file.",
+                    "description": "Attackers commonly hide their malicious payloads in layers of packing and code obfuscation. Compression is a common data transformation technique used to reduce the file size of Windows executables. Detected software behaviors indicate that the code has the ability to execute decompressed executables. While presence of dynamic code execution does not imply malicious intent, all of its uses in a software package should be documented and approved. When a software package has behavior traits similar to malicious software, it may become flagged by security solutions. One example of acceptable use for embedding raw compressed Windows executables is the intent to install or deploy software components.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1027 - Obfuscated Files or Information.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider an alternative delivery mechanism for software packages.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16110": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of document file formats that embed an executable.",
+                    "description": "Attackers commonly hide their malicious payloads in layers of packing and code obfuscation. Compression and encryption are common data transformation techniques used to hide the presence of Windows executables. Embedding Windows executables in product documentation is highly unusual, as this is an uncommon way to distribute software. While the presence of one or more executable files in a document does not necessarily imply malicious intent, all of its uses in a software package should be documented and approved. Presence of documents that embed executables may cause the entire software package to become flagged by security solutions.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1027 - Obfuscated Files or Information.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider an alternative delivery mechanism for software packages.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16111": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can tamper with the machine power settings.",
+                    "description": "Software components sometimes need to interact with higher privilege parts of the operating system, often requiring administrative access to accomplish a task. Machine power settings are high privilege functions that can change the power state of the device. This includes the ability to reboot and shutdown computer systems. Attackers often abuse machine power settings to force a system reboot, upon which malicious code can infect the system and gain persistence. While the presence of code that tampers with machine power settings does not necessarily imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider using functions that interact with the machine power state. One example of acceptable use for such functions is prompting users to reboot their system during complex software installations.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1529 - System Shutdown/Reboot.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16112": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can tamper with the system certificate stores.",
+                    "description": "Software components sometimes need to interact with higher privilege parts of the operating system, often requiring administrative access to accomplish a task. System certificate stores are databases that define the chain of trust for a machine. These databases control the list of websites the machine can securely connect to, and the list of applications that the operating system implicitly trusts. For that reason, attackers often abuse system certificate stores to ensure their malicious code executes without being detected by security solutions. While the presence of code that tampers with system certificate stores does not necessarily imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider using functions that interact with system certificate stores. One example of acceptable use for such functions is adding publisher certificates to the system trust store during software installation.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1553.004 - Install Root Certificate Subvert.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16113": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can tamper with the system network settings.",
+                    "description": "Software components sometimes need to interact with higher privilege parts of the operating system, often requiring administrative access to accomplish a task. Operating systems include a complete network stack with many services that allow the machine to connect to the internet. Some of these services are used to secure network access. For that reason, attackers often aim to tamper with system network settings. Disabling firewalls and other network security features enable the malicious code to execute without being blocked. While the presence of code that tampers with system network settings does not necessarily imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider using functions that interact with system network settings. One example of acceptable use for such functions is allowing specialized applications to use non-standard network ports by updating the firewall allowlist.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1562.004 - Disable or Modify System Firewall.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16114": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can tamper with the system security settings.",
+                    "description": "Software components sometimes need to interact with higher privilege parts of the operating system, often requiring administrative access to accomplish a task. System security settings are the first line of defense against the most common attack vectors. For that reason, attackers often aim to tamper with system security settings. Disabling User Access Controls (UAC) and other security settings enables malicious code to execute without being blocked. While the presence of code that tampers with system security settings does not necessarily imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider using functions that interact with system security settings. One example of acceptable use for such functions is allowing specialized applications to install as services that monitor the operating system events.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1562.001 - Disable or Modify Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16115": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can tamper with the system security software.",
+                    "description": "Software components sometimes need to interact with higher privilege parts of the operating system, often requiring administrative access to accomplish a task. Operating systems integrate first and third-party security solutions that can detect and block malicious code. For that reason, attackers often aim to tamper with system security software. Changing antivirus and other security software service settings may enable malicious code to execute without being blocked. While the presence of code that tampers with system security software does not necessarily imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider using functions that can temporarily disable system security features. One example of acceptable use for such functions is allowing specialized applications to modify protected folders and settings.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1562.001 - Disable or Modify Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16116": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can bypass system security software.",
+                    "description": "Software components sometimes need to interact with higher privilege parts of the operating system, often requiring administrative access to accomplish a task. Operating systems integrate first and third-party security solutions that can detect and block malicious code. For that reason, attackers often aim to bypass system security software. Disabling antivirus and other security software services enables malicious code to execute without being blocked. While the presence of code that interacts with system security software does not necessarily imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider using functions that can disable system security software. One example of acceptable use for such functions is allowing specialized applications to modify protected folders and settings.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1562.001 - Disable or Modify Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16117": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can detect installed security software.",
+                    "description": "Each security solution has a unique footprint that consists of installed files and changes to system configuration. Malicious code often tries to detect security solutions by accessing registry keys and folder locations associated with the software installation. Detecting which security solution is installed plays a key role in selecting the optimal malware infection strategy. When a computer system is protected by a security solution, malware may decide to behave differently. Malware may choose to delay its execution, change infection stages, or even avoid running altogether. While the presence of code that detects security solutions does not necessarily imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider using functions that check for presence of installed security software. One example of acceptable use for such functions is informing the user about possible compatibility issues with the detected security software.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1518.001 - Security Software Discovery.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16118": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can change the system startup sequence.",
+                    "description": "Operating systems provide multiple integration points for applications to insert themselves in the system startup sequence. Startup sequence is executed in its entirety each time the computer system powers on. For that reason, attackers typically try to register their malicious code in the system startup sequence. When malicious code is registered to start with the operating system, it achieves persistence, as it becomes permanently installed. While the presence of code that modifies the system startup sequence does not necessarily imply malicious intent, all of its uses in a software package should be documented and approved. Only applications that require constant background operation should consider installing themselves as a part of the startup sequence. One exemption to this recommendation would include running the application after the first system reboot to complete the software installation.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1547.001 - Registry Run Keys/Startup Folder.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16119": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can elevate the running application privileges.",
+                    "description": "Operating systems execute application code in multiple privilege access levels. Separation of privileges is designed to protect the stability and integrity of the operating system by shielding it from issues that may affect the user-mode applications it runs. However, some user-mode applications may need to interact with higher privilege parts of the operating system to accomplish a specific task. For this purpose operating systems provide facilities that user-mode applications may use to temporarily elevate their running privileges. Malicious code often requires elevated privileges to bypass security solutions, or achieve persistence. While the presence of code that elevates its running privilege does not necessarily imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider using functions that can elevate application privilege. One example of acceptable use for such functions is allowing the application to collect its debugging and error handling information.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1134 - Access Token Manipulation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16120": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can elevate the user privileges.",
+                    "description": "Operating systems execute application code in multiple privilege access levels. Separation of privileges is designed to protect the stability and integrity of the operating system by shielding it from issues that the user run applications may cause. However, some users may need to interact with higher privilege parts of the operating system to accomplish specific tasks. For this purpose, operating systems provide facilities that users may leverage to temporarily elevate their running privileges. Users with higher privileges can run any application with the same privilege level as their own. Attackers often try to trick privileged users into running malicious code, enabling them to infect the operating system. While the presence of code that elevates user privileges does not necessarily imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider using functions that can elevate user privileges. One example of acceptable use for such functions is allowing the users to install software packages and updates.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1548 - Abuse Elevation Control Mechanism.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16121": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can tamper with the system backup functions.",
+                    "description": "Operating systems provide utilities that allow the users to have their data automatically backed up. Backups provide resilience against incidents of material data loss through hardware corruption, or unintended file deletion. Financially motivated attackers often aim to disable backup systems and delete all instances of previously backed up data. Malicious code that typically exhibits these behavior traits is commonly referred to as ransomware. Ransomware aims to encrypt all user-generated data asking for monetary payment in return for providing the access back to its victims. While the presence of code that disables backup systems does not necessarily imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider using functions that can temporarily disable backups. One example of acceptable use for such functions is allowing the user to reduce their storage footprint in case data backups are no longer needed.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1490 - Inhibit System Recovery.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16122": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can access browser databases.",
+                    "description": "Installed software stores sensitive user information in application-specific databases. For browsers, this sensitive information includes the complete history of visited websites, autocomplete form data, saved passwords, website cookies and session information. These databases are typically not protected from unauthorized access for user convenience. Any encryption they might employ is easily bypassed, as the encryption keys are commonly stored alongside the data. For this reason, attackers often aim to gain access to browser databases and exfiltrate collected data to a remote server. While the presence of code that accesses browser databases does not necessarily imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider using functions that can interact with browser databases. One example of acceptable use for such functions is extending browser functionality through natively developed plugins.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1217 - Browser Information Discovery.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16123": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can access email application databases.",
+                    "description": "Installed software stores sensitive user information in application-specific databases. For email clients, this sensitive information includes the complete email correspondence, list of contacts, saved passwords, email attachments and digital signatures. These databases are typically not protected from unauthorized access for user convenience. Any encryption they might employ is easily bypassed, as the encryption keys are commonly stored alongside the data. For this reason, attackers often aim to gain access to email application databases and exfiltrate collected data to a remote server. While the presence of code that accesses email databases does not necessarily imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider using functions that can interact with email client data. One example of acceptable use for such functions is extending email client application functionality through natively developed plugins.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1114 - Email Collection.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16124": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can access instant messaging application databases.",
+                    "description": "Installed software stores sensitive user information in application-specific databases. For instant messaging clients, this sensitive information includes the complete message correspondence, list of contacts, saved passwords, exchanged files and digital signatures. These databases are typically not protected from unauthorized access for user convenience. Any encryption they might employ is easily bypassed, as the encryption keys are commonly stored alongside the data. For this reason, attackers often aim to gain access to instant messaging application databases and exfiltrate collected data to a remote server. While the presence of code that accesses instant messaging databases does not necessarily imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider using functions that can interact with messaging client data. One example of acceptable use for such functions is extending messaging client application functionality through natively developed plugins.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1005 - Data from Local System.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16125": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can access third-party application databases.",
+                    "description": "Installed software stores sensitive user information in application-specific databases. For third-party applications, this sensitive information may include stored passwords, sensitive files and other user communications. These databases are typically not protected from unauthorized access for user convenience. Any encryption they might employ is easily bypassed, as the encryption keys are commonly stored alongside the data. For this reason, attackers often aim to gain access to third-party application databases and exfiltrate collected data to a remote server. While the presence of code that accesses third-party databases does not necessarily imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider using functions that can interact with sensitive user information. One example of acceptable use for such functions is extending third-party application functionality through natively developed plugins.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1005 - Data from Local System.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16126": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 4,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can access user identity information.",
+                    "description": "Operating systems allow multiple user accounts to coexist on a single computer system. Each registered user has identity information associated with their account. At the very least, user accounts consist of a user name and an optional password. In some cases, user account data may also include personally identifiable information. Extended personal information may include user's given and last name, their email and mailing address, personal photo and their telephone number. Financially motivated attackers may seek to collect personal information for purposes of selling the private data to a third-party. Malicious code that typically exhibits these behavior traits is commonly referred to as an information stealer. While the presence of code that accesses identity information does not necessarily imply malicious intent, all of its uses in a software package should be documented and approved. Accessing identity information is a very common behavior for software packages. One example of acceptable use for such functions is verifying that the active user has purchased a software license that allows them to run the application.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1033 - System Owner/User Discovery.",
+                            "type": "consult"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17101": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "restricted network references",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that were explicitly restricted.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. One or more URLs found in the software package were explicitly marked as restricted.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review the audit section to better understand the organization security policy.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider removing all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17102": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing a Base-encoded URL.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Obfuscation is a process of mangling the software code legibility, and it can be applied to URLs embedded in a software package. Obfuscation can interfere with the accuracy of security and software quality assessment solutions. For this reason, obfuscation is a technique commonly used by malicious actors as a means of bypassing security solutions and avoiding detection. While presence of URL obfuscation does not imply malicious intent, all of its uses in a software package should be documented and approved. URLs have their own encoding type called url-encoding, which is the preferred way of encoding URLs used on the web.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1027 - Obfuscated Files or Information.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider encoding all embedded URL data with url-encoded format.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17103": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing references to TOR or hidden service URLs.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. The Onion Router (TOR) enables its users to anonymously interact with the content on the web. For this reason, TOR services are commonly used by malicious actors to maintain anonymity while conducting their attacks. While presence of TOR references does not imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider using the TOR network to enable anonymous internet access. One example of acceptable use for hidden service URLs is in applications designed to combat online censorship.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider removing all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17104": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 4,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs related to paste-and-share services.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Paste-and-share services are websites that allow their users to easily share code snippets and simple plain text documents. Users typically do not need to be registered on the website to publish and access shared information. For this reason, paste-and-share services are commonly used by malicious actors to deliver stages of their malware payloads. Many software supply chain attacks in the open source space leverage paste-and-share services to deliver malicious payloads. Presence of paste-and-share service references does not imply malicious intent. Software developers commonly include links to such services as documentation for various issues they encounter while writing and maintaining code bases.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider removing all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17105": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs related to Bitcoin mining pools.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Bitcoin (BTC) is a digital currency that uses peer-to-peer technology to facilitate instant payments on the web. Bitcoin mining is the process of creating new bitcoins by solving extremely complicated math problems that verify transactions in the currency exchange. When a bitcoin is successfully mined, the miner receives a predetermined amount of bitcoin. Bitcoin mining is a lucrative, but expensive, venture. For that reason, malicious actors often try to hijack computer systems with the aim to make others cover the mining cost. While presence of Bitcoin mining references does not imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider mining for bitcoin.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider removing all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17106": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs related to Bitcoin laundering services.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Bitcoin (BTC) is a digital currency that uses peer-to-peer technology to facilitate instant payments on the web. The goal of money laundering is to obscure the criminal origins of funds so that they can be accessed and spent. In the context of cryptocurrency-based crime, that generally means moving funds to services where they can be converted into cash, while often taking extra steps to conceal where the funds came from. While presence of Bitcoin laundering service references does not imply malicious intent, all of its uses in a software package should be documented and approved. Security solutions are the only application type that should consider having references to Bitcoin laundering services.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider removing all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17107": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs related to Bitcoin exchange services.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Bitcoin (BTC) is a digital currency that uses peer-to-peer technology to facilitate instant payments on the web. Bitcoin exchanges allow their customers to trade cryptocurrencies or digital currencies for other assets, such as conventional fiat money or other digital currencies. Financially motivated actors often include references to cryptocurrency exchanges in their code. Ransomware victims are instructed to visit Bitcoin exchanges to acquire the digital currency. Bitcoin is the most common payment method accepted by attackers in exchange for decrypting the user-generated data that is held for ransom. While presence of Bitcoin exchange service references does not imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider keeping track of Bitcoin exchange websites.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider removing all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17108": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that link to deceptive file formats.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Attackers often try to obfuscate URLs with the aim to avoid detection by security solutions. One common obfuscation technique attackers use is crafting deceptive links to externally hosted files. Users are more likely to click the links they deem to be trustworthy. Having two or more file extensions in a URL increases the odds of a deceptive link being perceived as trustworthy, especially if the first extension is commonly encountered by the user (such as a file extension of a popular document format). The reason why these links are considered deceptive is because the operating system will download the linked file and execute it with the last extension it detects, not the first. Attackers abuse this file naming quirk to trick users to run their malicious code. While presence of deceptive file format references does not imply malicious intent, all of its uses in a software package should be documented and approved. It is recommended to avoid double file format extensions altogether.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider changing the file extension for self-hosted files.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17109": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malicious network references",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that match known malware resource paths.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Attackers often reuse URL paths and query parameters between malicious campaigns. That makes it possible to detect a malicious network resource through static URL composition analysis. Because the attackers frequently migrate to different domains, the rules that detect malicious URLs are typically designed to match paths on any domain. While presence of known malware resource paths in network references does not imply malicious intent, all instances of this issue should be put under scrutiny and thoroughly reviewed.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Remove all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17110": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that use homoglyph spoofed variations of trusted domains.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. In typography, a homoglyph is one of two or more characters (or glyphs) with shapes that appear identical or very similar, but may have completely differing meanings. Attackers often register spoofed variations of known and trusted domains. By abusing homoglyphs, attackers can create malicious domains that appear visually identical to trusted ones. While presence of homoglyphs in network references does not imply malicious intent, all instances of this issue should be reviewed for spelling mistakes and typos. An attacker could be controlling the domains the application intends to connect to.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Remove all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17111": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that use sign-in paths specific to trusted domains.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Attackers often try to trick users into visiting a malicious domain. Users are more likely to click the links they deem to be trustworthy. To appear trustworthy, attackers may leverage URL paths that appear similar to sign-in paths of trusted domains. Combined with other URL obfuscation techniques, this approach may mislead the users into visiting an attacker-controlled domain. While presence of trusted sign-in paths in network references does not imply malicious intent, all instances of this issue should be reviewed.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider removing all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17112": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that use punycode spoofed variations of trusted domains.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Punycode is a representation of Unicode with the limited ASCII character subset used for domain names. Using punycode, domains containing Unicode characters are transcoded to a subset of ASCII consisting of letters, digits and hyphens. Attackers often register spoofed variations of known and trusted domains. By abusing punycode attackers can create malicious domains that appear visually identical to trusted ones. While presence of punycode in network references does not imply malicious intent, all instances of this issue should be reviewed for spelling mistakes and typos. An attacker could be controlling the domains the application intends to connect to.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Remove all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17113": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that use typosquatted variations of trusted domains.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Typosquatting relies on typographical errors than might occur when typing the domain name or a top-level domain (TLD) code the trusted domain is registered under. By predicting common spelling mistakes, attackers can pre-register domains with URLs that the users are likely to visit directly. While presence of typosquatted variations in network references does not imply malicious intent, all instances of this issue should be reviewed for spelling mistakes and typos. An attacker could be controlling the domains the application intends to connect to.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Remove all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17114": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that use trusted domains as subdomains.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Attackers often try to trick users into visiting a malicious domain. Users are more likely to click the links they deem to be trustworthy. To appear trustworthy attackers may craft URLs that use well-known and trusted domains as subdomains. Subdomains appear first in the browser address bar. Combined with other URL obfuscation techniques, this approach may mislead the users into visiting an attacker-controlled domain. While presence of trusted domains as subdomains does not imply malicious intent, all instances of this issue should be reviewed for spelling mistakes and typos. An attacker could be controlling the domains the application intends to connect to.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Remove all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17115": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that use non-standard ports.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. A port number is associated with a network address of a host, such as an IP address, and the type of network protocol used for communication. Within URLs the ports are optional. Ports can be specified in a URL immediately following the domain name. Each network protocol, or schema, has a set of standard ports on which the service operates. This issue is raised when a mismatch between a network protocol and its expected port number is detected. While the presence of non-standard ports does not imply malicious intent, all of its uses in a software package should be documented and approved.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider changing port to one that is standard for the networking protocol.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17116": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 4,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs with important query parameters.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Query parameters are a defined set of parameters (key-value pairs) attached to the end of a URL. Query parameters are used to provide additional information to a web service when making a request. They are an optional, but an important part of the URL, as they may define specific content or actions based on the data being passed. Some data they pass might be considered sensitive information. Since query parameters are not encrypted, this might cause sensitive information to leak. This issue is raised for query parameters that might contain information that attackers can easily intercept. Examples of sensitive information fields include hostname, password, email, IMEI and other similar parameters.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider changing the query parameters for flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17117": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malicious network references",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that link to blacklisted domains.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. One or more embedded URLs were discovered to link to an address found on a proprietary ReversingLabs domain blacklist. Software components that contain links to blacklisted domains are reported as malicious.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "If the software intent does not relate to malicious behavior, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Avoid using this software package.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17118": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that use suspicious top-level domains.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Top-level domains (TLD) are a part of the Domain Name System (DNS), and are used to lookup an Internet Protocol (IP) address of a requested website. There are a few different types of top-level domains. Generic, sponsored and country-code TLDs are generally accessible to the public. Registrars that govern the assignment of domain names within the TLD may choose to sell specific domain names to an interested party. However, some registrars are known to have less strict rules for assigning domain names. Attackers often abuse gaps in governance and actively seek to register their malicious domains in such TLDs. This issue is raised for all domains registered within TLDs that harbor an excessive number of malicious sites. While the presence of suspicious TLDs does not imply malicious intent, all of its uses in a software package should be documented and approved.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider changing the top-level domain to avoid being flagged by security solutions.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17119": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs with suspicious path components.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. URL paths provide additional information to a web service when making a request. They are an optional, but an important part of the URL, as they may define specific content or actions based on the data being passed. Some parameters they pass might be considered sensitive information. Since path components are not encrypted this might cause sensitive information to leak. This issue is raised for URL paths than might contain information that attackers can easily intercept. Examples of sensitive information fields include passwords and other similar parameters.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider removing all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17120": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malicious network references",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that redirect to malicious domains.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. One or more embedded URLs were discovered to redirect to an address found on a proprietary ReversingLabs domain blacklist. Software components that abuse open redirects by forwarding to blacklisted domains are reported as malicious.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "If the software intent does not relate to malicious behavior, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Avoid using this software package.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17121": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs related to anonymous file-sharing services.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. One or more embedded URLs were discovered to link to anonymous file-sharing services. Attackers often abuse popular web services to host malicious payloads. Since file-sharing services URLs are typically allowed by security solutions, using them for payload delivery increases the odds that the malicious code will reach the user. While the presence of file-sharing service locations does not imply malicious intent, all of their uses in a software package should be documented and approved. An increasing number of software supply chain attacks in the open source space leverages anonymous file-sharing services to deliver malicious payloads.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider an alternative delivery mechanism for software packages.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17122": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs related to IP querying services.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. When accessing the internet, a device is assigned a unique Internet Protocol (IP) address. This address identifies the point of origin and destination of each request a connected device makes. Attackers often aim to better understand their targets. Collecting basic reconnaissance information typically includes the IP address of a machine. While the operating system has the utilities to get this information, some attackers may prefer getting this data from an external source. Many web services host pages that return the IP address of the caller. For that reason, attacker often opt to get the IP information from a third-party service. While the presence of IP querying services does not imply malicious intent, all of their uses in a software package should be documented and approved.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider an alternative mechanism for detecting the machine's IP address.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17123": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that link to Discord attachments.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. One or more embedded URLs were discovered to link to the file attachments hosted on Discord. Attackers often abuse popular web services to host malicious payloads. Since file-sharing services URLs are typically allowed by security solutions, using them for payload delivery increases the odds that the malicious code will reach the user. While the presence of Discord file-sharing locations does not imply malicious intent, no software should be directly linking to a Discord file attachment. An increasing number of software supply chain attacks in the open source space leverages the Discord file-sharing service to deliver malicious payloads.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Remove all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17124": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that link to Dropbox download pages.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. One or more embedded URLs were discovered to link to the Dropbox file-sharing service. Attackers often abuse popular web services to host malicious payloads. Since file-sharing services URLs are typically allowed by security solutions, using them for payload delivery increases the odds that the malicious code will reach the user. While the presence of file-sharing service locations does not imply malicious intent, all of their uses in a software package should be documented and approved. An increasing number of software supply chain attacks in the open source space leverages the Dropbox file-sharing service to deliver malicious payloads.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider an alternative delivery mechanism for software packages.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17125": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs related to Discord webhooks.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Webhooks are web callback interfaces that enable real-time event notifications. Applications provide a public-facing interface that the web service calls when an appropriate event occurs. Attackers often abuse Discord webhooks as a command and control mechanism that instructs the infected computer systems to perform malicious actions. While the presence of Discord webhooks does not imply malicious intent, all of their uses in a software package should be documented and approved. An increasing number of software supply chain attacks in the open source space leverages Discord webhooks for command and control.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Remove all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17126": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing domains related to out-of-band application security testing tools.",
+                    "description": "Out-of-band application security testing tools (OAST) rely on external servers to detect security vulnerabilities in web applications. This form of security testing inspects the web application from the outside in, similar to how the attackers would probe its defenses. External domains are commonly used to facilitate out-of-band security testing. Attackers commonly abuse tools designed for security testing to monitor network traffic and find weaknesses that can be exploited. While the presence of domains related to OAST tools does not imply malicious intent, all of their uses in a software package should be documented and approved. Attackers might have purposely injected security testing tools in the software package to monitor the network traffic of the infected computer system. It is also possible that the software package has mistakenly included a part of its testing infrastructure during packaging.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider removing all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17127": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that link to raw files on GitHub.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. One or more embedded URLs were discovered to link to raw files hosted on GitHub. Attackers often abuse popular web services to host malicious payloads. Since code-sharing services URLs are typically allowed by security solutions, using them for payload delivery increases the odds that the malicious code will reach the user. While the presence of code-sharing service locations does not imply malicious intent, all of their uses in a software package should be documented and approved. An increasing number of software supply chain attacks in the open source space leverages the GitHub service to deliver malicious payloads.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider an alternative delivery mechanism for software packages.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17128": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that link to raw files on GitLab.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. One or more embedded URLs were discovered to link to raw files hosted on GitLab. Attackers often abuse popular web services to host malicious payloads. Since code-sharing services URLs are typically allowed by security solutions, using them for payload delivery increases the odds that the malicious code will reach the user. While the presence of code-sharing service locations does not imply malicious intent, all of their uses in a software package should be documented and approved. An increasing number of software supply chain attacks in the open source space leverages the GitLab service to deliver malicious payloads.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider an alternative delivery mechanism for software packages.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17129": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malicious network references",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing domains associated with ransomware.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. One or more embedded URLs were discovered to redirect to an address found on a proprietary ReversingLabs domain blacklist. Software components that abuse open redirects by forwarding to blacklisted domains are reported as malicious.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "If the software intent does not relate to malicious behavior, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Avoid using this software package.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17130": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing domains related to coinmining services.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Digital currencies use a peer-to-peer technology to facilitate instant payments on the web. Coinmining is the process of creating new digital currency coins by solving extremely complicated math problems that verify transactions in the currency exchange. When a crypto coin is successfully mined, the miner receives a predetermined amount of digital currency. Coinmining is a lucrative, but expensive, venture. For that reason, malicious actors often try to hijack computer systems with the aim to make others cover the mining cost. While presence of coinmining references does not imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider mining for digital currency. An increasing number of software supply chain attacks in the open source space tries to install unauthorized coinmining software.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider removing all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17131": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing domains used for intercepting and inspecting HTTP requests.",
+                    "description": "Applications communicate with web services by exchanging HTTP requests. During software development, externally hosted services are used by developers to debug software quality issues relating to exchanging HTTP requests. Attackers commonly abuse tools designed for HTTP request inspection to monitor network traffic and extract sensitive information from the HTTP traffic. While the presence of domains related to HTTP inspection does not imply malicious intent, all of their uses in a software package should be documented and approved. Attackers might have purposely injected security testing tools in the software package to monitor the network traffic of the infected computer system. It is also possible that the software package has mistakenly included a part of its testing infrastructure during packaging.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider removing all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH18101": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that reside in regions with export restrictions by the United States.",
+                    "description": "Export restrictions (or a restriction on exportation) are limitations on the quantity of goods exported to a specific country or countries by a Government. The United States Government has imposed export restrictions on a number of countries and regions. These restrictions may or may not apply to digital goods such as software and other related intellectual property. It is advised that the reported findings are put in the usage context so that they can be audited and reviewed by the legal department before the software package is deployed. Current list of countries with export restrictions includes: Cuba (.cu), Iran (.ir), North Korea (.nk) and Syria (.sy).",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the legal review is completed.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH18102": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that reside in regions with export restrictions by the European Union.",
+                    "description": "Export restrictions (or a restriction on exportation) are limitations on the quantity of goods exported to a specific country or countries by a Government. The European Union has imposed export restrictions on a number of countries and regions. These restrictions may or may not apply to digital goods such as software and other related intellectual property. It is advised that the reported findings are put in the usage context so that they can be audited and reviewed by the legal department before the software package is deployed. Current list of countries with export restrictions includes: Belarus (.by), Iran (.ir), Iraq (.iq), Libya (.ly), Myanmar (.mm), North Korea (.nk), Syria (.sy), Venezuela (.ve) and Zimbabwe (.zw).",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the legal review is completed.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH20101": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "indicators of tampering found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "diff-hunting",
+            "localization": [
+                {
+                    "label": "Detected indicators of tampering that resemble the SolarWinds Orion software compromise.",
+                    "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the SolarWinds Orion software compromise. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.002 - Compromise Software Supply Chain.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider hiring an external incident response team to assist with finding the root cause of the compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, and the detection is verified.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH20102": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "indicators of tampering found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "diff-hunting",
+            "localization": [
+                {
+                    "label": "Detected indicators of tampering that resemble the 3CX DesktopApp software compromise.",
+                    "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the 3CX DesktopApp software compromise. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.002 - Compromise Software Supply Chain.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider hiring an external incident response team to assist with finding the root cause of the compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, and the detection is verified.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH20103": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "indicators of tampering found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "diff-hunting",
+            "localization": [
+                {
+                    "label": "Detected indicators of tampering that resemble the Codecov Uploader software compromise.",
+                    "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the Codecov Uploader software compromise. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.002 - Compromise Software Supply Chain.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider hiring an external incident response team to assist with finding the root cause of the compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, and the detection is verified.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH20104": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "indicators of tampering found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "diff-hunting",
+            "localization": [
+                {
+                    "label": "Detected indicators of tampering that resemble the UAParser.js software compromise.",
+                    "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the UAParser.js software compromise. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.001 - Compromise Software Dependencies and Development Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider hiring an external incident response team to assist with finding the root cause of the compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, and the detection is verified.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH20105": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "indicators of tampering found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "diff-hunting",
+            "localization": [
+                {
+                    "label": "Detected indicators of tampering that resemble the CTX software compromise.",
+                    "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the CTX software compromise. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.001 - Compromise Software Dependencies and Development Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider hiring an external incident response team to assist with finding the root cause of the compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, and the detection is verified.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

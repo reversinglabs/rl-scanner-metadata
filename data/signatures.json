@@ -780,7 +780,16 @@
             "severity": "high",
             "flags": null
         },
-        "assessment": null,
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "integrity enforcement errors",
+                    "language": "en-US"
+                }
+            ]
+        },
         "policy": {
             "category": "signatures",
             "localization": [
