@@ -53,6 +53,7 @@ Policies are grouped into JSON files according to types of issues they detect.
 As a result, every JSON file corresponds to a specific policy category:
 
 - `containers.json` - Container Security
+- `hunting.json` - Threat Hunting and Differential Analysis
 - `licenses.json` - License Compliance
 - `linux.json` - Application Hardening (Linux)
 - `secrets.json` - Sensitive Information

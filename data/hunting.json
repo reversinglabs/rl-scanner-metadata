@@ -3058,5 +3058,58 @@
                 }
             ]
         }
+    },
+    "TH20106": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "indicators of tampering found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "diff-hunting",
+            "localization": [
+                {
+                    "label": "Detected indicators of tampering that resemble the XZ Utils software compromise.",
+                    "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the XZ Utils software compromise. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.001 - Compromise Software Dependencies and Development Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider hiring an external incident response team to assist with finding the root cause of the compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, and the detection is verified.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
     }
 }

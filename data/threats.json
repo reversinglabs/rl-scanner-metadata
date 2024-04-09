@@ -69,7 +69,7 @@
             "localization": [
                 {
                     "label": "Detected presence of software components commonly abused for malicious application loading.",
-                    "description": "Some software components may allow arbitrary code execution. Due to their design, applications may not check the type of content they are tasked to load or execute. Failing to enforce such checks may even lead to elevated privilege execution of unverified code. In those cases, malicious code can achieve stealth by being invoked through digitally signed and highly trusted applications. Those software components are known as Living of the Land binaries (LOLBins) among security professionals.",
+                    "description": "Some software components may allow arbitrary code execution. Due to their design, applications may not check the type of content they are tasked to load or execute. Failing to enforce such checks may even lead to elevated privilege execution of unverified code. In those cases, malicious code can achieve stealth by being invoked through digitally signed and highly trusted applications. Those software components are known as Living off the Land binaries (LOLBins) among security professionals.",
                     "language": "en-US",
                     "steps": [
                         {
