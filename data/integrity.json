@@ -1,0 +1,187 @@
+{
+    "SQ25101": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 4,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "integrity",
+            "localization": [
+                {
+                    "label": "Detected unsupported archive or software packaging formats.",
+                    "description": "Proprietary ReversingLabs analysis engine supports a wide range of commonly used archive and software packaging formats. Using automated static file decomposition technologies, the engine recursively analyzes complex software packages. Software analysis is typically conducted in multiple steps. Content identification, unpacking, validation, and classification are some of the steps performed on each analyzed file. The analysis engine may sometimes identify archive or software packaging formats that are not supported for deep file inspection or unpacking. This issue is reported for files that might contain additional software components that were not listed in the Software Bill of Materials (SBOM) due to lack of packaging format support. File reputation lookup and surface level analysis are still performed for all unsupported file formats. Therefore, some files might get detected as malicious even though they are packaged in an unsupported format.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Consult the ReversingLabs product documentation for a list of supported archive and software packaging formats.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider repackaging the software in an alternative file format to increase the analysis coverage.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Contact the ReversingLabs product management team to discuss our format coverage roadmap.",
+                            "type": "consult"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ25102": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "integrity",
+            "localization": [
+                {
+                    "label": "Detected packages with content that may be incomplete or corrupted.",
+                    "description": "Proprietary ReversingLabs analysis engine supports a wide range of commonly used archive and software packaging formats. Using automated static file decomposition technologies, the engine recursively analyzes complex software packages. Software analysis is typically conducted in multiple steps. Content identification, unpacking, validation, and classification are some of the steps performed on each analyzed file. The analysis engine may sometimes report file integrity problems while performing unpacking or validation steps. In this case, no content was extracted from the package before an analysis error was encountered. This issue is commonly reported for packages with content that may be incomplete or corrupted. In rare occurrences this issue may indicate a problem with the analysis engine's file format parsing functions.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Confirm that the software package contains incomplete or corrupted content.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Create a new version of the software package that resolves content integrity issues.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Contact the ReversingLabs support team if you suspect that the analysis engine may be causing the issue.",
+                            "type": "consult"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ25103": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "integrity",
+            "localization": [
+                {
+                    "label": "Detected packages with content that could only be partially analyzed.",
+                    "description": "Proprietary ReversingLabs analysis engine supports a wide range of commonly used archive and software packaging formats. Using automated static file decomposition technologies, the engine recursively analyzes complex software packages. Software analysis is typically conducted in multiple steps. Content identification, unpacking, validation, and classification are some of the steps performed on each analyzed file. The analysis engine may sometimes report file integrity problems while performing unpacking or validation steps. Some content was successfully extracted from the package before an analysis error was encountered. This issue is commonly reported for packages with content that may be incomplete or corrupted. In rare occurrences this issue may indicate a problem with the analysis engine's file format parsing functions.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Confirm that the software package contains incomplete or corrupted content.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Create a new version of the software package that resolves content integrity issues.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Contact the ReversingLabs support team if you suspect that the analysis engine may be causing the issue.",
+                            "type": "consult"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ25104": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 4,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "checksum validation errors",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "integrity",
+            "localization": [
+                {
+                    "label": "Detected packages with content that failed integrity validation checks.",
+                    "description": "Proprietary ReversingLabs analysis engine supports a wide range of commonly used archive and software packaging formats. Using automated static file decomposition technologies, the engine recursively analyzes complex software packages. Software analysis is typically conducted in multiple steps. Content identification, unpacking, validation, and classification are some of the steps performed on each analyzed file. The analysis engine may sometimes report file integrity problems while performing unpacking or validation steps. Failed integrity validation checks indicate that the content cannot be verified using its embedded checksums. This issue is commonly reported for packages with content that may be incomplete or corrupted. In rare occurrences this issue may indicate a problem with the analysis engine's file format parsing functions.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Confirm that the software package contains incomplete or corrupted content.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Create a new version of the software package that resolves content integrity issues.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Contact the ReversingLabs support team if you suspect that the analysis engine may be causing the issue.",
+                            "type": "consult"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ25105": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "integrity",
+            "localization": [
+                {
+                    "label": "Detected packages with content protected by an unknown password.",
+                    "description": "Proprietary ReversingLabs analysis engine supports a wide range of commonly used archive and software packaging formats. Using automated static file decomposition technologies, the engine recursively analyzes complex software packages. Software analysis is typically conducted in multiple steps. Content identification, unpacking, validation, and classification are some of the steps performed on each analyzed file. To limit the access to authorized users, the package contents may optionally be password-protected. When the package content is protected with an unknown password, it cannot be fully inspected by the analysis engine. The protected content might contain additional software components that were not listed in the Software Bill of Materials (SBOM) due to use of unknown passwords.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Consult the ReversingLabs product documentation for a list of supported archive and software packaging formats.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "CLI only: Provide the ReversingLabs analysis engine with the passwords used to protect the software package.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -64,8 +64,8 @@
             "category": "vulnerabilities",
             "localization": [
                 {
-                    "label": "Detected presence of actively exploited vulnerabilities.",
-                    "description": "Software composition analysis has identified a component with one or more known vulnerabilities. Available threat intelligence telemetry has confirmed that the reported vulnerabilities are actively being exploited by malicious actors.",
+                    "label": "Detected presence of severe vulnerabilities with active exploitation.",
+                    "description": "Software composition analysis has identified a component with one or more known severe vulnerabilities. Available threat intelligence telemetry has confirmed that the reported high or critical severity vulnerabilities are actively being exploited by malicious actors.",
                     "language": "en-US",
                     "steps": [
                         {

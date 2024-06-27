@@ -61,6 +61,7 @@ As a result, every JSON file corresponds to a specific policy category:
 - `threats.json` - Malware Detection
 - `vulnerabilities.json` - Known Vulnerabilities 
 - `windows.json` - Application Hardening (Windows)
+- `integrity.json` - Package Integrity
 
 
 ### Policy metadata file structure

@@ -4,6 +4,51 @@
             "blocker": "pass",
             "effort": "high",
             "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "licenses",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "copyleft licensed components",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "licenses",
+            "localization": [
+                {
+                    "label": "Detected presence of software components distributed with copyleft licenses.",
+                    "description": "Software license is a legal instrument that governs the use and distribution of software source code and its binary representation. Software publishers have the freedom to choose any commonly used or purposefully written license to publish their work under. While some licenses are liberal and allow almost any kind of distribution, with or without code modification, other licenses are more restrictive and impose rules for their inclusion in other software projects. Copyleft licenses in particular impose substantial restrictions on the licensee. They typically require that any derived works, and even software code that merely interacts with copyleft code, be licensed under the same license. Since copyleft licenses are commonly applied to open source code, their inclusion requires that the entire software package becomes open sourced. For commercial applications, this is typically undesirable. Therefore, the inclusion of copyleft code is commonly avoided or even prohibited by the organization policy.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Confirm that the software package includes a copyleft component.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Investigate if the software publisher provides this component under a non-copyleft license.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider replacing the software component with an alternative that offers a license compatible with commercial use.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ12102": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
             "priority": 3,
             "rl-level": null,
             "severity": "low",
@@ -23,16 +68,397 @@
             "category": "licenses",
             "localization": [
                 {
-                    "label": "Detected presence of software components distributed with copyleft licenses.",
-                    "description": "Software license is a legal instrument that governs the use and distribution of software source code and its binary representation. Software publishers have the freedom to choose any commonly used or purposefully written license to publish their work under. While some licenses are liberal and allow almost any kind of distribution, with or without code modification, other licenses are more restrictive and impose rules for their inclusion in other software projects. Copyleft licenses in particular impose substantial restrictions on the licensee. They typically require that any derived works, and even software code that merely interacts with copyleft code, be licensed under the same license. Since copyleft licenses are commonly open source licenses, their inclusion requires that the entire software package becomes open sourced. For commercial applications, this is typically undesirable. Therefore, the inclusion of copyleft code is commonly avoided or even prohibited by the organization policy.",
+                    "label": "Detected presence of software dependencies distributed with copyleft licenses.",
+                    "description": "Software license is a legal instrument that governs the use and distribution of software source code and its binary representation. Software publishers have the freedom to choose any commonly used or purposefully written license to publish their work under. While some licenses are liberal and allow almost any kind of distribution, with or without code modification, other licenses are more restrictive and impose rules for their inclusion in other software projects. Copyleft licenses in particular impose substantial restrictions on the licensee. They typically require that any derived works, and even software code that merely interacts with copyleft code, be licensed under the same license. Since copyleft licenses are commonly applied to open source code, their inclusion requires that the entire software package becomes open sourced. For commercial applications, this is typically undesirable. Therefore, the inclusion of copyleft code is commonly avoided or even prohibited by the organization policy.",
                     "language": "en-US",
                     "steps": [
                         {
-                            "content": "Investigate if the software publisher provides this component under a non-copyleft license.",
+                            "content": "Confirm that the software component references a copyleft dependency.",
                             "type": "investigate"
                         },
                         {
-                            "content": "Consider replacing the software component with an alternative that offers a license compatible with commercial use.",
+                            "content": "Investigate if the software publisher provides this dependency under a non-copyleft license.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider replacing the software dependency with an alternative that offers a license compatible with commercial use.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ12103": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "licenses",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "weak copyleft linked components",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "licenses",
+            "localization": [
+                {
+                    "label": "Detected presence of statically linked dependencies distributed with weak copyleft licenses.",
+                    "description": "Software license is a legal instrument that governs the use and distribution of software source code and its binary representation. Software publishers have the freedom to choose any commonly used or purposefully written license to publish their work under. While some licenses are liberal and allow almost any kind of distribution, with or without code modification, other licenses are more restrictive and impose rules for their inclusion in other software projects. Weak copyleft licenses in particular impose requirements that the user must be able to replace or update the code they apply to. In practical terms, that means the object and library files that statically link to weak copyleft code must be made available publicly. For commercial applications, this is typically undesirable. Therefore, statically linking to weak copyleft code is commonly avoided or even prohibited by the organization policy. Instead of linking statically to weak copyleft licensed code, it is recommended to isolate such code into modules that the publisher-developed, first-party code can dynamically link to without the aforementioned obligations.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Confirm that the software package statically links to a weak copyleft dependency.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Investigate if the software publisher provides this dependency under a non-copyleft license.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider replacing the software dependency with an alternative that offers a license compatible with commercial use.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Alternatively, repackage the code so that it dynamically links to a weak copyleft dependency.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ12401": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "licenses",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "restricted license inclusions",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "licenses",
+            "localization": [
+                {
+                    "label": "Detected presence of license families that were marked to issue a warning.",
+                    "description": "Software license is a legal instrument that governs the use and distribution of software source code and its binary representation. Software publishers have the freedom to choose any commonly used or purposefully written license to publish their work under. Software licenses are categorized into license families, or license groups, that impose a similar set of restrictions on software use. While some license families are universally accepted, as they are permissive, others may be intentionally declared as undesirable through the organization policy. This issue is reported for components or their dependencies with license families that were explicitly marked to issue a warning.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Confirm that the software package references a component or a dependency with an unwanted license family.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider replacing the software component with an alternative that offers a license compatible with organization policy.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ12402": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "licenses",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "restricted license inclusions",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "licenses",
+            "localization": [
+                {
+                    "label": "Detected presence of licenses that were marked to issue a warning.",
+                    "description": "Software license is a legal instrument that governs the use and distribution of software source code and its binary representation. Software publishers have the freedom to choose any commonly used or purposefully written license to publish their work under. While some licenses are universally accepted, as they are permissive, others can be intentionally declared as undesirable through the organization policy. This issue is reported for components or their dependencies with licenses that were explicitly marked to issue a warning.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Confirm that the software package references a component or a dependency with an undesired license.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider replacing the software component with an alternative that offers a license compatible with organization policy.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ12403": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "licenses",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "restricted license inclusions",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "licenses",
+            "localization": [
+                {
+                    "label": "Detected presence of licenses that were explicitly restricted.",
+                    "description": "Software license is a legal instrument that governs the use and distribution of software source code and its binary representation. Software publishers have the freedom to choose any commonly used or purposefully written license to publish their work under. While some licenses are universally accepted, as they are permissive, others can be intentionally declared as undesirable through the organization policy. This issue is reported for components or their dependencies with licenses that were explicitly marked as restricted.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Confirm that the software package references a component, or a dependency, with a restricted license.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider replacing the software component with an alternative that offers a license compatible with organization policy.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ12404": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "licenses",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "commercial use restrictions",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "licenses",
+            "localization": [
+                {
+                    "label": "Detected presence of licenses that place restrictions on commercial use.",
+                    "description": "Software license is a legal instrument that governs the use and distribution of software source code and its binary representation. Software publishers have the freedom to choose any commonly used or purposefully written license to publish their work under. While some licenses are liberal and allow almost any kind of distribution, with or without code modification, other licenses are more restrictive and impose rules for their inclusion in other software projects. Some software licenses place restrictions on commercial use of the code they apply to. The most restrictive licenses in this category may completely forbid commercial code use. When building commercial applications, this is typically undesirable. Therefore, the inclusion of any code that may impose limits on commercial use is commonly avoided or even prohibited by the organization policy.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Confirm that the software package references a component or a dependency with a restrictive license.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider replacing the software component with an alternative that offers a license compatible with organization policy.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ12405": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "licenses",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "software distribution restrictions",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "licenses",
+            "localization": [
+                {
+                    "label": "Detected presence of licenses that place restrictions on software distribution.",
+                    "description": "Software license is a legal instrument that governs the use and distribution of software source code and its binary representation. Software publishers have the freedom to choose any commonly used or purposefully written license to publish their work under. While some licenses are liberal and allow almost any kind of distribution, with or without code modification, other licenses are more restrictive and impose rules for their inclusion in other software projects. Some software licenses place restrictions on software distribution of the code they apply to. These restrictions may extend to the services built upon the code licensed under such restrictive licenses. Some restrictive licenses explicitly state that the licensee may not provide the software to third parties as a hosted or managed service, where the service provides users with access to any substantial set of the features or functionality of the licensed software. When building commercial applications, this is typically undesirable. Therefore, the inclusion of any code that may impose limits on software distribution is commonly avoided or even prohibited by the organization policy.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Confirm that the software package references a component or a dependency with a restrictive license.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider replacing the software component with an alternative that offers a license compatible with organization policy.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ12406": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 3,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "licenses",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "software deployment restrictions",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "licenses",
+            "localization": [
+                {
+                    "label": "Detected presence of licenses that place restrictions on use in production.",
+                    "description": "Software license is a legal instrument that governs the use and distribution of software source code and its binary representation. Software publishers have the freedom to choose any commonly used or purposefully written license to publish their work under. While some licenses are liberal and allow almost any kind of distribution, with or without code modification, other licenses are more restrictive and impose rules for their inclusion in other software projects. Some software licenses place restrictions on use of code in production environments. The most restrictive licenses in this category may completely forbid use in production. When building commercial applications, this is typically undesirable. Therefore, the inclusion of any code that may impose limits on how the software may be used is commonly avoided or even prohibited by the organization policy.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Confirm that the software package references a component or a dependency with a restrictive license.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider replacing the software component with an alternative that offers a license compatible with organization policy.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ12407": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "licenses",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "software modification restrictions",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "licenses",
+            "localization": [
+                {
+                    "label": "Detected presence of licenses that prohibit software modification.",
+                    "description": "Software license is a legal instrument that governs the use and distribution of software source code and its binary representation. Software publishers have the freedom to choose any commonly used or purposefully written license to publish their work under. While some licenses are liberal and allow almost any kind of distribution, with or without code modification, other licenses are more restrictive and impose rules for their inclusion in other software projects. Some software licenses place restrictions on creation of derivative works by prohibiting any kind of software modification. When building commercial applications, this may be undesirable as third-party code often needs to be adapted for use in software projects. Therefore, the inclusion of any code that prohibits software modifications is commonly avoided or even prohibited by the organization policy.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Confirm that the software package references a component or a dependency with a restrictive license.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider replacing the software component with an alternative that offers a license compatible with organization policy.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ12408": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 5,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "licenses",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "patent license considerations",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "licenses",
+            "localization": [
+                {
+                    "label": "Detected presence of licenses that require a separate use of patents permission.",
+                    "description": "Software license is a legal instrument that governs the use and distribution of software source code and its binary representation. Software publishers have the freedom to choose any commonly used or purposefully written license to publish their work under. While some licenses are liberal and allow almost any kind of distribution, with or without code modification, other licenses are more restrictive and impose rules for their inclusion in other software projects. Some software licenses specify that a separate agreement may be required for the use of patents the code may be leveraging. Patents are granted for significant innovations, and their use is typically tied to monetary compensation. When building commercial applications, this may be undesirable. Therefore, the inclusion of any patent-protected code is commonly scrutinized and often prohibited by the organization policy.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Confirm that the software package references a component or a dependency with a restrictive license.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider replacing the software component with an alternative that offers a license compatible with organization policy.",
                             "type": "fix"
                         }
                     ]

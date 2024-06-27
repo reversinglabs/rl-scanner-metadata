@@ -1,0 +1,294 @@
+{
+    "ui-display": {
+        "issues": [
+            {
+                "category": "threats",
+                "policies": [
+                    "threats.json"
+                ],
+                "enumeration": {
+                    "prefix": "SQ",
+                    "ranges": [
+                        {
+                            "id-label": null,
+                            "id-first": 30101,
+                            "id-last": 30120
+                        }
+                    ]
+                },
+                "localization": [
+                    {
+                        "label": "Malware Detection",
+                        "language": "en-US"
+                    }
+                ]
+            },
+            {
+                "category": "vulnerabilities",
+                "policies": [
+                    "vulnerabilities.json"
+                ],
+                "enumeration": {
+                    "prefix": "SQ",
+                    "ranges": [
+                        {
+                            "id-label": null,
+                            "id-first": 31101,
+                            "id-last": 31107
+                        }
+                    ]
+                },
+                "localization": [
+                    {
+                        "label": "Known Vulnerabilities",
+                        "language": "en-US"
+                    }
+                ]
+            },
+            {
+                "category": "signatures",
+                "policies": [
+                    "signatures.json"
+                ],
+                "enumeration": {
+                    "prefix": "SQ",
+                    "ranges": [
+                        {
+                            "id-label": null,
+                            "id-first": 20101,
+                            "id-last": 20131
+                        }
+                    ]
+                },
+                "localization": [
+                    {
+                        "label": "Digital Signatures",
+                        "language": "en-US"
+                    }
+                ]
+            },
+            {
+                "category": "hardening",
+                "policies": [
+                    "windows.json",
+                    "linux.json"
+                ],
+                "enumeration": {
+                    "prefix": "SQ",
+                    "ranges": [
+                        {
+                            "id-label": "windows",
+                            "id-first": 14101,
+                            "id-last": 14162
+                        },
+                        {
+                            "id-label": "linux",
+                            "id-first": 18101,
+                            "id-last": 18115
+                        }
+                    ]
+                },
+                "localization": [
+                    {
+                        "label": "Application Hardening",
+                        "language": "en-US"
+                    }
+                ]
+            },
+            {
+                "category": "integrity",
+                "policies": [
+                    "integrity.json"
+                ],
+                "enumeration": {
+                    "prefix": "SQ",
+                    "ranges": [
+                        {
+                            "id-label": null,
+                            "id-first": 25101,
+                            "id-last": 25105
+                        }
+                    ]
+                },
+                "localization": [
+                    {
+                        "label": "Package Integrity",
+                        "language": "en-US"
+                    }
+                ]
+            },
+            {
+                "category": "containers",
+                "policies": [
+                    "containers.json"
+                ],
+                "enumeration": {
+                    "prefix": "SQ",
+                    "ranges": [
+                        {
+                            "id-label": null,
+                            "id-first": 40101,
+                            "id-last": 41106
+                        }
+                    ]
+                },
+                "localization": [
+                    {
+                        "label": "Container Security",
+                        "language": "en-US"
+                    }
+                ]
+            },
+            {
+                "category": "secrets",
+                "policies": [
+                    "secrets.json"
+                ],
+                "enumeration": {
+                    "prefix": "SQ",
+                    "ranges": [
+                        {
+                            "id-label": null,
+                            "id-first": 34101,
+                            "id-last": 34404
+                        }
+                    ]
+                },
+                "localization": [
+                    {
+                        "label": "Sensitive Information",
+                        "language": "en-US"
+                    }
+                ]
+            },
+            {
+                "category": "licenses",
+                "policies": [
+                    "licenses.json"
+                ],
+                "enumeration": {
+                    "prefix": "SQ",
+                    "ranges": [
+                        {
+                            "id-label": null,
+                            "id-first": 12101,
+                            "id-last": 12408
+                        }
+                    ]
+                },
+                "localization": [
+                    {
+                        "label": "License Compliance",
+                        "language": "en-US"
+                    }
+                ]
+            },
+            {
+                "category": "hunting",
+                "policies": [
+                    "hunting.json"
+                ],
+                "enumeration": {
+                    "prefix": "TH",
+                    "ranges": [
+                        {
+                            "id-label": null,
+                            "id-first": 15101,
+                            "id-last": 18102
+                        }
+                    ]
+                },
+                "localization": [
+                    {
+                        "label": "Threat Hunting",
+                        "language": "en-US"
+                    }
+                ]
+            },
+            {
+                "category": "diff-hunting",
+                "policies": [
+                    "hunting.json"
+                ],
+                "enumeration": {
+                    "prefix": "TH",
+                    "ranges": [
+                        {
+                            "id-label": null,
+                            "id-first": 20101,
+                            "id-last": 20106
+                        }
+                    ]
+                },
+                "localization": [
+                    {
+                        "label": "Differential Analysis",
+                        "language": "en-US"
+                    }
+                ]
+            }
+        ],
+        "assessments": [
+            {
+                "category": "secrets",
+                "vertical": "Compliance",
+                "localization": [
+                    {
+                        "label": "Secrets",
+                        "language": "en-US"
+                    }
+                ]
+            },
+            {
+                "category": "licenses",
+                "vertical": "Compliance",
+                "localization": [
+                    {
+                        "label": "Licenses",
+                        "language": "en-US"
+                    }
+                ]
+            },
+            {
+                "category": "vulnerabilities",
+                "vertical": "Security",
+                "localization": [
+                    {
+                        "label": "Vulnerabilities",
+                        "language": "en-US"
+                    }
+                ]
+            },
+            {
+                "category": "hardening",
+                "vertical": "Security",
+                "localization": [
+                    {
+                        "label": "Hardening",
+                        "language": "en-US"
+                    }
+                ]
+            },
+            {
+                "category": "tampering",
+                "vertical": "Threats",
+                "localization": [
+                    {
+                        "label": "Tampering",
+                        "language": "en-US"
+                    }
+                ]
+            },
+            {
+                "category": "malware",
+                "vertical": "Threats",
+                "localization": [
+                    {
+                        "label": "Malware",
+                        "language": "en-US"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -684,7 +684,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "integrity enforcement errors",
+                    "label": "integrity enforcement concerns",
                     "language": "en-US"
                 }
             ]
@@ -748,7 +748,16 @@
             "severity": "high",
             "flags": null
         },
-        "assessment": null,
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "signature compliance mistakes",
+                    "language": "en-US"
+                }
+            ]
+        },
         "policy": {
             "category": "signatures",
             "localization": [
@@ -1005,11 +1014,11 @@
     },
     "SQ20130": {
         "quality": {
-            "blocker": "fail",
+            "blocker": "pass",
             "effort": "high",
             "enabled": true,
-            "priority": 0,
-            "rl-level": 4,
+            "priority": 1,
+            "rl-level": null,
             "severity": "high",
             "flags": null
         },
@@ -1041,7 +1050,16 @@
             "severity": "high",
             "flags": null
         },
-        "assessment": null,
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "signature compliance mistakes",
+                    "language": "en-US"
+                }
+            ]
+        },
         "policy": {
             "category": "signatures",
             "localization": [

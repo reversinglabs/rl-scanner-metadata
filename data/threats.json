@@ -823,7 +823,7 @@
                     "language": "en-US",
                     "steps": [
                         {
-                            "content": "Inspect behaviors exibited by the detected software components.",
+                            "content": "Inspect behaviors exhibited by the detected software components.",
                             "type": "investigate"
                         },
                         {

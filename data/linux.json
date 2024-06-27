@@ -51,7 +51,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "ineffective mitigations found",
+                    "label": "ineffective mitigations detected",
                     "language": "en-US"
                 }
             ]
@@ -92,7 +92,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "ineffective mitigations found",
+                    "label": "ineffective mitigations detected",
                     "language": "en-US"
                 }
             ]
@@ -166,7 +166,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "vulnerability mitigation issues",
+                    "label": "vulnerability mitigations missing",
                     "language": "en-US"
                 }
             ]
@@ -207,7 +207,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "vulnerability mitigation issues",
+                    "label": "vulnerability mitigations missing",
                     "language": "en-US"
                 }
             ]
@@ -248,7 +248,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "vulnerability mitigation issues",
+                    "label": "vulnerability mitigations missing",
                     "language": "en-US"
                 }
             ]
@@ -289,7 +289,7 @@
             "status": "pass",
             "localization": [
                 {
-                    "label": "low priority mitigation issues",
+                    "label": "low priority mitigations absent",
                     "language": "en-US"
                 }
             ]
@@ -326,7 +326,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "mitigation effectiveness issues",
+                    "label": "reduced effectiveness mitigations",
                     "language": "en-US"
                 }
             ]
@@ -367,7 +367,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "mitigation effectiveness issues",
+                    "label": "reduced effectiveness mitigations",
                     "language": "en-US"
                 }
             ]
@@ -441,7 +441,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "execution hijacking risks",
+                    "label": "execution hijacking concerns",
                     "language": "en-US"
                 }
             ]
@@ -482,7 +482,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "execution hijacking risks",
+                    "label": "execution hijacking concerns",
                     "language": "en-US"
                 }
             ]
@@ -523,7 +523,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "execution hijacking risks",
+                    "label": "execution hijacking concerns",
                     "language": "en-US"
                 }
             ]
@@ -564,7 +564,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "execution hijacking risks",
+                    "label": "execution hijacking concerns",
                     "language": "en-US"
                 }
             ]

@@ -14,7 +14,7 @@
             "status": "fail",
             "localization": [
                 {
-                    "label": "critical code packing issues",
+                    "label": "mitigation incompatible packers",
                     "language": "en-US"
                 }
             ]
@@ -96,7 +96,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "ineffective mitigations found",
+                    "label": "ineffective mitigations detected",
                     "language": "en-US"
                 }
             ]
@@ -133,7 +133,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "ineffective mitigations found",
+                    "label": "ineffective mitigations detected",
                     "language": "en-US"
                 }
             ]
@@ -215,7 +215,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "mitigation effectiveness issues",
+                    "label": "reduced effectiveness mitigations",
                     "language": "en-US"
                 }
             ]
@@ -260,7 +260,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "ineffective mitigations found",
+                    "label": "ineffective mitigations detected",
                     "language": "en-US"
                 }
             ]
@@ -301,7 +301,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "mitigation effectiveness issues",
+                    "label": "reduced effectiveness mitigations",
                     "language": "en-US"
                 }
             ]
@@ -338,7 +338,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "mitigation effectiveness issues",
+                    "label": "reduced effectiveness mitigations",
                     "language": "en-US"
                 }
             ]
@@ -379,7 +379,7 @@
             "status": "fail",
             "localization": [
                 {
-                    "label": "critical code linking issues",
+                    "label": "unsafe code linking practices",
                     "language": "en-US"
                 }
             ]
@@ -420,7 +420,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "mitigation effectiveness issues",
+                    "label": "reduced effectiveness mitigations",
                     "language": "en-US"
                 }
             ]
@@ -497,7 +497,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "outdated toolchain issues",
+                    "label": "outdated toolchains detected",
                     "language": "en-US"
                 }
             ]
@@ -571,7 +571,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "ineffective mitigations found",
+                    "label": "ineffective mitigations detected",
                     "language": "en-US"
                 }
             ]
@@ -612,7 +612,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "mitigation effectiveness issues",
+                    "label": "reduced effectiveness mitigations",
                     "language": "en-US"
                 }
             ]
@@ -649,7 +649,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "ineffective mitigations found",
+                    "label": "ineffective mitigations detected",
                     "language": "en-US"
                 }
             ]
@@ -690,7 +690,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "ineffective mitigations found",
+                    "label": "ineffective mitigations detected",
                     "language": "en-US"
                 }
             ]
@@ -770,7 +770,12 @@
         "assessment": {
             "category": "hardening",
             "status": "pass",
-            "localization": []
+            "localization": [
+                {
+                    "label": "low priority mitigations absent",
+                    "language": "en-US"
+                }
+            ]
         },
         "policy": {
             "category": "hardening",
@@ -812,7 +817,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "ineffective mitigations found",
+                    "label": "ineffective mitigations detected",
                     "language": "en-US"
                 }
             ]
@@ -853,7 +858,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "hardening mitigations missing",
+                    "label": "modern mitigations missing",
                     "language": "en-US"
                 }
             ]
@@ -930,7 +935,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "hardening effectiveness issues",
+                    "label": "reduced effectiveness mitigations",
                     "language": "en-US"
                 }
             ]
@@ -969,7 +974,12 @@
         "assessment": {
             "category": "hardening",
             "status": "pass",
-            "localization": []
+            "localization": [
+                {
+                    "label": "low priority mitigations absent",
+                    "language": "en-US"
+                }
+            ]
         },
         "policy": {
             "category": "hardening",
@@ -1041,7 +1051,12 @@
         "assessment": {
             "category": "hardening",
             "status": "pass",
-            "localization": []
+            "localization": [
+                {
+                    "label": "low priority mitigations absent",
+                    "language": "en-US"
+                }
+            ]
         },
         "policy": {
             "category": "hardening",
@@ -1081,7 +1096,12 @@
         "assessment": {
             "category": "hardening",
             "status": "pass",
-            "localization": []
+            "localization": [
+                {
+                    "label": "low priority mitigations absent",
+                    "language": "en-US"
+                }
+            ]
         },
         "policy": {
             "category": "hardening",
@@ -1229,7 +1249,12 @@
         "assessment": {
             "category": "hardening",
             "status": "pass",
-            "localization": []
+            "localization": [
+                {
+                    "label": "modern mitigations missing",
+                    "language": "en-US"
+                }
+            ]
         },
         "policy": {
             "category": "hardening",
@@ -1408,8 +1433,13 @@
         },
         "assessment": {
             "category": "hardening",
-            "status": "pass",
-            "localization": []
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "integrity enforcement errors",
+                    "language": "en-US"
+                }
+            ]
         },
         "policy": {
             "category": "hardening",
@@ -1447,7 +1477,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "vulnerability mitigation issues",
+                    "label": "vulnerability mitigations missing",
                     "language": "en-US"
                 }
             ]
@@ -1492,7 +1522,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "vulnerability mitigation issues",
+                    "label": "vulnerability mitigations missing",
                     "language": "en-US"
                 }
             ]
@@ -1537,7 +1567,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "vulnerability mitigation issues",
+                    "label": "vulnerability mitigations missing",
                     "language": "en-US"
                 }
             ]
@@ -1580,7 +1610,12 @@
         "assessment": {
             "category": "hardening",
             "status": "pass",
-            "localization": []
+            "localization": [
+                {
+                    "label": "low priority mitigations absent",
+                    "language": "en-US"
+                }
+            ]
         },
         "policy": {
             "category": "hardening",
@@ -1618,7 +1653,7 @@
             "status": "fail",
             "localization": [
                 {
-                    "label": "critical code linking issues",
+                    "label": "unsafe code linking practices",
                     "language": "en-US"
                 }
             ]
@@ -1655,7 +1690,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "outdated toolchain issues",
+                    "label": "outdated toolchains detected",
                     "language": "en-US"
                 }
             ]
@@ -1696,7 +1731,7 @@
             "status": "fail",
             "localization": [
                 {
-                    "label": "critical code linking issues",
+                    "label": "unsafe code linking practices",
                     "language": "en-US"
                 }
             ]
@@ -1737,7 +1772,7 @@
             "status": "fail",
             "localization": [
                 {
-                    "label": "critical code linking issues",
+                    "label": "unsafe code linking practices",
                     "language": "en-US"
                 }
             ]
@@ -1778,7 +1813,7 @@
             "status": "fail",
             "localization": [
                 {
-                    "label": "critical code linking issues",
+                    "label": "unsafe code linking practices",
                     "language": "en-US"
                 }
             ]
@@ -1815,7 +1850,7 @@
             "status": "fail",
             "localization": [
                 {
-                    "label": "critical code linking issues",
+                    "label": "unsafe code linking practices",
                     "language": "en-US"
                 }
             ]
@@ -1852,7 +1887,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "outdated toolchain issues",
+                    "label": "outdated toolchains detected",
                     "language": "en-US"
                 }
             ]
@@ -1889,7 +1924,7 @@
             "status": "fail",
             "localization": [
                 {
-                    "label": "critical code linking issues",
+                    "label": "unsafe code linking practices",
                     "language": "en-US"
                 }
             ]
@@ -1926,7 +1961,7 @@
             "status": "fail",
             "localization": [
                 {
-                    "label": "critical code linking issues",
+                    "label": "unsafe code linking practices",
                     "language": "en-US"
                 }
             ]
@@ -2000,7 +2035,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "vulnerability mitigation issues",
+                    "label": "vulnerability mitigations missing",
                     "language": "en-US"
                 }
             ]
@@ -2037,7 +2072,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "vulnerability mitigation issues",
+                    "label": "vulnerability mitigations missing",
                     "language": "en-US"
                 }
             ]
@@ -2074,7 +2109,7 @@
             "status": "fail",
             "localization": [
                 {
-                    "label": "critical code linking issues",
+                    "label": "unsafe code linking practices",
                     "language": "en-US"
                 }
             ]
@@ -2111,7 +2146,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "execution hijacking risks",
+                    "label": "execution hijacking concerns",
                     "language": "en-US"
                 }
             ]
@@ -2148,7 +2183,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "execution hijacking risks",
+                    "label": "execution hijacking concerns",
                     "language": "en-US"
                 }
             ]
@@ -2185,7 +2220,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "execution hijacking risks",
+                    "label": "execution hijacking concerns",
                     "language": "en-US"
                 }
             ]
@@ -2222,7 +2257,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "execution hijacking risks",
+                    "label": "execution hijacking concerns",
                     "language": "en-US"
                 }
             ]
@@ -2259,7 +2294,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "execution hijacking risks",
+                    "label": "execution hijacking concerns",
                     "language": "en-US"
                 }
             ]
@@ -2296,7 +2331,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "outdated toolchain issues",
+                    "label": "outdated toolchains detected",
                     "language": "en-US"
                 }
             ]
@@ -2369,7 +2404,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "execution hijacking risks",
+                    "label": "execution hijacking concerns",
                     "language": "en-US"
                 }
             ]
