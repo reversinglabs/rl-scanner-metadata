@@ -125,6 +125,59 @@ Empty arrays are represented as `[]`.
 ```
 
 
+### Catalogue file
+
+In addition to policy metadata JSON files, the `/data` directory contains the `catalogue.json` file.
+
+The catalogue file provides an overview of all policy categories, maps policy categories to JSON files and ReversingLabs Assessment verticals, and defines policy ID ranges for every category.
+
+The structure of objects in `ui-display.issues` is illustrated and described inline in the following example.
+Objects and values can be empty, which is represented as `null`.
+Empty arrays are represented as `[]`.
+
+```
+{
+  "category": string               // Policy category name; used internally in metadata and other policy-related files.
+    "policies": [
+       string                      // Name(s) of JSON files containing metadata for policies in this category.
+    ]
+    "enumeration": {
+       "prefix": string            // Two-letter prefix used for policy IDs in this category.
+       "ranges": [
+          {
+             "id-label": null      // Policy ID label.
+             "id-first": integer   // ID of the first policy in this category.
+             "id-last": integer    // ID of the last policy in this category.
+          }
+       ]
+    }
+    "localization": [
+          {
+            "label": string       // Policy category label used in analysis reports and product UI.
+            "language": string    // Language of the policy category label.
+          }
+    ]
+}
+```
+
+
+The structure of objects in `ui-display.assessments` is illustrated and described inline in the following example.
+Objects and values can be empty, which is represented as `null`.
+Empty arrays are represented as `[]`.
+
+```
+{
+  "category": string          // Policy category name.
+  "vertical": string          // ReversingLabs Assessment vertical that the policy category belongs to.
+  "localization": [
+      {
+        "label": string       // Policy category label used in ReversingLabs Assessment sections of the report and product UI.
+        "language": string    // Language of the policy category label.
+      }
+  ]
+}
+```
+
 ## Versioning 
 
 This repository always contains the latest version of metadata available in Spectra Assure products. 

@@ -59,7 +59,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "riskware applications found",
+                    "label": "riskware components found",
                     "language": "en-US"
                 }
             ]
@@ -69,7 +69,7 @@
             "localization": [
                 {
                     "label": "Detected presence of software components commonly abused for malicious application loading.",
-                    "description": "Some software components may allow arbitrary code execution. Due to their design, applications may not check the type of content they are tasked to load or execute. Failing to enforce such checks may even lead to elevated privilege execution of unverified code. In those cases, malicious code can achieve stealth by being invoked through digitally signed and highly trusted applications. Those software components are known as Living off the Land binaries (LOLBins) among security professionals.",
+                    "description": "Some software components may allow arbitrary code execution. Due to their design, applications may not check the type of content they are tasked to load or execute. Failing to enforce such checks may even lead to elevated privilege execution of unverified code. In those cases, malicious code can achieve stealth by being invoked through digitally signed and highly trusted applications. Those software components are known as Living off the Land binaries (LOLBins) among security professionals. Some Windows operating system versions may even be configured to prevent loading of commonly abused kernel drivers by default. When Hypervisor-protected Code Integrity (HVCI) feature is enabled, the operating system will refuse to load any of the drivers found on its blocklist.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -77,7 +77,7 @@
                             "type": "practice"
                         },
                         {
-                            "content": "This policy may also detect script language interpreters and compilers. In such cases, you should review runtime code generation and allow it only when strictly required by the application.",
+                            "content": "If the software component update can't resolve the issue, create a plan to isolate or replace the component with an alternative.",
                             "type": "fix"
                         }
                     ]
@@ -311,11 +311,11 @@
             "localization": [
                 {
                     "label": "Detected presence of malicious files by a machine learning algorithm.",
-                    "description": "Proprietary ReversingLabs malware detection algorithms have determined that the software package contains one or more malicious files. The detection was made by a machine learning model. This malware detection method is considered proactive, and can typically identify the malware threat type. The detection is strongly influenced by behaviors that software components exibit. Behaviors similar to previously discovered malware and software supply chain attacks may cause some otherwise benign components to be detected as malicious.",
+                    "description": "Proprietary ReversingLabs malware detection algorithms have determined that the software package contains one or more malicious files. The detection was made by a machine learning model. This malware detection method is considered proactive, and can typically identify the malware threat type. The detection is strongly influenced by behaviors that software components exhibit. Behaviors similar to previously discovered malware and software supply chain attacks may cause some otherwise benign components to be detected as malicious.",
                     "language": "en-US",
                     "steps": [
                         {
-                            "content": "Inspect behaviors exibited by the detected software components.",
+                            "content": "Inspect behaviors exhibited by the detected software components.",
                             "type": "investigate"
                         },
                         {
@@ -350,7 +350,7 @@
             "status": "fail",
             "localization": [
                 {
-                    "label": "malicious components found",
+                    "label": "analyst-vetted malware found",
                     "language": "en-US"
                 }
             ]

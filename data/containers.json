@@ -402,7 +402,7 @@
             "category": "containers",
             "localization": [
                 {
-                    "label": "Detected container images with COPY commands to relative path target without the WORKDIR set",
+                    "label": "Detected container images with COPY commands to relative path target without the WORKDIR set.",
                     "description": "Containers typically run in one of two modes, as executables or as services. Regardless of how they are used, they typically require one or more executables, data and configuration files, and other dependencies and environment-related files required to run the executables. The Dockerfile is a sequence of instructions that defines how an image should be built. ADD or COPY instructions are used to include external content in an image layer, while the WORKDIR instruction is used to set the working directory for instructions. When using the COPY instruction, it's recommended to set the current working directory using the WORKDIR instruction, and to avoid using relative paths that are hard to read, troubleshoot and maintain.",
                     "language": "en-US",
                     "steps": [

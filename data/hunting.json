@@ -329,6 +329,104 @@
             ]
         }
     },
+    "TH15501": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "suspicious application behaviors",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files with behaviors similar to malicious packages published on PyPI.",
+                    "description": "Software components contain executable code that performs actions implemented during its development. These actions are called behaviors. In the analysis report, behaviors are presented as human-readable descriptions that best match the underlying code intent. Python Package Index (PyPI) repository is often abused by threat actors to publish software packages that exhibit malicious behaviors. Malware authors use numerous tactics to lure developers into including malicious PyPI packages in their software projects. Most malicious packages published on PyPI target developers and their workstations. However, some are designed to activate only when deployed in the end-user environment. Both types of Python malicious packages are detected by proprietary ReversingLabs threat hunting algorithms. This detection method is considered proactive, and it is based on Machine Learning (ML) algorithms that can detect novel malware. The detection is strongly influenced by behaviors that software components exhibit. Behaviors similar to previously discovered malware and software supply chain attacks may cause some otherwise benign software packages to be detected by this policy.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to the reported behavior, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH15502": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "suspicious application behaviors",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files with behaviors similar to malicious packages published on NPM.",
+                    "description": "Software components contain executable code that performs actions implemented during its development. These actions are called behaviors. In the analysis report, behaviors are presented as human-readable descriptions that best match the underlying code intent. Node Package Manager (NPM) repository is often abused by threat actors to publish software packages that exhibit malicious behaviors. Malware authors use numerous tactics to lure developers into including malicious NPM packages in their software projects. Most malicious packages published on NPM target developers and their workstations. However, some are designed to activate only when deployed in the end-user environment. Both types of NodeJS malicious packages are detected by proprietary ReversingLabs threat hunting algorithms. This detection method is considered proactive, and it is based on Machine Learning (ML) algorithms that can detect novel malware. The detection is strongly influenced by behaviors that software components exhibit. Behaviors similar to previously discovered malware and software supply chain attacks may cause some otherwise benign software packages to be detected by this policy.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to the reported behavior, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
     "TH16101": {
         "quality": {
             "blocker": "pass",
@@ -1359,6 +1457,82 @@
                         {
                             "content": "Consult Mitre ATT&CK documentation: T1033 - System Owner/User Discovery.",
                             "type": "consult"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16127": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 4,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that have code outside of the common screen width.",
+                    "description": "Diligent software developers audit the source code of a component before it gets included in the software project. This audit often includes reviewing key pieces of code hosted in a public source repository. Aiming to avoid detection through spot-checks, attackers often hide malicious payloads by placing the code outside the common screen width. Depending on how the code editor used for review is configured, the malicious code might never be shown to the developer during the audit. Since many programming languages allow multiple statements to be made in the same line of code, both visible and off-screen code will be executed. While presence of code outside the common screen width does not imply malicious intent, all of its uses in a software package should be documented and approved. When a software package has behavior traits similar to malicious software, it may become flagged by security solutions.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1027 - Obfuscated Files or Information.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16128": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can detect common crypto tokens.",
+                    "description": "Crypto tokens are versatile digital assets used within the blockchain ecosystem. Crypto tokens are used to represent a wide range of values, rights, or utilities. They play a crucial role in decentralized finance (DeFi), governance, and other blockchain-based applications. Most crypto tokens are built on existing blockchains using smart contracts. A smart contract is a self-executing contract with the terms of the agreement directly written as lines of code. These contracts automatically execute and enforce themselves when predetermined conditions are met, without the need for intermediaries. For this reason, attackers often aim to steal crypto tokens from the machines they infect. Once stolen, crypto tokens are difficult to trace or recover due to the decentralized and pseudonymous nature of blockchain technology. The irreversibility of blockchain transactions means that once the tokens are transferred to the another crypto wallet, they are effectively gone, making them an attractive target for financially motivated actors. While presence of regex code that detects crypto tokens does not imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider working with crypto tokens.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
                         }
                     ]
                 }
@@ -2722,6 +2896,50 @@
             ]
         }
     },
+    "TH17132": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs related to the Telegram API.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Telegram, like many other instant messaging solutions, provides a public-facing API that the chat client can invoke when an appropriate application event occurs. Attackers often abuse Telegram APIs as a command-and-control mechanism that instructs the infected computer systems to perform malicious actions. While the presence of Telegram APIs does not imply malicious intent, all of their uses in a software package should be documented and approved. An increasing number of software supply chain attacks in the open source space leverages Telegram infrastructure for command and control.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Remove all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
     "TH18101": {
         "quality": {
             "blocker": "pass",
@@ -2788,6 +3006,231 @@
                         {
                             "content": "You should delay the software release until the legal review is completed.",
                             "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH19101": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "unsafe AI models detected",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of Pickle serialized data that can execute code.",
+                    "description": "An AI (Artificial Intelligence) model is a mathematical representation of a process that uses algorithms to learn patterns and make predictions based on provided data. After the models are trained, their mathematical representations are stored in a variety of data serialization formats. Stored AI models can be shared and reused without the need for additional model training. Pickle is a popular Python module that many data scientists use for serializing and deserializing AI model data. Pickle is considered an unsafe data format, as it allows Python code to be executed during AI model deserialization. Attackers commonly abuse Pickle and other unsafe data serialization formats to hide their malicious payloads. It was detected that the serialized Pickle data includes Python code that can invoke external scripts and execute arbitrary commands on the computer system that attempts to deserialize the AI model data. While presence of Python code within Pickle serialized data does not always imply malicious intent, its use in an AI model should be documented and approved. It is recommended that any custom actions needed to load the AI model be kept separate from the serialized model data.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider replacing the Pickle data serialization format with a safer alternative.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH19102": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "unsafe AI models detected",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of Pickle serialized data that has networking capabilities.",
+                    "description": "An AI (Artificial Intelligence) model is a mathematical representation of a process that uses algorithms to learn patterns and make predictions based on provided data. After the models are trained, their mathematical representations are stored in a variety of data serialization formats. Stored AI models can be shared and reused without the need for additional model training. Pickle is a popular Python module that many data scientists use for serializing and deserializing AI model data. Pickle is considered an unsafe data format, as it allows Python code to be executed during AI model deserialization. Attackers commonly abuse Pickle and other unsafe data serialization formats to hide their malicious payloads. It was detected that the serialized Pickle data includes Python code that can access web resources and make network requests on the computer system that attempts to deserialize the AI model data. While presence of Python code within Pickle serialized data does not always imply malicious intent, its use in an AI model should be documented and approved. It is recommended that any custom actions needed to load the AI model be kept separate from the serialized model data.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider replacing the Pickle data serialization format with a safer alternative.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH19103": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "unsafe AI models detected",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of Pickle serialized data that can create new processes.",
+                    "description": "An AI (Artificial Intelligence) model is a mathematical representation of a process that uses algorithms to learn patterns and make predictions based on provided data. After the models are trained, their mathematical representations are stored in a variety of data serialization formats. Stored AI models can be shared and reused without the need for additional model training. Pickle is a popular Python module that many data scientists use for serializing and deserializing AI model data. Pickle is considered an unsafe data format, as it allows Python code to be executed during AI model deserialization. Attackers commonly abuse Pickle and other unsafe data serialization formats to hide their malicious payloads. It was detected that the serialized Pickle data includes Python code that can create new processes and execute arbitrary commands on the computer system that attempts to deserialize the AI model data. While presence of Python code within Pickle serialized data does not always imply malicious intent, its use in an AI model should be documented and approved. It is recommended that any custom actions needed to load the AI model be kept separate from the serialized model data.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider replacing the Pickle data serialization format with a safer alternative.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH19104": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "unsafe AI models detected",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of Pickle serialized data that can access system interfaces.",
+                    "description": "An AI (Artificial Intelligence) model is a mathematical representation of a process that uses algorithms to learn patterns and make predictions based on provided data. After the models are trained, their mathematical representations are stored in a variety of data serialization formats. Stored AI models can be shared and reused without the need for additional model training. Pickle is a popular Python module that many data scientists use for serializing and deserializing AI model data. Pickle is considered an unsafe data format, as it allows Python code to be executed during AI model deserialization. Attackers commonly abuse Pickle and other unsafe data serialization formats to hide their malicious payloads. It was detected that the serialized Pickle data includes Python code that can access low-level operating system functions on the computer system that attempts to deserialize the AI model data. While presence of Python code within Pickle serialized data does not always imply malicious intent, its use in an AI model should be documented and approved. It is recommended that any custom actions needed to load the AI model be kept separate from the serialized model data.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider replacing the Pickle data serialization format with a safer alternative.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH19105": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "unsafe AI models detected",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of Pickle serialized data that can manipulate other Pickle files.",
+                    "description": "An AI (Artificial Intelligence) model is a mathematical representation of a process that uses algorithms to learn patterns and make predictions based on provided data. After the models are trained, their mathematical representations are stored in a variety of data serialization formats. Stored AI models can be shared and reused without the need for additional model training. Pickle is a popular Python module that many data scientists use for serializing and deserializing AI model data. Pickle is considered an unsafe data format, as it allows Python code to be executed during AI model deserialization. Attackers commonly abuse Pickle and other unsafe data serialization formats to hide their malicious payloads. It was detected that the serialized Pickle data includes Python code that can manipulate other Pickle files on the computer system that attempts to deserialize the AI model data. While presence of Python code within Pickle serialized data does not always imply malicious intent, its use in an AI model should be documented and approved. It is recommended that any custom actions needed to load the AI model be kept separate from the serialized model data.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider replacing the Pickle data serialization format with a safer alternative.",
+                            "type": "fix"
                         }
                     ]
                 }
@@ -3085,6 +3528,59 @@
                 {
                     "label": "Detected indicators of tampering that resemble the XZ Utils software compromise.",
                     "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the XZ Utils software compromise. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.001 - Compromise Software Dependencies and Development Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider hiring an external incident response team to assist with finding the root cause of the compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, and the detection is verified.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH20107": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "indicators of tampering found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "diff-hunting",
+            "localization": [
+                {
+                    "label": "Detected indicators of tampering that resemble the Intellect Service M.E.Doc software compromise.",
+                    "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the M.E.Doc software compromise. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
                     "language": "en-US",
                     "steps": [
                         {

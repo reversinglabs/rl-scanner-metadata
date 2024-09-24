@@ -192,9 +192,34 @@
                     "prefix": "TH",
                     "ranges": [
                         {
-                            "id-label": null,
+                            "id-label": "behaviors",
                             "id-first": 15101,
+                            "id-last": 15107
+                        },
+                        {
+                            "id-label": "ml-hunting",
+                            "id-first": 15501,
+                            "id-last": 15502
+                        },
+                        {
+                            "id-label": "behaviors",
+                            "id-first": 16101,
+                            "id-last": 16128
+                        },
+                        {
+                            "id-label": "networking",
+                            "id-first": 17101,
+                            "id-last": 17132
+                        },
+                        {
+                            "id-label": "sanctions",
+                            "id-first": 18101,
                             "id-last": 18102
+                        },
+                        {
+                            "id-label": "ml-malware",
+                            "id-first": 19101,
+                            "id-last": 19105
                         }
                     ]
                 },
@@ -216,7 +241,7 @@
                         {
                             "id-label": null,
                             "id-first": 20101,
-                            "id-last": 20106
+                            "id-last": 20107
                         }
                     ]
                 },
