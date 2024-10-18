@@ -1,8 +1,12 @@
 {
+    "version": 1,
     "ui-display": {
         "issues": [
             {
                 "category": "threats",
+                "personas": [
+                    "security"
+                ],
                 "policies": [
                     "threats.json"
                 ],
@@ -25,6 +29,10 @@
             },
             {
                 "category": "vulnerabilities",
+                "personas": [
+                    "security",
+                    "developer"
+                ],
                 "policies": [
                     "vulnerabilities.json"
                 ],
@@ -47,6 +55,9 @@
             },
             {
                 "category": "signatures",
+                "personas": [
+                    "developer"
+                ],
                 "policies": [
                     "signatures.json"
                 ],
@@ -69,6 +80,9 @@
             },
             {
                 "category": "hardening",
+                "personas": [
+                    "developer"
+                ],
                 "policies": [
                     "windows.json",
                     "linux.json"
@@ -97,6 +111,9 @@
             },
             {
                 "category": "integrity",
+                "personas": [
+                    "security"
+                ],
                 "policies": [
                     "integrity.json"
                 ],
@@ -119,6 +136,10 @@
             },
             {
                 "category": "containers",
+                "personas": [
+                    "operations",
+                    "developer"
+                ],
                 "policies": [
                     "containers.json"
                 ],
@@ -141,6 +162,10 @@
             },
             {
                 "category": "secrets",
+                "personas": [
+                    "security",
+                    "developer"
+                ],
                 "policies": [
                     "secrets.json"
                 ],
@@ -163,6 +188,10 @@
             },
             {
                 "category": "licenses",
+                "personas": [
+                    "compliance",
+                    "developer"
+                ],
                 "policies": [
                     "licenses.json"
                 ],
@@ -185,6 +214,9 @@
             },
             {
                 "category": "hunting",
+                "personas": [
+                    "security"
+                ],
                 "policies": [
                     "hunting.json"
                 ],
@@ -232,6 +264,9 @@
             },
             {
                 "category": "diff-hunting",
+                "personas": [
+                    "security"
+                ],
                 "policies": [
                     "hunting.json"
                 ],

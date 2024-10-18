@@ -166,7 +166,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "vulnerability mitigations missing",
+                    "label": "misconfigured toolchains detected",
                     "language": "en-US"
                 }
             ]
@@ -207,7 +207,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "vulnerability mitigations missing",
+                    "label": "misconfigured toolchains detected",
                     "language": "en-US"
                 }
             ]
@@ -248,7 +248,7 @@
             "status": "warning",
             "localization": [
                 {
-                    "label": "vulnerability mitigations missing",
+                    "label": "misconfigured toolchains detected",
                     "language": "en-US"
                 }
             ]

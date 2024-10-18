@@ -38,6 +38,10 @@
                         {
                             "content": "You should delay the software release until the investigation is completed.",
                             "type": "stop"
+                        },
+                        {
+                            "content": "Report confirmed false positive detections to security solution providers.",
+                            "type": "fix"
                         }
                     ]
                 }
@@ -274,12 +278,20 @@
                     "language": "en-US",
                     "steps": [
                         {
-                            "content": "If the software intent does not relate to malicious behavior, investigate the build and release environment for software supply chain compromise.",
+                            "content": "Inspect behaviors exhibited by the detected software components.",
                             "type": "investigate"
                         },
                         {
-                            "content": "Avoid using this software package.",
+                            "content": "If the software behaviors differ from expected, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
                             "type": "stop"
+                        },
+                        {
+                            "content": "Consider rewriting code that may have triggered the detection due to its malware similarity.",
+                            "type": "fix"
                         }
                     ]
                 }
@@ -364,7 +376,7 @@
                     "language": "en-US",
                     "steps": [
                         {
-                            "content": "If the software intent does not relate to malicious behavior, investigate the build and release environment for software supply chain compromise.",
+                            "content": "Investigate the build and release environment for software supply chain compromise.",
                             "type": "investigate"
                         },
                         {

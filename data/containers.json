@@ -9,7 +9,16 @@
             "severity": "medium",
             "flags": null
         },
-        "assessment": null,
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "elevated container privileges",
+                    "language": "en-US"
+                }
+            ]
+        },
         "policy": {
             "category": "containers",
             "localization": [
@@ -32,12 +41,16 @@
             "blocker": "pass",
             "effort": "medium",
             "enabled": true,
-            "priority": 1,
+            "priority": 2,
             "rl-level": null,
             "severity": "medium",
             "flags": null
         },
-        "assessment": null,
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
         "policy": {
             "category": "containers",
             "localization": [
@@ -65,7 +78,16 @@
             "severity": "high",
             "flags": null
         },
-        "assessment": null,
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "exposed container ports",
+                    "language": "en-US"
+                }
+            ]
+        },
         "policy": {
             "category": "containers",
             "localization": [
@@ -97,7 +119,16 @@
             "severity": "high",
             "flags": null
         },
-        "assessment": null,
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "exposed container ports",
+                    "language": "en-US"
+                }
+            ]
+        },
         "policy": {
             "category": "containers",
             "localization": [
@@ -129,7 +160,16 @@
             "severity": "high",
             "flags": null
         },
-        "assessment": null,
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "exposed container ports",
+                    "language": "en-US"
+                }
+            ]
+        },
         "policy": {
             "category": "containers",
             "localization": [
@@ -161,7 +201,16 @@
             "severity": "high",
             "flags": null
         },
-        "assessment": null,
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "exposed container ports",
+                    "language": "en-US"
+                }
+            ]
+        },
         "policy": {
             "category": "containers",
             "localization": [
@@ -193,7 +242,16 @@
             "severity": "high",
             "flags": null
         },
-        "assessment": null,
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "exposed container ports",
+                    "language": "en-US"
+                }
+            ]
+        },
         "policy": {
             "category": "containers",
             "localization": [
@@ -225,7 +283,16 @@
             "severity": "high",
             "flags": null
         },
-        "assessment": null,
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "exposed container ports",
+                    "language": "en-US"
+                }
+            ]
+        },
         "policy": {
             "category": "containers",
             "localization": [
@@ -257,7 +324,11 @@
             "severity": "low",
             "flags": null
         },
-        "assessment": null,
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
         "policy": {
             "category": "containers",
             "localization": [
@@ -285,7 +356,11 @@
             "severity": "low",
             "flags": null
         },
-        "assessment": null,
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
         "policy": {
             "category": "containers",
             "localization": [
@@ -308,12 +383,21 @@
             "blocker": "pass",
             "effort": "low",
             "enabled": true,
-            "priority": 3,
+            "priority": 2,
             "rl-level": null,
             "severity": "low",
             "flags": null
         },
-        "assessment": null,
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "unsafe container build commands",
+                    "language": "en-US"
+                }
+            ]
+        },
         "policy": {
             "category": "containers",
             "localization": [
@@ -341,12 +425,16 @@
             "severity": "low",
             "flags": null
         },
-        "assessment": null,
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
         "policy": {
             "category": "containers",
             "localization": [
                 {
-                    "label": "Detected container images with multiple CMD instructions.",                    
+                    "label": "Detected container images with multiple CMD instructions.",
                     "description": "Containers typically run in one of two modes, as executables or as services. Regardless of how they are used, they are usually configured with a default command to be executed when instantiated, to run a particular program or start a service. The Dockerfile is a sequence of instructions that defines how an image should be built, and the default command can be set with the CMD instruction. It's enough to specify it once. If there are multiple CMD instructions in a Dockerfile, only the last one takes effect, but the Dockerfile gets harder to read and maintain.",
                     "language": "en-US",
                     "steps": [
@@ -369,7 +457,11 @@
             "severity": "low",
             "flags": null
         },
-        "assessment": null,
+        "assessment": {
+            "category": "hardening",
+            "status": "pass",
+            "localization": []
+        },
         "policy": {
             "category": "containers",
             "localization": [
@@ -397,7 +489,16 @@
             "severity": "low",
             "flags": null
         },
-        "assessment": null,
+        "assessment": {
+            "category": "hardening",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "unsafe container build commands",
+                    "language": "en-US"
+                }
+            ]
+        },
         "policy": {
             "category": "containers",
             "localization": [
