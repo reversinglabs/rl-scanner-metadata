@@ -120,7 +120,7 @@
             "localization": [
                 {
                     "label": "Detected digital signatures that used an expired certificate during signing.",
-                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. Certificates have a validity period during which they can be used to create signatures. After the validity period has expired, the certificate is considered invalid and should not be used for signing. This warning means we detected that an already expired certificate was used to create a digital signature. Failing to comply with the established code signing best practices may result in application errors and availability outages.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be self-issued or purchased from certificate authorities. Certificates have a validity period during which they can be used to create signatures. After the validity period has expired, the certificate is considered invalid and should not be used for signing. This issue indicates that an already expired certificate was used to create a digital signature. Failing to comply with the established code signing best practices may result in application errors and availability outages.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -221,7 +221,7 @@
             "localization": [
                 {
                     "label": "Detected digital signatures that contain a revoked certificate.",
-                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. Certificates have a validity period during which they can be used to create signatures. Certificates can be revoked by the certificate authority that issued them. While there can be multiple reasons for revocation, users are advised against using software applications signed with revoked certificates. This warning indicates the signing certificate was revoked after the signature had been made. Releasing software components signed with revoked certificates may result in application errors and availability outages.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. Certificates have a validity period during which they can be used to create signatures. Certificates can be revoked by the certificate authority that issued them. While there can be multiple reasons for revocation, users are advised against using software applications signed with revoked certificates. This issue indicates the signing certificate, or a certificate of an authority that issued the signing certificate, was revoked after the signature had been made. Releasing software components signed with revoked certificates may result in application errors and availability outages.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -258,7 +258,7 @@
             "localization": [
                 {
                     "label": "Detected digital signatures that were made with a revoked certificate.",
-                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. Certificates have a validity period during which they can be used to create signatures. Certificates can be revoked by the certificate authority that issued them. While there can be multiple reasons for revocation, users are advised against using software applications signed with revoked certificates. This warning indicates the signing certificate was revoked before the signature had been made. Releasing software components signed with revoked certificates may result in application errors and availability outages.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. Certificates have a validity period during which they can be used to create signatures. Certificates can be revoked by the certificate authority that issued them. While there can be multiple reasons for revocation, users are advised against using software applications signed with revoked certificates. This issue indicates the signing certificate, or a certificate of an authority that issued the signing certificate, was revoked before the signature had been made. Releasing software components signed with revoked certificates may result in application errors and availability outages.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -295,7 +295,7 @@
             "localization": [
                 {
                     "label": "Detected digital signatures that contain a certificate revoked due to the private key compromise.",
-                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. Certificates have a validity period during which they can be used to create signatures. Certificates can be revoked by the certificate authority that issued them. While there can be multiple reasons for revocation, users are advised against using software applications signed with revoked certificates. This warning indicates the signing certificate was revoked due to the private key compromise. Releasing software components signed with revoked certificates may result in application errors and availability outages.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be purchased from certificate authorities or be self-issued. Certificates have a validity period during which they can be used to create signatures. Certificates can be revoked by the certificate authority that issued them. While there can be multiple reasons for revocation, users are advised against using software applications signed with revoked certificates. This issue indicates the signing certificate was revoked due to the private key compromise. Releasing software components signed with revoked certificates may result in application errors and availability outages.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -503,7 +503,7 @@
             "localization": [
                 {
                     "label": "Detected digital signatures that are failing integrity validation check.",
-                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures verify the origin and the integrity of the object they apply to. Signatures contain a cryptographic hash of the object they are signing. Any mismatch between the expected and computed hashes is reported as an integrity validation failure. This can happen for a few reasons. Either the software package got damaged during network transport, or a post-signing process changed some of the package contents, or there was an attempt to tamper with the package. Discerning between these cases is impossible without manually inspecting the affected packages.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures verify the origin and the integrity of the object they apply to. Signatures contain a cryptographic hash of the object they are signing. Any mismatch between the expected and computed hashes is reported as an integrity validation failure. This can happen for a few reasons. The software package may have been damaged during network transport, or a post-signing process changed some of the package contents, or there was an attempt to tamper with the package. Discerning between these cases is impossible without manually inspecting the affected packages.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -781,20 +781,20 @@
     },
     "SQ20123": {
         "quality": {
-            "blocker": "fail",
+            "blocker": "pass",
             "effort": "medium",
             "enabled": true,
-            "priority": 0,
-            "rl-level": 2,
+            "priority": 1,
+            "rl-level": null,
             "severity": "high",
             "flags": null
         },
         "assessment": {
             "category": "tampering",
-            "status": "fail",
+            "status": "warning",
             "localization": [
                 {
-                    "label": "integrity enforcement errors",
+                    "label": "integrity enforcement concerns",
                     "language": "en-US"
                 }
             ]
@@ -804,7 +804,7 @@
             "localization": [
                 {
                     "label": "Detected digital signatures missing extensions required for code integrity validation while trying to enforce it.",
-                    "description": "Enforced image integrity checking ensures that Windows executable files are only allowed to run after their digital signatures are verified. This security mechanism ensures that the tampered and corrupted applications are prohibited from running. Additionally, access to certain operating system functions may require applications to enable enforced integrity checks. Integrity enforcement reduces harm that the malicious code may cause once executed. One or more software components that require integrity enforcement were found to be digitally signed without the mandatory page hash validation data. Operating system will refuse to load files linked with the /INTEGRITYCHECK option unless they are digitally signed with signatures that include the page hash validation data.",
+                    "description": "Enforced image integrity checking ensures that Windows executable files are only allowed to run after their digital signatures are verified. This security mechanism ensures that the tampered and corrupted applications are prohibited from running. Additionally, access to certain operating system functions may require applications to enable enforced integrity checks. Integrity enforcement reduces harm that the malicious code may cause once executed. One or more software components that require integrity enforcement were found to be digitally signed without the mandatory page hash validation data. Operating system may be configured to refuse to load files linked with the /INTEGRITYCHECK option unless they are digitally signed with signatures that include the page hash validation data.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -1017,9 +1017,9 @@
             "blocker": "pass",
             "effort": "high",
             "enabled": true,
-            "priority": 1,
+            "priority": 2,
             "rl-level": null,
-            "severity": "high",
+            "severity": "medium",
             "flags": null
         },
         "assessment": null,
@@ -1042,8 +1042,81 @@
     },
     "SQ20131": {
         "quality": {
-            "blocker": "fail",
+            "blocker": "pass",
             "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that used an expired certificate during cross-signing.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. These signatures verify the origin and the integrity of the object they are applied to. Cross-certificates are digital certificates issued by one certificate authority that get used to sign the public key for the root certificate of another certificate authority. Cross-certificates provide a means to create a chain of trust from a single, trusted, root certificate authority to multiple others. This digital signing program was used primarily for Windows kernel drivers. However, this signing program has now been deprecated. Existing driver packages that were not timestamped, or those with signatures made after the expiration date of their issuing certificates, are no longer supported by the operating system. Failing to comply with the cross-signing requirements may result in application errors and availability outages.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Obtain a new code signing certificate, migrate to the new Windows Hardware Program, and re-sign the software component.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20132": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "tampered memory pages found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that are failing memory integrity validation check.",
+                    "description": "Digital signatures are applied to applications, libraries, packages, and drivers as cryptographically secured authenticity record. Signatures verify the origin and the integrity of the object they apply to. Signatures contain a cryptographic hash of the object they are signing. Windows executables may optionally be protected from tampering during runtime with page hash validation. With this integrity enforcement mechanism, any mismatch between the expected and computed hashes, on storage or in memory, is reported as a critical integrity validation failure. This can happen for a few reasons. The software package may have been damaged during network transport, or a post-signing process changed some of the package contents, or there was an attempt to tamper with the package. Discerning between these cases is impossible without manually inspecting the affected packages.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Inspect the software package for malicious software supply chain tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If there is no evidence of tampering, re-sign and re-publish the software component.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "If there are any post-signing processes that might modify the software package, move them to an earlier point in the release process.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20133": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "medium",
             "enabled": true,
             "priority": 0,
             "rl-level": 2,
@@ -1064,12 +1137,126 @@
             "category": "signatures",
             "localization": [
                 {
-                    "label": "Detected digital signatures that used an expired certificate during cross-signing.",
-                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. These signatures verify the origin and the integrity of the object they are applied to. Cross-certificates are digital certificates issued by one certificate authority that get used to sign the public key for the root certificate of another certificate authority. Cross-certificates provide a means to create a chain of trust from a single, trusted, root certificate authorities to multiple others. This digital signing program was used primarily for Windows kernel drivers. However, this signing program has now been deprecated. Existing driver packages that were not timestamped, or those with signatures made after the expiration date of their issuing certificates, are no longer supported by the operating system. Failing to comply with the cross-signing requirements may result in application errors and availability outages.",
+                    "label": "Detected digital signatures that were made with a certificate before its validity period began.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures are made using digital certificates, which can either be self-issued or purchased from certificate authorities. Certificates have a validity period during which they can be used to create signatures. Before the validity period has started, the certificate is considered invalid and should not be used for signing. This issue indicates that a certificate was used before it was intended to create a digital signature. Failing to comply with the established code signing best practices may result in application errors and availability outages.",
                     "language": "en-US",
                     "steps": [
                         {
-                            "content": "Obtain a new code signing certificate, migrate to the new Windows Hardware Program, and re-sign the software component.",
+                            "content": "Check the validity period of the signing certificate and re-sign the software component.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20134": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 2,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "signature compliance mistakes",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that were countersigned by an expired time-stamping certificate.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures verify the origin and the integrity of the object they apply to. For application signatures, or digital code signing, it is recommended to countersign the signatures for time-stamping. Countersigned software components have their signature period validity extended past the signing certificate expiration date. However, for the timestamp to be considered trustworthy, it is important that the time-stamping service can be authenticated, and that its certificate is valid at the time of signing. Timestamped signatures are considered valid indefinitely. Failing to countersign software components may result in application errors and availability outages.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Consult the certificate authority code signing documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "With Microsoft SignTool, you can specify the trusted remote time-stamping server using the /t or /tr parameter.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20135": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "medium",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 4,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "revoked certificates detected",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that were countersigned by a revoked time-stamping certificate.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures verify the origin and the integrity of the object they apply to. For application signatures, or digital code signing, it is recommended to countersign the signatures for time-stamping. Countersigned software components have their signature period validity extended past the signing certificate expiration date. However, for the timestamp to be considered trustworthy, it is important that the time-stamping service can be authenticated, and that its certificate is valid at the time of signing. Timestamped signatures are considered valid indefinitely. Failing to countersign software components may result in application errors and availability outages.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Consult the certificate authority code signing documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "With Microsoft SignTool, you can specify the trusted remote time-stamping server using the /t or /tr parameter.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ20136": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "low",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": null,
+        "policy": {
+            "category": "signatures",
+            "localization": [
+                {
+                    "label": "Detected digital signatures that were countersigned by an unknown time-stamping service.",
+                    "description": "Digital signatures are applied to applications, packages and documents as a cryptographically secured authenticity record. Signatures verify the origin and the integrity of the object they apply to. For application signatures, or digital code signing, it is recommended to countersign the signatures for time-stamping. Countersigned software components have their signature period validity extended past the signing certificate expiration date. However, for the timestamp to be considered trustworthy, it is important that the time-stamping service can be authenticated, and that it is managed by a reputable certificate authority. Lists of trusted certificate authorities can typically be found in certificate stores in your operating system or internet browser. Failing to countersign software components may result in application errors and availability outages.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Consult the certificate authority code signing documentation.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "With Microsoft SignTool, you can specify the trusted remote time-stamping server using the /t or /tr parameter.",
                             "type": "fix"
                         }
                     ]

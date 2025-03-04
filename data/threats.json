@@ -114,7 +114,7 @@
             "localization": [
                 {
                     "label": "Detected presence of potentially unwanted applications.",
-                    "description": "Potentially unwanted applications (PUAs) can be considered a risk by some software package users. These threat types are typically used for collecting private user data, or in more extreme cases, for security mechanism tampering. Most threat prevention solutions detect and block PUAs. Software packages that trigger security solution detections also tend to increase the number of support calls and open tickets from users.",
+                    "description": "Potentially unwanted applications (PUAs) can be considered a risk by some software users. This threat type typically collects private user data, or in more extreme cases, tampers with system security settings. Most threat prevention solutions detect and block PUAs. Software packages that trigger security solution detections also tend to increase the number of support calls and open tickets from users.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -849,6 +849,358 @@
                         {
                             "content": "Avoid using this software package until it is vetted as safe.",
                             "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30121": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 5,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "low-quality components found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of software components with low-quality content.",
+                    "description": "Authors of open source software may decide to include low-quality content in their projects. Low quality components typically do not contain any meaningful code, nor do they contribute to the functionality of applications they are a part of. Low quality packages are often published to open source package repositories. The goal of such packages is to accumulate reward points for their authors. Some programs aimed at open source developers reward the most popular packages. Such reward programs create powerful incentives for developers to include low-quality content in their projects. However, proliferation of low-quality content in open source increases the risk that the developer account may be taken over by a malicious party. Low quality components may receive updates that introduce behaviors that were not expected by the developers who included them in their projects.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Inspect behaviors exhibited by the detected software components.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software behaviors differ from expected, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Revise the use of components that raise these alarms. If you can't deprecate those components, make sure they are well-documented.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30122": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 2,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "adware applications found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of advertising-supported applications.",
+                    "description": "Advertising-supported software can be considered a risk by some software users. This threat type commonly collects usage and private user data, displays obtrusive advertisements, or in more extreme cases, automatically installs other unwanted applications. Most threat prevention solutions detect and block adware. Software packages that trigger security solution detections also tend to increase the number of support calls and open tickets from users.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Revise the use of components that raise these alarms. If you can't deprecate those components, make sure they are well-documented.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30201": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 2,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "undesirable dependencies found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of software components with potentially unwanted dependencies.",
+                    "description": "Potentially unwanted applications (PUAs) can be considered a risk by some software users. This threat type typically collects private user data, or in more extreme cases, tampers with system security settings. Most threat prevention solutions detect and block PUAs. Some software dependencies may be optional, and could be installed or downloaded only if a certain pre-defined condition is met. When software dependencies are confirmed to be found within the software package, additional issues might also be reported. Software packages that trigger security solution detections also tend to increase the number of support calls and open tickets from users.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Revise the use of components that raise these alarms. If you can't deprecate those components, make sure they are well-documented.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30202": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 2,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "adware dependencies found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of software components with advertising-supported dependencies.",
+                    "description": "Advertising-supported software can be considered a risk by some software users. This threat type typically collects private user data, or in more extreme cases, automatically installs other unwanted software dependencies. Most threat prevention solutions detect and block adware. Some software dependencies may be optional, and could be installed or downloaded only if a certain pre-defined condition is met. When software dependencies are confirmed to be found within the software package, additional issues might also be reported. Software packages that trigger security solution detections also tend to increase the number of support calls and open tickets from users.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Revise the use of components that raise these alarms. If you can't deprecate those components, make sure they are well-documented.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30203": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 2,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "protestware dependencies found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of software components with political protest dependencies.",
+                    "description": "Authors of open source software may decide to use their projects to spread political messages. Running software packages that include protestware dependencies may trigger protest-related functions when executed in the targeted environments or geographies. Protest-motivated code is commonly implemented as a simple display of harmless messages that call for peace. However, over time protestware may evolve to include code that performs excessive logging, issues denial of service, or even deletes user files. Software packages that depend on protestware code are considered to be potentially unwanted applications. When political activism escalates to inclusion of destructive code, additional malware detection policies trigger to flag malicious intent.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Inspect behaviors exhibited by the detected software components.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software behaviors differ from expected, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Revise the use of components that raise these alarms. If you can't deprecate those components, make sure they are well-documented.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30204": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 5,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "low-quality dependencies found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of software components with low-quality content dependencies.",
+                    "description": "Authors of open source software may decide to include low-quality content in their projects. Low quality components typically do not contain any meaningful code, nor do they contribute to the functionality of applications they are a part of. Low quality packages are often published to open source package repositories. The goal of such packages is to accumulate reward points for their authors. Some programs aimed at open source developers reward the most popular packages. Such reward programs create powerful incentives for developers to include low-quality content in their projects. However, proliferation of low-quality content in open source increases the risk that the developer account may be taken over by a malicious party. Low quality components may receive updates that introduce behaviors that were not expected by the developers who included them in their projects.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Inspect behaviors exhibited by the detected software components.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software behaviors differ from expected, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Revise the use of components that raise these alarms. If you can't deprecate those components, make sure they are well-documented.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30205": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malicious dependencies found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of software components with malicious dependencies.",
+                    "description": "Proprietary ReversingLabs malware detection algorithms have determined that the software package has one or more malicious dependencies. Some software dependencies may be optional, and could be installed or downloaded only if a certain pre-defined condition is met. When software dependencies are confirmed to be found within the software package, additional issues might also be reported. The detection was made by either a static byte signature, software component identity, or a complete file hash. This malware detection method is considered highly accurate, and can typically attribute malware to previously discovered software supply chain attacks.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Inspect behaviors exhibited by the detected software components.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software behaviors differ from expected, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Revise the use of components that raise these alarms. If you can't deprecate those components, make sure they are well-documented.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30206": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "suspicious dependencies found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of software components with suspicious dependencies.",
+                    "description": "Proprietary ReversingLabs malware detection algorithms have determined that the software package has one or more suspicious dependencies. Some software dependencies may be optional, and could be installed or downloaded only if a certain pre-defined condition is met. When software dependencies are confirmed to be found within the software package, additional issues might also be reported. The detection was made by either a static byte signature, software component identity, or a complete file hash. This malware detection method is considered predictive, and can typically identify the malware family by name.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Suspicious detections are a lower confidence detection, so you should first review them for malicious intent.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to malicious behavior, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Proceed with increased caution when using this software package.",
+                            "type": "practice"
                         }
                     ]
                 }

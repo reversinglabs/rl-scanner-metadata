@@ -329,6 +329,371 @@
             ]
         }
     },
+    "TH15108": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malware-like behaviors found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files with behaviors that match the infostealer malware profile.",
+                    "description": "Software components contain executable code that performs actions implemented during its development. These actions are called behaviors. In the analysis report, behaviors are presented as human-readable descriptions that best match the underlying code intent. While most behaviors are benign, some are exclusively used by malicious software with the intent to cause harm. When a software package matches behavior traits of malicious software, it becomes flagged by security solutions. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider. Detected threat type matches the behaviors typically exhibited by the infostealer malware profile. Infostealers are commonly used to steal sensitive user data such as stored login details, financial information, and other personally identifiable information.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "In the case this behavior is intended, rewrite the flagged code without using the malware-like behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH15109": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malware-like behaviors found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files with behaviors that match the keylogger malware profile.",
+                    "description": "Software components contain executable code that performs actions implemented during its development. These actions are called behaviors. In the analysis report, behaviors are presented as human-readable descriptions that best match the underlying code intent. While most behaviors are benign, some are exclusively used by malicious software with the intent to cause harm. When a software package matches behavior traits of malicious software, it becomes flagged by security solutions. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider. Detected threat type matches the behaviors typically exhibited by the keylogger malware profile. Keyloggers monitor user keystrokes in real-time to collect, and optionally exfiltrate, sensitive information such as login details, chat messages, and other personal information.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "In the case this behavior is intended, rewrite the flagged code without using the malware-like behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH15110": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malware-like behaviors found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files with behaviors that match the rootkit malware profile.",
+                    "description": "Software components contain executable code that performs actions implemented during its development. These actions are called behaviors. In the analysis report, behaviors are presented as human-readable descriptions that best match the underlying code intent. While most behaviors are benign, some are exclusively used by malicious software with the intent to cause harm. When a software package matches behavior traits of malicious software, it becomes flagged by security solutions. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider. Detected threat type matches the behaviors typically exhibited by the rootkit malware profile. Rootkits are commonly used to access and tamper with high privilege areas of the operating system. Due to their unfettered access to sensitive system areas, rootkits are often used to hide running applications and changes to system settings from security audits.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "In the case this behavior is intended, rewrite the flagged code without using the malware-like behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH15401": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malicious author components",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components authored by known threat actors.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Software developers publish components they have authored to public repositories. Open source communities use code repositories to facilitate project discovery and simplify software deployment. However, anyone with an email account can join a community and start publishing code to public repositories. Vetting users before they join a community is usually not done by repository maintainers. That makes public repositories popular among threat actors. Detected software component was authored by an email address, or an identity, that is known to publish malicious code in public repositories.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider replacing the software component with an alternative.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH15402": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components authored by high-risk developers.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Open source communities depend on the work of thousands of software developers that volunteer their time to maintain software components. While the majority of open source contributors are altruistic and trustworthy, some software developers have a history of making harmful changes to the projects they maintain. Changes that are considered harmful include destructive and disruptive actions, and other developer behaviors that might cause them to be considered untrustworthy in their community. Code written by these software developers should be put under higher degree of scrutiny, and continuously reviewed for unexpected changes.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should consider delaying the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider replacing the software component with an alternative.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH15403": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "bug bounty components found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components authored by bug bounty researchers.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Open source communities depend on the work of thousands of software developers that volunteer their time to maintain software components. While the majority of open source contributors are altruistic and trustworthy, some software developers are also members of security research or bug bounty programs. Researchers that participate in bug bounty programs develop applications that leak sensitive environment information to prove that they've successfully bypassed security mechanisms. Code written by these software developers should be put under a higher degree of scrutiny, and their code should never appear in software packages intended for release.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider removing the software component.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH15404": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components authored by developers with disposable email service accounts.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Open source communities depend on the work of thousands of software developers that volunteer their time to maintain software components. Software developers build up their reputation by being transparent. The person behind the public-facing alias is just as important as the alias itself. Developers rarely opt to use short-lived email service accounts that hide the link between their alias and the person behind it. Software components published by anonymized developer accounts often relate to activities that are unsuited for enterprise consumption.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should consider delaying the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider replacing the software component with an alternative.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH15405": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components authored by developers with anonymous email service accounts.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Open source communities depend on the work of thousands of software developers that volunteer their time to maintain software components. Software developers build up their reputation by being transparent. The person behind the public-facing alias is just as important as the alias itself. Developers rarely opt to use anonymous email service accounts that hide the link between their alias and the person behind it. Software components published by anonymized developer accounts often relate to activities that are unsuited for enterprise consumption.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should consider delaying the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider replacing the software component with an alternative.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
     "TH15501": {
         "quality": {
             "blocker": "pass",
@@ -2947,7 +3312,7 @@
             "enabled": true,
             "priority": 1,
             "rl-level": null,
-            "severity": "high",
+            "severity": "medium",
             "flags": null
         },
         "assessment": {
@@ -2959,7 +3324,7 @@
             "category": "hunting",
             "localization": [
                 {
-                    "label": "Detected presence of files containing URLs that reside in regions with export restrictions by the United States.",
+                    "label": "Detected presence of files containing URLs that reside in regions with US export restrictions.",
                     "description": "Export restrictions (or a restriction on exportation) are limitations on the quantity of goods exported to a specific country or countries by a Government. The United States Government has imposed export restrictions on a number of countries and regions. These restrictions may or may not apply to digital goods such as software and other related intellectual property. It is advised that the reported findings are put in the usage context so that they can be audited and reviewed by the legal department before the software package is deployed. Current list of countries with export restrictions includes: Cuba (.cu), Iran (.ir), North Korea (.nk) and Syria (.sy).",
                     "language": "en-US",
                     "steps": [
@@ -2983,6 +3348,42 @@
             "enabled": true,
             "priority": 1,
             "rl-level": null,
+            "severity": "medium",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that reside in regions with EU export restrictions.",
+                    "description": "Export restrictions (or a restriction on exportation) are limitations on the quantity of goods exported to a specific country or countries by a Government. The European Union has imposed export restrictions on a number of countries and regions. These restrictions may or may not apply to digital goods such as software and other related intellectual property. It is advised that the reported findings are put in the usage context so that they can be audited and reviewed by the legal department before the software package is deployed. Current list of countries with export restrictions includes: Belarus (.by), Iran (.ir), Iraq (.iq), Libya (.ly), Myanmar (.mm), North Korea (.nk), Syria (.sy), Venezuela (.ve) and Zimbabwe (.zw).",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the legal review is completed.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH18201": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
             "severity": "high",
             "flags": null
         },
@@ -2995,7 +3396,43 @@
             "category": "hunting",
             "localization": [
                 {
-                    "label": "Detected presence of files containing URLs that reside in regions with export restrictions by the European Union.",
+                    "label": "Detected presence of software components authored by accounts in regions with US export restrictions.",
+                    "description": "Export restrictions (or a restriction on exportation) are limitations on the quantity of goods exported to a specific country or countries by a Government. The United States Government has imposed export restrictions on a number of countries and regions. These restrictions may or may not apply to digital goods such as software and other related intellectual property. It is advised that the reported findings are put in the usage context so that they can be audited and reviewed by the legal department before the software package is deployed. Current list of countries with export restrictions includes: Cuba (.cu), Iran (.ir), North Korea (.nk) and Syria (.sy).",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the legal review is completed.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH18202": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components authored by accounts in regions with EU export restrictions.",
                     "description": "Export restrictions (or a restriction on exportation) are limitations on the quantity of goods exported to a specific country or countries by a Government. The European Union has imposed export restrictions on a number of countries and regions. These restrictions may or may not apply to digital goods such as software and other related intellectual property. It is advised that the reported findings are put in the usage context so that they can be audited and reviewed by the legal department before the software package is deployed. Current list of countries with export restrictions includes: Belarus (.by), Iran (.ir), Iraq (.iq), Libya (.ly), Myanmar (.mm), North Korea (.nk), Syria (.sy), Venezuela (.ve) and Zimbabwe (.zw).",
                     "language": "en-US",
                     "steps": [
@@ -3036,8 +3473,8 @@
             "category": "hunting",
             "localization": [
                 {
-                    "label": "Detected presence of Pickle serialized data that can execute code.",
-                    "description": "An AI (Artificial Intelligence) model is a mathematical representation of a process that uses algorithms to learn patterns and make predictions based on provided data. After the models are trained, their mathematical representations are stored in a variety of data serialization formats. Stored AI models can be shared and reused without the need for additional model training. Pickle is a popular Python module that many data scientists use for serializing and deserializing AI model data. Pickle is considered an unsafe data format, as it allows Python code to be executed during AI model deserialization. Attackers commonly abuse Pickle and other unsafe data serialization formats to hide their malicious payloads. It was detected that the serialized Pickle data includes Python code that can invoke external scripts and execute arbitrary commands on the computer system that attempts to deserialize the AI model data. While presence of Python code within Pickle serialized data does not always imply malicious intent, its use in an AI model should be documented and approved. It is recommended that any custom actions needed to load the AI model be kept separate from the serialized model data.",
+                    "label": "Detected presence of serialized data formats that can execute code.",
+                    "description": "An AI (Artificial Intelligence) model is a mathematical representation of a process that uses algorithms to learn patterns and make predictions based on provided data. After the models are trained, their mathematical representations are stored in a variety of data serialization formats. Stored AI models can be shared and reused without the need for additional model training. Pickle is a popular Python module that many data scientists use for serializing and deserializing AI model data. Pickle is considered an unsafe data format, as it allows Python code to be executed during AI model deserialization. Attackers commonly abuse Pickle and other unsafe data serialization formats to hide their malicious payloads. It was detected that the serialized data includes Python code that can invoke external scripts and execute arbitrary commands on the computer system that attempts to deserialize the AI model data. While presence of Python code within serialized data does not always imply malicious intent, its use in an AI model should be documented and approved. It is recommended that any custom actions needed to load the AI model be kept separate from the serialized model data.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -3049,7 +3486,7 @@
                             "type": "stop"
                         },
                         {
-                            "content": "Consider replacing the Pickle data serialization format with a safer alternative.",
+                            "content": "Consider replacing the selected data serialization format with a safer alternative.",
                             "type": "fix"
                         }
                     ]
@@ -3081,8 +3518,8 @@
             "category": "hunting",
             "localization": [
                 {
-                    "label": "Detected presence of Pickle serialized data that has networking capabilities.",
-                    "description": "An AI (Artificial Intelligence) model is a mathematical representation of a process that uses algorithms to learn patterns and make predictions based on provided data. After the models are trained, their mathematical representations are stored in a variety of data serialization formats. Stored AI models can be shared and reused without the need for additional model training. Pickle is a popular Python module that many data scientists use for serializing and deserializing AI model data. Pickle is considered an unsafe data format, as it allows Python code to be executed during AI model deserialization. Attackers commonly abuse Pickle and other unsafe data serialization formats to hide their malicious payloads. It was detected that the serialized Pickle data includes Python code that can access web resources and make network requests on the computer system that attempts to deserialize the AI model data. While presence of Python code within Pickle serialized data does not always imply malicious intent, its use in an AI model should be documented and approved. It is recommended that any custom actions needed to load the AI model be kept separate from the serialized model data.",
+                    "label": "Detected presence of serialized data formats that has networking capabilities.",
+                    "description": "An AI (Artificial Intelligence) model is a mathematical representation of a process that uses algorithms to learn patterns and make predictions based on provided data. After the models are trained, their mathematical representations are stored in a variety of data serialization formats. Stored AI models can be shared and reused without the need for additional model training. Pickle is a popular Python module that many data scientists use for serializing and deserializing AI model data. Pickle is considered an unsafe data format, as it allows Python code to be executed during AI model deserialization. Attackers commonly abuse Pickle and other unsafe data serialization formats to hide their malicious payloads. It was detected that the serialized data includes Python code that can access web resources and make network requests on the computer system that attempts to deserialize the AI model data. While presence of Python code within serialized data does not always imply malicious intent, its use in an AI model should be documented and approved. It is recommended that any custom actions needed to load the AI model be kept separate from the serialized model data.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -3094,7 +3531,7 @@
                             "type": "stop"
                         },
                         {
-                            "content": "Consider replacing the Pickle data serialization format with a safer alternative.",
+                            "content": "Consider replacing the selected data serialization format with a safer alternative.",
                             "type": "fix"
                         }
                     ]
@@ -3126,8 +3563,8 @@
             "category": "hunting",
             "localization": [
                 {
-                    "label": "Detected presence of Pickle serialized data that can create new processes.",
-                    "description": "An AI (Artificial Intelligence) model is a mathematical representation of a process that uses algorithms to learn patterns and make predictions based on provided data. After the models are trained, their mathematical representations are stored in a variety of data serialization formats. Stored AI models can be shared and reused without the need for additional model training. Pickle is a popular Python module that many data scientists use for serializing and deserializing AI model data. Pickle is considered an unsafe data format, as it allows Python code to be executed during AI model deserialization. Attackers commonly abuse Pickle and other unsafe data serialization formats to hide their malicious payloads. It was detected that the serialized Pickle data includes Python code that can create new processes and execute arbitrary commands on the computer system that attempts to deserialize the AI model data. While presence of Python code within Pickle serialized data does not always imply malicious intent, its use in an AI model should be documented and approved. It is recommended that any custom actions needed to load the AI model be kept separate from the serialized model data.",
+                    "label": "Detected presence of serialized data formats that can create new processes.",
+                    "description": "An AI (Artificial Intelligence) model is a mathematical representation of a process that uses algorithms to learn patterns and make predictions based on provided data. After the models are trained, their mathematical representations are stored in a variety of data serialization formats. Stored AI models can be shared and reused without the need for additional model training. Pickle is a popular Python module that many data scientists use for serializing and deserializing AI model data. Pickle is considered an unsafe data format, as it allows Python code to be executed during AI model deserialization. Attackers commonly abuse Pickle and other unsafe data serialization formats to hide their malicious payloads. It was detected that the serialized data includes Python code that can create new processes and execute arbitrary commands on the computer system that attempts to deserialize the AI model data. While presence of Python code within serialized data does not always imply malicious intent, its use in an AI model should be documented and approved. It is recommended that any custom actions needed to load the AI model be kept separate from the serialized model data.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -3139,7 +3576,7 @@
                             "type": "stop"
                         },
                         {
-                            "content": "Consider replacing the Pickle data serialization format with a safer alternative.",
+                            "content": "Consider replacing the selected data serialization format with a safer alternative.",
                             "type": "fix"
                         }
                     ]
@@ -3171,8 +3608,8 @@
             "category": "hunting",
             "localization": [
                 {
-                    "label": "Detected presence of Pickle serialized data that can access system interfaces.",
-                    "description": "An AI (Artificial Intelligence) model is a mathematical representation of a process that uses algorithms to learn patterns and make predictions based on provided data. After the models are trained, their mathematical representations are stored in a variety of data serialization formats. Stored AI models can be shared and reused without the need for additional model training. Pickle is a popular Python module that many data scientists use for serializing and deserializing AI model data. Pickle is considered an unsafe data format, as it allows Python code to be executed during AI model deserialization. Attackers commonly abuse Pickle and other unsafe data serialization formats to hide their malicious payloads. It was detected that the serialized Pickle data includes Python code that can access low-level operating system functions on the computer system that attempts to deserialize the AI model data. While presence of Python code within Pickle serialized data does not always imply malicious intent, its use in an AI model should be documented and approved. It is recommended that any custom actions needed to load the AI model be kept separate from the serialized model data.",
+                    "label": "Detected presence of serialized data formats that can access system interfaces.",
+                    "description": "An AI (Artificial Intelligence) model is a mathematical representation of a process that uses algorithms to learn patterns and make predictions based on provided data. After the models are trained, their mathematical representations are stored in a variety of data serialization formats. Stored AI models can be shared and reused without the need for additional model training. Pickle is a popular Python module that many data scientists use for serializing and deserializing AI model data. Pickle is considered an unsafe data format, as it allows Python code to be executed during AI model deserialization. Attackers commonly abuse Pickle and other unsafe data serialization formats to hide their malicious payloads. It was detected that the serialized data includes Python code that can access low-level operating system functions on the computer system that attempts to deserialize the AI model data. While presence of Python code within serialized data does not always imply malicious intent, its use in an AI model should be documented and approved. It is recommended that any custom actions needed to load the AI model be kept separate from the serialized model data.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -3184,7 +3621,7 @@
                             "type": "stop"
                         },
                         {
-                            "content": "Consider replacing the Pickle data serialization format with a safer alternative.",
+                            "content": "Consider replacing the selected data serialization format with a safer alternative.",
                             "type": "fix"
                         }
                     ]
@@ -3216,8 +3653,8 @@
             "category": "hunting",
             "localization": [
                 {
-                    "label": "Detected presence of Pickle serialized data that can manipulate other Pickle files.",
-                    "description": "An AI (Artificial Intelligence) model is a mathematical representation of a process that uses algorithms to learn patterns and make predictions based on provided data. After the models are trained, their mathematical representations are stored in a variety of data serialization formats. Stored AI models can be shared and reused without the need for additional model training. Pickle is a popular Python module that many data scientists use for serializing and deserializing AI model data. Pickle is considered an unsafe data format, as it allows Python code to be executed during AI model deserialization. Attackers commonly abuse Pickle and other unsafe data serialization formats to hide their malicious payloads. It was detected that the serialized Pickle data includes Python code that can manipulate other Pickle files on the computer system that attempts to deserialize the AI model data. While presence of Python code within Pickle serialized data does not always imply malicious intent, its use in an AI model should be documented and approved. It is recommended that any custom actions needed to load the AI model be kept separate from the serialized model data.",
+                    "label": "Detected presence of serialized data formats that can manipulate other serialized files.",
+                    "description": "An AI (Artificial Intelligence) model is a mathematical representation of a process that uses algorithms to learn patterns and make predictions based on provided data. After the models are trained, their mathematical representations are stored in a variety of data serialization formats. Stored AI models can be shared and reused without the need for additional model training. Pickle is a popular Python module that many data scientists use for serializing and deserializing AI model data. Pickle is considered an unsafe data format, as it allows Python code to be executed during AI model deserialization. Attackers commonly abuse Pickle and other unsafe data serialization formats to hide their malicious payloads. It was detected that the serialized data includes Python code that can manipulate other serialized files on the computer system that attempts to deserialize the AI model data. While presence of Python code within serialized data does not always imply malicious intent, its use in an AI model should be documented and approved. It is recommended that any custom actions needed to load the AI model be kept separate from the serialized model data.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -3229,7 +3666,7 @@
                             "type": "stop"
                         },
                         {
-                            "content": "Consider replacing the Pickle data serialization format with a safer alternative.",
+                            "content": "Consider replacing the selected data serialization format with a safer alternative.",
                             "type": "fix"
                         }
                     ]
@@ -3581,6 +4018,377 @@
                 {
                     "label": "Detected indicators of tampering that resemble the Intellect Service M.E.Doc software compromise.",
                     "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the M.E.Doc software compromise. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.001 - Compromise Software Dependencies and Development Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider hiring an external incident response team to assist with finding the root cause of the compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, and the detection is verified.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH20108": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "indicators of tampering found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "diff-hunting",
+            "localization": [
+                {
+                    "label": "Detected indicators of tampering that resemble the Command-Option-Argument software compromise.",
+                    "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the Command-Option-Argument software compromise. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.001 - Compromise Software Dependencies and Development Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider hiring an external incident response team to assist with finding the root cause of the compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, and the detection is verified.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH20109": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "indicators of tampering found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "diff-hunting",
+            "localization": [
+                {
+                    "label": "Detected indicators of tampering that resemble the ESLint Scope software compromise.",
+                    "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the ESLint Scope software compromise. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.001 - Compromise Software Dependencies and Development Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider hiring an external incident response team to assist with finding the root cause of the compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, and the detection is verified.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH20110": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "indicators of tampering found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "diff-hunting",
+            "localization": [
+                {
+                    "label": "Detected indicators of tampering that resemble the LottieFiles Player software compromise.",
+                    "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the LottieFiles Player software compromise. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.001 - Compromise Software Dependencies and Development Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider hiring an external incident response team to assist with finding the root cause of the compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, and the detection is verified.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH20111": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "indicators of tampering found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "diff-hunting",
+            "localization": [
+                {
+                    "label": "Detected indicators of tampering that resemble the rest-client software compromise.",
+                    "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the rest-client software compromise. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.001 - Compromise Software Dependencies and Development Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider hiring an external incident response team to assist with finding the root cause of the compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, and the detection is verified.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH20112": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "indicators of tampering found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "diff-hunting",
+            "localization": [
+                {
+                    "label": "Detected indicators of tampering that resemble the AIOSend aiocpa software compromise.",
+                    "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the aiocpa software compromise. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.001 - Compromise Software Dependencies and Development Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider hiring an external incident response team to assist with finding the root cause of the compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, and the detection is verified.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH20113": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "indicators of tampering found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "diff-hunting",
+            "localization": [
+                {
+                    "label": "Detected indicators of tampering that resemble the Ultralytics software compromise.",
+                    "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the Ultralytics software compromise. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.001 - Compromise Software Dependencies and Development Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider hiring an external incident response team to assist with finding the root cause of the compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, and the detection is verified.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH20114": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "indicators of tampering found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "diff-hunting",
+            "localization": [
+                {
+                    "label": "Detected indicators of tampering that resemble the Rspack software compromise.",
+                    "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the Rspack software compromise. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
                     "language": "en-US",
                     "steps": [
                         {

@@ -512,21 +512,16 @@
         "quality": {
             "blocker": "pass",
             "effort": "medium",
-            "enabled": true,
-            "priority": 3,
+            "enabled": false,
+            "priority": 4,
             "rl-level": null,
             "severity": "low",
             "flags": null
         },
         "assessment": {
             "category": "hardening",
-            "status": "warning",
-            "localization": [
-                {
-                    "label": "execution hijacking concerns",
-                    "language": "en-US"
-                }
-            ]
+            "status": "pass",
+            "localization": []
         },
         "policy": {
             "category": "hardening",

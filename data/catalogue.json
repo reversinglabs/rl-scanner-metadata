@@ -1,5 +1,5 @@
 {
-    "version": 1,
+    "version": 2,
     "ui-display": {
         "issues": [
             {
@@ -16,7 +16,7 @@
                         {
                             "id-label": null,
                             "id-first": 30101,
-                            "id-last": 30120
+                            "id-last": 30206
                         }
                     ]
                 },
@@ -67,7 +67,7 @@
                         {
                             "id-label": null,
                             "id-first": 20101,
-                            "id-last": 20131
+                            "id-last": 20136
                         }
                     ]
                 },
@@ -226,7 +226,12 @@
                         {
                             "id-label": "behaviors",
                             "id-first": 15101,
-                            "id-last": 15107
+                            "id-last": 15110
+                        },
+                        {
+                            "id-label": "authors",
+                            "id-first": 15401,
+                            "id-last": 15405
                         },
                         {
                             "id-label": "ml-hunting",
@@ -246,7 +251,7 @@
                         {
                             "id-label": "sanctions",
                             "id-first": 18101,
-                            "id-last": 18102
+                            "id-last": 18202
                         },
                         {
                             "id-label": "ml-malware",
@@ -276,7 +281,7 @@
                         {
                             "id-label": null,
                             "id-first": 20101,
-                            "id-last": 20107
+                            "id-last": 20114
                         }
                     ]
                 },
