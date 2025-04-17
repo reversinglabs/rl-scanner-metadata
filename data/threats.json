@@ -3,7 +3,7 @@
         "quality": {
             "blocker": "pass",
             "effort": "medium",
-            "enabled": false,
+            "enabled": true,
             "priority": null,
             "rl-level": null,
             "severity": "low",
