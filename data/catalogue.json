@@ -1,5 +1,5 @@
 {
-    "version": 3,
+    "version": 4,
     "ui-display": {
         "issues": [
             {
@@ -244,6 +244,11 @@
                             "id-last": 16128
                         },
                         {
+                            "id-label": "behaviors",
+                            "id-first": 16501,
+                            "id-last": 16509
+                        },
+                        {
                             "id-label": "networking",
                             "id-first": 17101,
                             "id-last": 17132
@@ -251,12 +256,17 @@
                         {
                             "id-label": "sanctions",
                             "id-first": 18101,
-                            "id-last": 18202
+                            "id-last": 18302
                         },
                         {
                             "id-label": "ml-malware",
                             "id-first": 19101,
                             "id-last": 19105
+                        },
+                        {
+                            "id-label": "community",
+                            "id-first": 30101,
+                            "id-last": 30113
                         }
                     ]
                 },

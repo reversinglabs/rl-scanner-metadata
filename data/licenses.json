@@ -7,6 +7,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -52,6 +53,7 @@
             "priority": 3,
             "rl-level": null,
             "severity": "low",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -97,6 +99,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -146,6 +149,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -187,6 +191,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -228,6 +233,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -269,6 +275,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -310,6 +317,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -351,6 +359,7 @@
             "priority": 0,
             "rl-level": 3,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -392,6 +401,7 @@
             "priority": 3,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -433,6 +443,7 @@
             "priority": 0,
             "rl-level": 5,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {

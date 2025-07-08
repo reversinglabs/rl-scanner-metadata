@@ -7,6 +7,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -52,6 +53,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -97,6 +99,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -141,6 +144,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -190,6 +194,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -239,6 +244,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -288,6 +294,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -337,6 +344,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -386,6 +394,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -435,6 +444,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -484,6 +494,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -533,6 +544,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -573,6 +585,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -622,6 +635,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -662,6 +676,7 @@
             "priority": 3,
             "rl-level": null,
             "severity": "low",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -702,6 +717,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -751,6 +767,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -800,6 +817,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -840,6 +858,7 @@
             "priority": 4,
             "rl-level": null,
             "severity": "low",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -880,6 +899,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -920,6 +940,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -960,6 +981,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1000,6 +1022,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1040,6 +1063,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1080,6 +1104,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1120,6 +1145,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1160,6 +1186,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1200,6 +1227,7 @@
             "priority": 3,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1240,6 +1268,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1280,6 +1309,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1320,6 +1350,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1360,6 +1391,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1400,6 +1432,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1440,6 +1473,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1480,6 +1514,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1520,6 +1555,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1560,6 +1596,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1600,6 +1637,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1640,6 +1678,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1680,6 +1719,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1720,6 +1760,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1760,6 +1801,7 @@
             "priority": 3,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1800,6 +1842,7 @@
             "priority": 4,
             "rl-level": null,
             "severity": "low",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1836,6 +1879,7 @@
             "priority": 4,
             "rl-level": null,
             "severity": "low",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1876,6 +1920,7 @@
             "priority": 3,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1904,6 +1949,414 @@
             ]
         }
     },
+    "TH16501": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of package manifests with entry points dependent on localization.",
+                    "description": "Many popular programming languages use standardized software packaging formats to distribute reusable code components. Software packages are built from instructions written within package manifests that act as blueprints for package assembly. A package manifest declares the most important software properties, such as the package name, its authors and license, external dependencies, and various actions that may occur during the package lifecycle. Software applications are required to have one or more entry points. Entry points are functions contained within the application that need be executed before any other code. These functions are used to initialize the application, after which they pass the execution to other application functions depending on software configuration or user input. Therefore, it is uncommon to have entry points that are dependent on localization, the language, or the region in which the software is used. Localization should be handled by the application logic, not by declaring different entry point functions within the package manifest. Threat actors often abuse package localization features to avoid detection by security solutions.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider rewriting the package manifest without localizing software entry points.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16502": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous package manifests",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of package manifests that execute cryptocurrency miners.",
+                    "description": "Many popular programming languages use standardized software packaging formats to distribute reusable code components. Software packages are built from instructions written within package manifests that act as blueprints for package assembly. A package manifest declares the most important software properties, such as the package name, its authors and license, external dependencies, and various actions that may occur during the package lifecycle. Actions defined within the package manifest are executed automatically by the package manager during events such as package installation, compilation, testing, or on package removal. These events are used by software developers to set up the environment for package use, or to perform cleanup upon package removal. However, package manifest actions are commonly abused by threat actors to execute arbitrary commands on the development machine. It was detected that the package manifest could deploy cryptocurrency miners through an action. This type of behavior is typically observed only in malicious packages that get published to public open source package repositories.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to the reported behavior, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider removing cryptocurrency miners from the package manifest.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16503": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous package manifests",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of package manifests that execute unusual system commands.",
+                    "description": "Many popular programming languages use standardized software packaging formats to distribute reusable code components. Software packages are built from instructions written within package manifests that act as blueprints for package assembly. A package manifest declares the most important software properties, such as the package name, its authors and license, external dependencies, and various actions that may occur during the package lifecycle. Actions defined within the package manifest are executed automatically by the package manager during events such as package installation, compilation, testing, or on package removal. These events are used by software developers to set up the environment for package use, or to perform cleanup upon package removal. However, package manifest actions are commonly abused by threat actors to execute arbitrary commands on the development machine. It was detected that the package manifest could execute unusual operating system commands. Unusual commands resemble common threat actor tactics, such as destructive file deletion, elevation of privileges, or tampering with security settings. Unusual package manifests often contain code obfuscation, anti-analysis features, and other detection evasion techniques.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to the reported behavior, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider rewriting the package manifest without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16504": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of package manifests that execute code written in another programming language.",
+                    "description": "Many popular programming languages use standardized software packaging formats to distribute reusable code components. Software packages are built from instructions written within package manifests that act as blueprints for package assembly. A package manifest declares the most important software properties, such as the package name, its authors and license, external dependencies, and various actions that may occur during the package lifecycle. Actions defined within the package manifest are executed automatically by the package manager during events such as package installation, compilation, testing, or on package removal. It is unusual to have a package manifest that executes actions using programming languages that are not native to the package ecosystem. Attackers often reuse code across ecosystems, targeting developers that have multiple languages installed on their machines. This is a simple but effective way to avoid detection by security solutions.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider rewriting the package manifest without using multiple programming languages.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16505": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous package manifests",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of package manifests that hijack operating system commands.",
+                    "description": "Many popular programming languages use standardized software packaging formats to distribute reusable code components. Software packages are built from instructions written within package manifests that act as blueprints for package assembly. A package manifest declares the most important software properties, such as the package name, its authors and license, list of external dependencies, and various actions that may occur during the package lifecycle. Package manifests allow developers to register their own commands with the operating system. This package manager feature allows developers to simplify application consumption, making it easy to integrate software packages into development workflows. However, it was detected that the software package might abuse this feature to hijack common operating system commands. Attackers often hijack system commands to ensure that their malicious application gets executed before the intended one. This allows the attackers to modify application runtime parameters, or to collect sensitive information that gets passed to trusted applications.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider rewriting the package manifest without overriding operating system commands.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16506": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous package manifests",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of package manifests that hijack common development tools.",
+                    "description": "Many popular programming languages use standardized software packaging formats to distribute reusable code components. Software packages are built from instructions written within package manifests that act as blueprints for package assembly. A package manifest declares the most important software properties, such as the package name, its authors and license, list of external dependencies, and various actions that may occur during the package lifecycle. Package manifests allow developers to register their own commands with the operating system. This package manager feature allows developers to simplify application consumption, making it easy to integrate software packages into development workflows. However, it was detected that the software package might abuse this feature to hijack common development tools. Attackers often hijack development commands to ensure that their malicious application gets executed before the intended one. This allows the attackers to modify application runtime parameters, or to collect sensitive information that gets passed to trusted applications.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider rewriting the package manifest without overriding development tool commands.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16507": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous package manifests",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of package manifests that have networking capabilities.",
+                    "description": "Many popular programming languages use standardized software packaging formats to distribute reusable code components. Software packages are built from instructions written within package manifests that act as blueprints for package assembly. A package manifest declares the most important software properties, such as the package name, its authors and license, external dependencies, and various actions that may occur during the package lifecycle. Actions defined within the package manifest are executed automatically by the package manager during events such as package installation, compilation, testing, or on package removal. It is unusual for a package manifest to invoke commands that download additional content from a remote server. Attackers commonly abuse package manifest actions to fetch malicious payloads from public code repositories, file sharing websites, or their own infrastructure. Remotely hosted content is not immutable, allowing the attackers to change the type of malware they deploy at any time.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to the reported behavior, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider rewriting the package manifest without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16508": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous package manifests",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of package manifests that can collect sensitive system information.",
+                    "description": "Many popular programming languages use standardized software packaging formats to distribute reusable code components. Software packages are built from instructions written within package manifests that act as blueprints for package assembly. A package manifest declares the most important software properties, such as the package name, its authors and license, external dependencies, and various actions that may occur during the package lifecycle. Actions defined within the package manifest are executed automatically by the package manager during events such as package installation, compilation, testing, or on package removal. It is unusual for a package manifest to execute commands that can collect sensitive system information. Attackers often abuse package manifests to run commands that collect identifiable system information such as hostnames, user names, folder structures, and other data points that could help them understand the environment in which their malicious code was installed.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to the reported behavior, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider rewriting the package manifest without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16509": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous package manifests",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of package manifests that can access sensitive system files.",
+                    "description": "Many popular programming languages use standardized software packaging formats to distribute reusable code components. Software packages are built from instructions written within package manifests that act as blueprints for package assembly. A package manifest declares the most important software properties, such as the package name, its authors and license, external dependencies, and various actions that may occur during the package lifecycle. Actions defined within the package manifest are executed automatically by the package manager during events such as package installation, compilation, testing, or on package removal. It is unusual for a package manifest to execute commands that can collect sensitive system files. Attackers often abuse package manifests to run commands that collect authentication details such as tokens and credentials, private keys, environment files, and other secrets that could help them gain unauthorized access to the system on which their malicious code was installed.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to the reported behavior, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider rewriting the package manifest without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
     "TH17101": {
         "quality": {
             "blocker": "fail",
@@ -1912,6 +2365,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1957,6 +2411,7 @@
             "priority": 3,
             "rl-level": null,
             "severity": "low",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -1997,6 +2452,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2041,6 +2497,7 @@
             "priority": 4,
             "rl-level": null,
             "severity": "low",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2085,6 +2542,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2129,6 +2587,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2173,6 +2632,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2217,6 +2677,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2229,7 +2690,7 @@
             "localization": [
                 {
                     "label": "Detected presence of files containing URLs that link to deceptive file formats.",
-                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Attackers often try to obfuscate URLs with the aim to avoid detection by security solutions. One common obfuscation technique attackers use is crafting deceptive links to externally hosted files. Users are more likely to click the links they deem to be trustworthy. Having two or more file extensions in a URL increases the odds of a deceptive link being perceived as trustworthy, especially if the first extension is commonly encountered by the user (such as a file extension of a popular document format). The reason why these links are considered deceptive is because the operating system will download the linked file and execute it with the last extension it detects, not the first. Attackers abuse this file naming quirk to trick users to run their malicious code. While presence of deceptive file format references does not imply malicious intent, all of its uses in a software package should be documented and approved. It is recommended to avoid double file format extensions altogether.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Attackers often try to obfuscate URLs with the aim of avoiding detection by security solutions. One common obfuscation technique attackers use is crafting deceptive links to externally hosted files. Users are more likely to click the links they deem trustworthy. Having two or more file extensions in a URL increases the odds of a deceptive link being perceived as trustworthy, especially if the first extension is commonly encountered by the user (such as the file extension of a popular document format). The reason why these links are considered deceptive is because the operating system will download the linked file and execute it with the last extension it detects, not the first. Attackers abuse this file naming quirk to trick users into running their malicious code. While presence of deceptive file format references does not imply malicious intent, all of their uses in a software package should be documented and approved. It is recommended to avoid double file format extensions altogether.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -2261,6 +2722,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2310,6 +2772,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2321,7 +2784,7 @@
             "category": "hunting",
             "localization": [
                 {
-                    "label": "Detected presence of files containing URLs that use homoglyph spoofed variations of trusted domains.",
+                    "label": "Detected presence of files containing URLs that use homoglyph-spoofed variations of trusted domains.",
                     "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. In typography, a homoglyph is one of two or more characters (or glyphs) with shapes that appear identical or very similar, but may have completely differing meanings. Attackers often register spoofed variations of known and trusted domains. By abusing homoglyphs, attackers can create malicious domains that appear visually identical to trusted ones. While presence of homoglyphs in network references does not imply malicious intent, all instances of this issue should be reviewed for spelling mistakes and typos. An attacker could be controlling the domains the application intends to connect to.",
                     "language": "en-US",
                     "steps": [
@@ -2354,6 +2817,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2398,6 +2862,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2409,8 +2874,8 @@
             "category": "hunting",
             "localization": [
                 {
-                    "label": "Detected presence of files containing URLs that use punycode spoofed variations of trusted domains.",
-                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Punycode is a representation of Unicode with the limited ASCII character subset used for domain names. Using punycode, domains containing Unicode characters are transcoded to a subset of ASCII consisting of letters, digits and hyphens. Attackers often register spoofed variations of known and trusted domains. By abusing punycode attackers can create malicious domains that appear visually identical to trusted ones. While presence of punycode in network references does not imply malicious intent, all instances of this issue should be reviewed for spelling mistakes and typos. An attacker could be controlling the domains the application intends to connect to.",
+                    "label": "Detected presence of files containing URLs that use punycode-spoofed variations of trusted domains.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Punycode is a representation of Unicode with the limited ASCII character subset used for domain names. Using punycode, domains containing Unicode characters are transcoded to a subset of ASCII consisting of letters, digits and hyphens. Attackers often register spoofed variations of known and trusted domains. By abusing punycode, attackers can create malicious domains that appear visually identical to trusted ones. While presence of punycode in network references does not imply malicious intent, all instances of this issue should be reviewed for spelling mistakes and typos. An attacker could be controlling the domains the application intends to connect to.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -2442,6 +2907,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2486,6 +2952,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2498,7 +2965,7 @@
             "localization": [
                 {
                     "label": "Detected presence of files containing URLs that use trusted domains as subdomains.",
-                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Attackers often try to trick users into visiting a malicious domain. Users are more likely to click the links they deem to be trustworthy. To appear trustworthy attackers may craft URLs that use well-known and trusted domains as subdomains. Subdomains appear first in the browser address bar. Combined with other URL obfuscation techniques, this approach may mislead the users into visiting an attacker-controlled domain. While presence of trusted domains as subdomains does not imply malicious intent, all instances of this issue should be reviewed for spelling mistakes and typos. An attacker could be controlling the domains the application intends to connect to.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Attackers often try to trick users into visiting a malicious domain. Users are more likely to click the links they deem trustworthy. To appear trustworthy, attackers may craft URLs that use well-known and trusted domains as subdomains. Subdomains appear first in the browser address bar. Combined with other URL obfuscation techniques, this approach may mislead the users into visiting an attacker-controlled domain. While presence of trusted domains as subdomains does not imply malicious intent, all instances of this issue should be reviewed for spelling mistakes and typos. An attacker could be controlling the domains the application intends to connect to.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -2530,6 +2997,7 @@
             "priority": 3,
             "rl-level": null,
             "severity": "low",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2542,7 +3010,7 @@
             "localization": [
                 {
                     "label": "Detected presence of files containing URLs that use non-standard ports.",
-                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. A port number is associated with a network address of a host, such as an IP address, and the type of network protocol used for communication. Within URLs the ports are optional. Ports can be specified in a URL immediately following the domain name. Each network protocol, or schema, has a set of standard ports on which the service operates. This issue is raised when a mismatch between a network protocol and its expected port number is detected. While the presence of non-standard ports does not imply malicious intent, all of its uses in a software package should be documented and approved.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. A port number is associated with a network address of a host, such as an IP address, and the type of network protocol used for communication. Within URLs, the ports are optional. Ports can be specified in a URL immediately following the domain name. Each network protocol, or schema, has a set of standard ports on which the service operates. This issue is raised when a mismatch between a network protocol and its expected port number is detected. While the presence of non-standard ports does not imply malicious intent, all of their uses in a software package should be documented and approved.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -2558,7 +3026,7 @@
                             "type": "stop"
                         },
                         {
-                            "content": "Consider changing port to one that is standard for the networking protocol.",
+                            "content": "Consider changing the port to one that is standard for the networking protocol.",
                             "type": "fix"
                         }
                     ]
@@ -2574,6 +3042,7 @@
             "priority": 4,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2618,6 +3087,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2659,6 +3129,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2703,6 +3174,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2747,6 +3219,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2788,6 +3261,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2832,6 +3306,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2844,7 +3319,7 @@
             "localization": [
                 {
                     "label": "Detected presence of files containing URLs related to IP querying services.",
-                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. When accessing the internet, a device is assigned a unique Internet Protocol (IP) address. This address identifies the point of origin and destination of each request a connected device makes. Attackers often aim to better understand their targets. Collecting basic reconnaissance information typically includes the IP address of a machine. While the operating system has the utilities to get this information, some attackers may prefer getting this data from an external source. Many web services host pages that return the IP address of the caller. For that reason, attacker often opt to get the IP information from a third-party service. While the presence of IP querying services does not imply malicious intent, all of their uses in a software package should be documented and approved.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. When accessing the internet, a device is assigned a unique Internet Protocol (IP) address. This address identifies the point of origin and destination of each request a connected device makes. Attackers often aim to better understand their targets. Collecting basic reconnaissance information typically includes the IP address of a machine. While the operating system has the utilities to get this information, some attackers may prefer getting this data from an external source. Many web services host pages that return the IP address of the caller. For that reason, attackers often opt to get the IP information from a third-party service. While the presence of IP querying services does not imply malicious intent, all of their uses in a software package should be documented and approved.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -2876,6 +3351,7 @@
             "priority": 3,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2920,6 +3396,7 @@
             "priority": 3,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -2964,6 +3441,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3008,6 +3486,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3052,6 +3531,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3096,6 +3576,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3140,6 +3621,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3181,6 +3663,7 @@
             "priority": 2,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3225,6 +3708,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3269,6 +3753,7 @@
             "priority": 3,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3313,6 +3798,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3349,6 +3835,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "medium",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3385,6 +3872,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3421,6 +3909,7 @@
             "priority": 1,
             "rl-level": null,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3449,6 +3938,80 @@
             ]
         }
     },
+    "TH18301": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components hosted on repositories in regions with US export restrictions.",
+                    "description": "Export restrictions (or a restriction on exportation) are limitations on the quantity of goods exported to a specific country or countries by a Government. The United States Government has imposed export restrictions on a number of countries and regions. These restrictions may or may not apply to digital goods such as software and other related intellectual property. It is advised that the reported findings are put in the usage context so that they can be audited and reviewed by the legal department before the software package is deployed. Current list of countries with export restrictions includes: Cuba (.cu), Iran (.ir), North Korea (.nk) and Syria (.sy).",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the legal review is completed.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH18302": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components hosted on repositories in regions with EU export restrictions.",
+                    "description": "Export restrictions (or a restriction on exportation) are limitations on the quantity of goods exported to a specific country or countries by a Government. The European Union has imposed export restrictions on a number of countries and regions. These restrictions may or may not apply to digital goods such as software and other related intellectual property. It is advised that the reported findings are put in the usage context so that they can be audited and reviewed by the legal department before the software package is deployed. Current list of countries with export restrictions includes: Belarus (.by), Iran (.ir), Iraq (.iq), Libya (.ly), Myanmar (.mm), North Korea (.nk), Syria (.sy), Venezuela (.ve) and Zimbabwe (.zw).",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the legal review is completed.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
     "TH19101": {
         "quality": {
             "blocker": "fail",
@@ -3457,6 +4020,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3502,6 +4066,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3518,7 +4083,7 @@
             "category": "hunting",
             "localization": [
                 {
-                    "label": "Detected presence of serialized data formats that has networking capabilities.",
+                    "label": "Detected presence of serialized data formats that have networking capabilities.",
                     "description": "An AI (Artificial Intelligence) model is a mathematical representation of a process that uses algorithms to learn patterns and make predictions based on provided data. After the models are trained, their mathematical representations are stored in a variety of data serialization formats. Stored AI models can be shared and reused without the need for additional model training. Pickle is a popular Python module that many data scientists use for serializing and deserializing AI model data. Pickle is considered an unsafe data format, as it allows Python code to be executed during AI model deserialization. Attackers commonly abuse Pickle and other unsafe data serialization formats to hide their malicious payloads. It was detected that the serialized data includes Python code that can access web resources and make network requests on the computer system that attempts to deserialize the AI model data. While presence of Python code within serialized data does not always imply malicious intent, its use in an AI model should be documented and approved. It is recommended that any custom actions needed to load the AI model be kept separate from the serialized model data.",
                     "language": "en-US",
                     "steps": [
@@ -3547,6 +4112,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3592,6 +4158,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3637,6 +4204,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3682,6 +4250,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3735,6 +4304,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3788,6 +4358,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3841,6 +4412,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3894,6 +4466,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -3947,6 +4520,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -4000,6 +4574,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -4053,6 +4628,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -4106,6 +4682,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -4159,6 +4736,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -4212,6 +4790,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -4265,6 +4844,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -4318,6 +4898,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -4371,6 +4952,7 @@
             "priority": 0,
             "rl-level": 1,
             "severity": "high",
+            "offline": true,
             "flags": null
         },
         "assessment": {
@@ -4409,6 +4991,607 @@
                         },
                         {
                             "content": "You should delay the software release until the investigation is completed, and the detection is verified.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH30101": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "offline": false,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "components with malware history",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that had a recent malware or tampering incident.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Software developers publish components they have authored to public repositories. Some open source projects have a history of security lapses that culminated with a publication of one or more malicious component versions. To ensure that repeated supply chain incidents do not occur, the open source project should be closely monitored for up to two years. All software package versions that are published within two years of the malware incident will convey a warning about the history of security incidents tied to the open source project.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Inspect behaviors exhibited by the detected software components.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software behaviors differ from expected, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Revise the use of components that raise these alarms. If you can't deprecate those components, make sure that their versions are pinned.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH30102": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": false,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "quarantined components found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that are quarantined in the public package repository.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Software developers publish components they have authored to public repositories. Open source repositories may place software packages into quarantine during an ongoing security incident investigation. When a software project is placed into quarantine, it is typically unavailable for installation. Repository maintainers may also hide quarantined software projects from users that might stumble upon them using repository search functions. Quarantine is typically raised for software projects that were reported for unusual code changes or unexpected software behaviors.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Inspect behaviors exhibited by the detected software components.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software behaviors differ from expected, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Revise the use of components that raise these alarms. If you can't deprecate those components, make sure they are well-documented.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH30103": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "offline": false,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "components prone to hijacking",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that were removed from the public package repository.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Software developers publish components they have authored to public repositories. Open source projects are the intellectual property of their respective authors. At any time, the authors may choose to completely remove the software component from a public repository. This often occurs when a software project reaches its end-of-life stage, or when the software authors lose interest in maintaining the project. This kind of removal frees up the software package name, its unique software identifier in the public repository, for other developers to use. However, new software project owners might have malicious intent. Threat actors are continuously monitoring popular package names in case their unique identifiers suddenly become available for hijacking. Once the software projects falls under new ownership, the new maintainers may opt to use the project popularity to spread malware to unsuspecting users.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Inspect behaviors exhibited by the detected software components.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software behaviors differ from expected, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Revise the use of components that raise these alarms. If you can't deprecate those components, make sure that their versions are pinned.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH30104": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "offline": false,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that had a recent package version removal incident.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Software developers publish components they have authored to public repositories. Some open source repositories allow the developers to take down software component versions that they have published. For open source projects, version unpublishing is uncommon. Versions are typically removed due to a security incident, such as malicious code tampering or accidental development secrets exposure. Software developers often prioritize taking down such packages before informing the community that they have experienced a security incident. Therefore, it is prudent to review the reasons behind software version removals as these events might be a signal of an ongoing software supply chain attack.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review software component documentation for the reasons behind the recent version removal.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software version was removed due to a security incident, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Revise the use of components that raise these alarms. If you can't deprecate those components, make sure that their versions are pinned.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH30105": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "offline": false,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that were recently published to the public package repository.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Software developers publish components they have authored to public repositories. While a new software project is a welcome addition to the open source community, it is not always prudent to indiscriminately use the latest components when building a commercial application. Irrespective of the software quality, the danger of being the first to try out a new project lies in the fact that the software component may contain novel, currently undetected malicious code. Therefore, it is prudent to review software component behaviors and even try out software component in a sandbox, an environment meant for testing untrusted code.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Check the software component behaviors for anomalies.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider exploratory software component testing within a sandbox environment.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider replacing the software component with a more widely used alternative.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH30106": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "offline": false,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that have low popularity or number of downloads.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Software developers publish components they have authored to public repositories. While a new software project is a welcome addition to the open source community, it is not always prudent to indiscriminately use the latest components when building a commercial application. Irrespective of the software quality, the danger of being the first to try out a new project lies in the fact that the software component may contain novel, currently undetected malicious code. Therefore, it is prudent to review software component behaviors and even try out software component in a sandbox, an environment meant for testing untrusted code.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Check the software component behaviors for anomalies.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider exploratory software component testing within a sandbox environment.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider replacing the software component with a more widely used alternative.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH30107": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "offline": false,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that are rarely included by other public software packages.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Software developers publish components they have authored to public repositories. While a new software project is a welcome addition to the open source community. it is not always prudent to indiscriminately use the latest components when building a commercial application. Irrespective of the software quality, the danger of using components that are rarely used to build applications lies in the fact that the software component may contain novel, currently undetected malicious code. Therefore, it is prudent to review software component behaviors and even try out software component in a sandbox, an environment meant for testing untrusted code.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Check the software component behaviors for anomalies.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider exploratory software component testing within a sandbox environment.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider replacing the software component with a more widely used alternative.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH30108": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "impersonated components found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that are impersonating popular software packages.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Software developers publish components they have authored to public repositories. Open source communities use code repositories to facilitate project discovery and simplify software deployment. These code repositories use unique component names as identifiers that developers can later use to specify software components required by their applications during the build or run processes. Since component names are manually written down by the developer within the code, it is possible to mistype them. Simple omissions of characters, such as prefixes, suffixes, plurals, hyphens, and underscores can have serious consequences. Unintended software components might get installed - components that might have been authored by a threat actor. Threat actors are constantly poisoning open source repositories with typosquatted components preying on typos by unsuspecting developers. They typically try to impersonate the most popular software components, as most developers will be using them to build their applications.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review software component names to ensure there were no accidental package name mistypes.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software component names differ from expected, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH30109": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components with dependencies that are hosted outside the official project repository.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Each of these components can have dozens, or even hundreds, of its own dependencies. When building applications, software developers download and install components from public repositories. For components to work properly, all of their dependencies also need to be installed. Some package repositories, like Node Package Manager (NPM), allow components to declare dependencies that are hosted remotely. Such dependencies are automatically downloaded from a specified location during software component installation. Since remotely hosted dependencies are not immutable, that enables a threat actor to change the dependency contents even after a component was published and vetted by security solutions. It is uncommon to find open source components that use remotely hosted dependencies residing outside the official project source code repository.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review software component remote dependency locations.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software component resolves dependencies from unusual locations, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider vendoring the software component with all of its dependencies.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH30110": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components with remotely hosted binary dependencies.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Each of these components can have dozens, or even hundreds, of its own dependencies. When building applications, software developers download and install components from public repositories. For components to work properly, all of their dependencies also need to be installed. Some package repositories, like Node Package Manager (NPM), allow components to declare dependencies that are hosted remotely. Such dependencies are automatically downloaded from a specified location during software component installation. Since remotely hosted dependencies are not immutable, that enables a threat actor to change the dependency contents even after a component was published and vetted by security solutions. It is uncommon to find open source components that use remotely hosted binary dependencies.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review software component remote dependency locations.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software component resolves dependencies from unusual locations, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider vendoring the software component with all of its dependencies.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH30111": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "low",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components with remotely hosted source dependencies.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Each of these components can have dozens, or even hundreds, of its own dependencies. When building applications, software developers download and install components from public repositories. For components to work properly, all of their dependencies also need to be installed. Some package repositories, like Node Package Manager (NPM), allow components to declare dependencies that are hosted remotely. Such dependencies are automatically downloaded from a specified location during software component installation. Since remotely hosted dependencies are not immutable, that enables a threat actor to change the dependency contents even after a component was published and vetted by security solutions. It is uncommon to find open source components that use remotely hosted source dependencies.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review software component remote dependency locations.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software component resolves dependencies from unusual locations, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider vendoring the software component with all of its dependencies.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH30112": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components without a declared source code repository.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Open source communities depend on the work of thousands of software developers that volunteer their time to maintain software components. Software developers build up the reputation of their open source projects by developing in public. Modern source code repositories have many social features that allow software developers to handle bug reports, have discussions with their users, and convey reaching significant project milestones. It is uncommon to find open source projects that omit linking their component to a publicly accessible source code repository.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Check the software component behaviors for anomalies.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider exploratory software component testing within a sandbox environment.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider replacing the software component with a more widely used alternative.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH30113": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components with unusual package versions.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Software developers publish components they have authored to public repositories. Developers that use open source components within their applications can specify the exact version of the component their application depends on. However, since components are frequently updated, some developers opt to always use the latest version of the software component. This helps reduce the number of vulnerabilities that open source components can introduce in the application. However, it does expose the developer and the build environment to risks associated with software supply chain attacks. Should a threat actor hijack the ownership of the software component publishing account, or even its publishing token, they could issue a malicious update that can infect the build environment or the application itself. To ensure that the build system updates the software component to a malicious version, threat actors often set the version number to an unusually high value. If a build system is instructed to use the latest component version, it will install the component with the highest version number, and execute its code.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review software component versions to ensure there were no accidental code updates.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software component versions differ from expected, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider pinning the software component version to prevent accidental code updates.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
                             "type": "stop"
                         }
                     ]
