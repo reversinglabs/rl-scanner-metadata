@@ -75,7 +75,7 @@
             "localization": [
                 {
                     "label": "Detected presence of software components commonly abused for malicious application loading.",
-                    "description": "Some software components may allow arbitrary code execution. Due to their design, applications may not check the type of content they are tasked to load or execute. Failing to enforce such checks may even lead to elevated privilege execution of unverified code. In those cases, malicious code can achieve stealth by being invoked through digitally signed and highly trusted applications. Those software components are known as Living off the Land binaries (LOLBins) among security professionals. Some Windows operating system versions may even be configured to prevent loading of commonly abused kernel drivers by default. When Hypervisor-protected Code Integrity (HVCI) feature is enabled, the operating system will refuse to load any of the drivers found on its blocklist.",
+                    "description": "Some software components may allow arbitrary code execution. Due to their design, applications may not check the type of content they are tasked to load or execute. Failing to enforce such checks may even lead to elevated privilege execution of unverified code. In those cases, malicious code can achieve stealth by being invoked through digitally signed and highly trusted applications. Those software components are known as Living off the Land binaries (LOLBins) among security professionals. Commonly abused software applications, kernel drivers, and remote access management tools all fall in the LOLBin risk category. Some Windows operating system versions may even be configured to prevent loading of commonly abused kernel drivers by default. When Hypervisor-protected Code Integrity (HVCI) feature is enabled, the operating system will refuse to load any of the drivers found on its blocklist.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -1216,6 +1216,140 @@
                 {
                     "label": "Detected presence of software components with suspicious dependencies.",
                     "description": "Proprietary ReversingLabs malware detection algorithms have determined that the software package has one or more suspicious dependencies. Some software dependencies may be optional, and could be installed or downloaded only if a certain pre-defined condition is met. When software dependencies are confirmed to be found within the software package, additional issues might also be reported. The detection was made by either a static byte signature, software component identity, or a complete file hash. This malware detection method is considered predictive, and can typically identify the malware family by name.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Suspicious detections are a lower confidence detection, so you should first review them for malicious intent.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to malicious behavior, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Proceed with increased caution when using this software package.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30251": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "undesirable develop dependencies",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of software components developed using potentially unwanted dependencies.",
+                    "description": "Potentially unwanted applications (PUAs) can be considered a risk by some software users. This threat type typically collects private user data, or in more extreme cases, tampers with system security settings. Development dependencies may be optional, and could be installed or downloaded only if a certain pre-defined condition is met. Development dependencies are used by software developers during application production. Presence of potentially unwanted development dependencies could be an indication of a software build pipeline compromise. When software dependencies are confirmed to be found within the software package, additional issues might also be reported. Most threat prevention solutions detect and block PUAs. Software packages that trigger security solution detections also tend to increase the number of support calls and open tickets from users.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Revise the use of components that raise these alarms. If you can't deprecate those components, make sure they are well-documented.",
+                            "type": "practice"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30252": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "malicious develop dependencies",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of software components developed using malicious dependencies.",
+                    "description": "Proprietary ReversingLabs malware detection algorithms have determined that the software package has one or more malicious development dependencies. Development dependencies may be optional, and could be installed or downloaded only if a certain pre-defined condition is met. Development dependencies are used by software developers during application production. Presence of malicious development dependencies could be an indication of a software build pipeline compromise. When software dependencies are confirmed to be found within the software package, additional issues might also be reported. The detection was made by either a static byte signature, software component identity, or a complete file hash. This malware detection method is considered highly accurate, and can typically attribute malware to previously discovered software supply chain attacks.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Inspect behaviors exhibited by the detected software components.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software behaviors differ from expected, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Revise the use of components that raise these alarms. If you can't deprecate those components, make sure they are well-documented.",
+                            "type": "practice"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "SQ30253": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 2,
+            "rl-level": null,
+            "severity": "medium",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "malware",
+            "status": "warning",
+            "localization": [
+                {
+                    "label": "suspicious develop dependencies",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "threats",
+            "localization": [
+                {
+                    "label": "Detected presence of software components developed using suspicious dependencies.",
+                    "description": "Proprietary ReversingLabs malware detection algorithms have determined that the software package has one or more suspicious development dependencies. Development dependencies may be optional, and could be installed or downloaded only if a certain pre-defined condition is met. Development dependencies are used by software developers during application production. Presence of suspicious development dependencies could be an indication of a software build pipeline compromise. When software dependencies are confirmed to be found within the software package, additional issues might also be reported. The detection was made by either a static byte signature, software component identity, or a complete file hash. This malware detection method is considered predictive, and can typically identify the malware family by name.",
                     "language": "en-US",
                     "steps": [
                         {

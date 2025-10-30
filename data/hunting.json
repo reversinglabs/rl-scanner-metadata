@@ -2357,6 +2357,256 @@
             ]
         }
     },
+    "TH16601": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous install procedures",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software installers that perform unusual actions.",
+                    "description": "Most software applications use standardized installation formats for their distribution. Software installers are built from instructions written within installation scripts that act as blueprints for the distribution format assembly. Installation scripts declare the most important software properties, such as the default installation location, its external dependencies, and various actions that may occur during the installation process. Actions defined within the installation script are executed automatically during events such as software deployment, update, or removal. These events are used by software developers to set up the environment for nominal software use, or to perform cleanup upon software removal. However, installation scripts are commonly abused by threat actors to execute arbitrary commands on the deployment machine. It was detected that an installation script could execute commands that are not typically used during software installation. Such unusual commands resemble common threat actor tactics and are usually obscured by layers of cryptography, code obfuscation, anti-analysis features, and other detection evasion techniques.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to the reported behavior, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider rewriting the installation procedure without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16602": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous install procedures",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software installers that execute unusual system commands.",
+                    "description": "Most software applications use standardized installation formats for their distribution. Software installers are built from instructions written within installation scripts that act as blueprints for the distribution format assembly. Installation scripts declare the most important software properties, such as the default installation location, its external dependencies, and various actions that may occur during the installation process. Actions defined within the installation script are executed automatically during events such as software deployment, update, or removal. These events are used by software developers to set up the environment for nominal software use, or to perform cleanup upon software removal. However, installation scripts are commonly abused by threat actors to execute arbitrary commands on the deployment machine. It was detected that an installation script could execute unusual operating system commands. Unusual commands resemble common threat actor tactics, such as destructive file deletion, elevation of privileges, or tampering with security settings. Unusual installation scripts often contain code obfuscation, anti-analysis features, and other detection evasion techniques.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to the reported behavior, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider rewriting the installation procedure without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16603": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous install procedures",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software installers with unusual networking functionality.",
+                    "description": "Most software applications use standardized installation formats for their distribution. Software installers are built from instructions written within installation scripts that act as blueprints for the distribution format assembly. Installation scripts declare the most important software properties, such as the default installation location, its external dependencies, and various actions that may occur during the installation process. Actions defined within the installation script are executed automatically during events such as software deployment, update, or removal. These events are used by software developers to set up the environment for nominal software use, or to perform cleanup upon software removal. It is unusual for certain types of software installers to invoke commands that download additional content from a remote server. Attackers commonly abuse software installers to fetch malicious payloads from public code repositories, file sharing websites, or their own infrastructure. Remotely hosted content is not immutable, allowing the attackers to change the type of malware they deploy at any time.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to the reported behavior, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider rewriting the installation procedure without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16604": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous install procedures",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software installers that can collect sensitive system information.",
+                    "description": "Most software applications use standardized installation formats for their distribution. Software installers are built from instructions written within installation scripts that act as blueprints for the distribution format assembly. Installation scripts declare the most important software properties, such as the default installation location, its external dependencies, and various actions that may occur during the installation process. Actions defined within the installation script are executed automatically during events such as software deployment, update, or removal. These events are used by software developers to set up the environment for nominal software use, or to perform cleanup upon software removal. It is unusual for certain types of software installers to execute commands that can collect sensitive system information. Attackers often abuse software installers to run commands that collect identifiable system information such as hostnames, user names, folder structures, and other data points that could help them understand the environment in which their malicious code was installed.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to the reported behavior, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider rewriting the installation procedure without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16605": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous install procedures",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software installers that can access sensitive system files.",
+                    "description": "Most software applications use standardized installation formats for their distribution. Software installers are built from instructions written within installation scripts that act as blueprints for the distribution format assembly. Installation scripts declare the most important software properties, such as the default installation location, its external dependencies, and various actions that may occur during the installation process. Actions defined within the installation script are executed automatically during events such as software deployment, update, or removal. These events are used by software developers to set up the environment for nominal software use, or to perform cleanup upon software removal. It is unusual for certain types of software installers to execute commands that can collect sensitive system files. Attackers often abuse software installers to run commands that collect authentication details such as tokens and credentials, private keys, environment files, and other secrets that could help them gain unauthorized access to the system on which their malicious code was installed.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "If the software intent does not relate to the reported behavior, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider rewriting the installation procedure without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
     "TH17101": {
         "quality": {
             "blocker": "fail",
@@ -4971,6 +5221,114 @@
                 {
                     "label": "Detected indicators of tampering that resemble the Rspack software compromise.",
                     "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the Rspack software compromise. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.001 - Compromise Software Dependencies and Development Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider hiring an external incident response team to assist with finding the root cause of the compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, and the detection is verified.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH20115": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "indicators of tampering found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "diff-hunting",
+            "localization": [
+                {
+                    "label": "Detected indicators of tampering that resemble the Nx software compromise.",
+                    "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the Nx software compromise. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.001 - Compromise Software Dependencies and Development Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider hiring an external incident response team to assist with finding the root cause of the compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, and the detection is verified.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH20116": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "indicators of tampering found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "diff-hunting",
+            "localization": [
+                {
+                    "label": "Detected indicators of tampering that resemble the Shai-hulud supply chain attack.",
+                    "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the malware traits found in packages that were infected by the Shai-hulud worm. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
                     "language": "en-US",
                     "steps": [
                         {
