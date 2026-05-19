@@ -1949,6 +1949,129 @@
             ]
         }
     },
+    "TH16129": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can tamper with other installed software.",
+                    "description": "Software components are typically distributed in standardized packaging formats. Software packages are built from instructions written within package manifests that act as blueprints for package assembly. A package manifest declares the most important software properties, such as the package name, its authors and license, external dependencies, and various actions that may occur during the package lifecycle. Package managers are specialized tools used by developers to manage software components. Package managers read these manifests to deploy software components along with their dependencies. The premise of the package management system is that software components are isolated from each other, and that they rely on the package manager to provide their dependencies. However, it was detected that a software component includes code capable of accessing or modifying directories that are maintained exclusively by package managers. This is unusual as it resembles tactics used by threat actors that tamper with installed software components and inject malicious code into trusted execution paths.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1554 - Compromise Host Software Binary.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16130": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can access sensitive cloud workload configuration.",
+                    "description": "Software components sometimes need to interact with sensitive parts of the runtime environment, often requiring privileged access to accomplish a task. Cloud workload configuration includes high-value information such as cloud provider credentials, environment variables containing secrets, and configuration files used by cloud and container orchestration tools. That information is used by applications running in cloud and containerized environments. Attackers often abuse access to cloud workload configuration to harvest secrets from developer machines and build environments, which can later be exfiltrated to attacker-controlled infrastructure and used to gain unauthorized access to cloud resources. While the presence of code that accesses cloud workload configuration does not necessarily imply malicious intent, all of its uses in a software package should be documented and approved. Only select software components should consider using functions that read cloud workload configuration. One example of acceptable use for such functions is infrastructure-as-code tooling that legitimately needs to read credentials to provision or manage cloud resources on behalf of the developer.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1580 - Cloud Infrastructure Discovery.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16131": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components that can access sensitive build pipeline configuration.",
+                    "description": "Software components sometimes need to interact with sensitive parts of the runtime environment, often requiring privileged access to accomplish a task. Build pipeline configuration includes high-value information such as CI/CD platform secrets and tokens, pipeline definition files and runner configuration, build-time environment variables containing signing keys or deploy credentials, and artifact registry and package publishing credentials. That information is used by continuous integration and delivery systems. Attackers often abuse access to build pipeline configuration to harvest secrets from build environments, which can later be exfiltrated to attacker-controlled infrastructure and used to tamper with software releases or publish malicious artifacts under trusted identities. While the presence of code that accesses build pipeline configuration does not necessarily imply malicious intent, all of its uses in a software package should be documented and approved. Only select software components should consider using functions that read build pipeline configuration. One example of acceptable use for such functions is release tooling that reads publishing credentials to push artifacts.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections as indicators of software tampering.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1072 - Software Deployment Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Consider rewriting the flagged code without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
     "TH16501": {
         "quality": {
             "blocker": "pass",
@@ -2600,6 +2723,546 @@
                         },
                         {
                             "content": "Consider rewriting the installation procedure without using the marked behaviors.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16701": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous develop extensions",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of development extensions that perform unusual actions.",
+                    "description": "Development extensions are commonly used by software developers to extend the functionality of integrated development environments, code editors, and other developer tools. Extensions are typically distributed through public marketplaces as packages that bundle the extension code with supporting resources. Development extension code implements behaviors that integrate it with the host application. This integration allows extensions to register commands, react to editor events, or provide programming language support. Extension code is loaded and executed automatically by the host application during events such as editor startup, file opening, or user interaction. These events are used by extension developers to set up the environment for nominal extension use, or to respond to activity within the host application. However, extensions are commonly abused by threat actors to execute arbitrary commands within the development environment. It was detected that the extension code could execute commands that are not typically used by development tools. Such unusual commands resemble common threat actor tactics and are usually obscured by layers of cryptography, code obfuscation, anti-analysis features, and other detection evasion techniques.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1176.002 - Software Extensions: IDE Extensions.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "If the development extension intent does not relate to the reported behavior, investigate your development environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should stop using the development extension until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider replacing the development extension with an alternative.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16702": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous develop extensions",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of development extensions that execute unusual system commands.",
+                    "description": "Development extensions are commonly used by software developers to extend the functionality of integrated development environments, code editors, and other developer tools. Extensions are typically distributed through public marketplaces as packages that bundle the extension code with supporting resources. Development extension code implements behaviors that integrate it with the host application. This integration allows extensions to register commands, react to editor events, or provide programming language support. Extension code is loaded and executed automatically by the host application during events such as editor startup, file opening, or user interaction. These events are used by extension developers to set up the environment for nominal extension use, or to respond to activity within the host application. However, extensions are commonly abused by threat actors to execute arbitrary commands within the development environment. It was detected that the extension code could execute unusual operating system commands. Unusual commands resemble common threat actor tactics, such as destructive file deletion, elevation of privileges, or tampering with security settings. Unusual extension code often contains code obfuscation, anti-analysis features, and other detection evasion techniques.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1176.002 - Software Extensions: IDE Extensions.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "If the development extension intent does not relate to the reported behavior, investigate your development environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should stop using the development extension until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider replacing the development extension with an alternative.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16703": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous develop extensions",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of development extensions with unusual networking functionality.",
+                    "description": "Development extensions are commonly used by software developers to extend the functionality of integrated development environments, code editors, and other developer tools. Extensions are typically distributed through public marketplaces as packages that bundle the extension code with supporting resources. Development extension code implements behaviors that integrate it with the host application. This integration allows extensions to register commands, react to editor events, or provide programming language support. Extension code is loaded and executed automatically by the host application during events such as editor startup, file opening, or user interaction. These events are used by extension developers to set up the environment for nominal extension use, or to respond to activity within the host application. It is unusual for certain types of development extensions to invoke commands that download additional content from a remote server. Attackers commonly abuse development extensions to fetch malicious payloads from public code repositories, file sharing websites, or their own infrastructure. Remotely hosted content is not immutable, allowing the attackers to change the type of malware they deploy at any time.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1176.002 - Software Extensions: IDE Extensions.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "If the development extension intent does not relate to the reported behavior, investigate your development environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should stop using the development extension until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider replacing the development extension with an alternative.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16704": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous develop extensions",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of development extensions that can collect sensitive system information.",
+                    "description": "Development extensions are commonly used by software developers to extend the functionality of integrated development environments, code editors, and other developer tools. Extensions are typically distributed through public marketplaces as packages that bundle the extension code with supporting resources. Development extension code implements behaviors that integrate it with the host application. This integration allows extensions to register commands, react to editor events, or provide programming language support. Extension code is loaded and executed automatically by the host application during events such as editor startup, file opening, or user interaction. These events are used by extension developers to set up the environment for nominal extension use, or to respond to activity within the host application. It is unusual for certain types of development extensions to execute commands that can collect sensitive system information. Attackers often abuse development extensions to run commands that collect identifiable system information such as hostnames, user names, folder structures, and other data points that could help them understand the environment in which their malicious code was loaded.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1176.002 - Software Extensions: IDE Extensions.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "If the development extension intent does not relate to the reported behavior, investigate your development environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should stop using the development extension until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider replacing the development extension with an alternative.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16705": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous develop extensions",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of development extensions that can access sensitive system files.",
+                    "description": "Development extensions are commonly used by software developers to extend the functionality of integrated development environments, code editors, and other developer tools. Extensions are typically distributed through public marketplaces as packages that bundle the extension code with supporting resources. Development extension code implements behaviors that integrate it with the host application. This integration allows extensions to register commands, react to editor events, or provide programming language support. Extension code is loaded and executed automatically by the host application during events such as editor startup, file opening, or user interaction. These events are used by extension developers to set up the environment for nominal extension use, or to respond to activity within the host application. It is unusual for certain types of development extensions to execute commands that can collect sensitive system files. Attackers often abuse development extensions to run commands that collect authentication details such as tokens and credentials, private keys, environment files, and other secrets that could help them gain unauthorized access to the system on which their malicious code was loaded.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1176.002 - Software Extensions: IDE Extensions.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "If the development extension intent does not relate to the reported behavior, investigate your development environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should stop using the development extension until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider replacing the development extension with an alternative.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16801": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous AI extensions",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of AI assistant extensions that perform unusual actions.",
+                    "description": "AI assistant extensions are commonly used by software developers to extend the functionality of AI coding assistants, agentic development tools, and other AI-powered developer tools. Extensions are typically distributed through public marketplaces as packages that bundle skill instruction files with supporting resources. Skill instruction files describe specialized capabilities that the AI assistant can invoke, such as guidance for handling specific file formats, performing domain-specific tasks, or interacting with particular services. The AI assistant loads instructions from these files into its context and follows them when relevant user requests or workflow events occur. These instructions are written by extension authors to guide the AI assistant toward the intended capability, or to provide additional context for nominal extension use. However, AI assistant extensions are commonly abused by threat actors to influence the AI assistant into performing arbitrary actions within the development environment. It was detected that the skill instruction files could direct the AI assistant to perform actions that are not typically associated with such tools. Such unusual actions resemble common threat actor tactics and are usually obscured by indirect phrasing, misleading context, or other prompt injection techniques.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1176 - Software Extensions.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "If the AI assistant extension intent does not relate to the reported behavior, investigate your development environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should stop using the AI assistant extension until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider replacing the AI assistant extension with an alternative.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16802": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous AI extensions",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of AI assistant extensions that execute unusual system commands.",
+                    "description": "AI assistant extensions are commonly used by software developers to extend the functionality of AI coding assistants, agentic development tools, and other AI-powered developer tools. Extensions are typically distributed through public marketplaces as packages that bundle skill instruction files with supporting resources. Skill instruction files describe specialized capabilities that the AI assistant can invoke, such as guidance for handling specific file formats, performing domain-specific tasks, or interacting with particular services. The AI assistant loads instructions from these files into its context and follows them when relevant user requests or workflow events occur. These instructions are written by extension authors to guide the AI assistant toward the intended capability, or to provide additional context for nominal extension use. However, AI assistant extensions are commonly abused by threat actors to influence the AI assistant into performing arbitrary actions within the development environment. It was detected that the skill instruction files could direct the AI assistant to execute unusual operating system commands. Unusual commands resemble common threat actor tactics, such as destructive file deletion, elevation of privileges, or tampering with security settings. Unusual skill instruction files often contain indirect phrasing, misleading context, or other prompt injection techniques.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1176 - Software Extensions.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "If the AI assistant extension intent does not relate to the reported behavior, investigate your development environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should stop using the AI assistant extension until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider replacing the AI assistant extension with an alternative.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16803": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous AI extensions",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of AI assistant extensions with unusual networking functionality.",
+                    "description": "AI assistant extensions are commonly used by software developers to extend the functionality of AI coding assistants, agentic development tools, and other AI-powered developer tools. Extensions are typically distributed through public marketplaces as packages that bundle skill instruction files with supporting resources. Skill instruction files describe specialized capabilities that the AI assistant can invoke, such as guidance for handling specific file formats, performing domain-specific tasks, or interacting with particular services. The AI assistant loads instructions from these files into its context and follows them when relevant user requests or workflow events occur. These instructions are written by extension authors to guide the AI assistant toward the intended capability, or to provide additional context for nominal extension use. It is unusual for certain types of AI assistant extensions to direct the AI assistant to download additional content from a remote server. Attackers commonly abuse AI assistant extensions to fetch malicious payloads from public code repositories, file sharing websites, or their own infrastructure. Remotely hosted content is not immutable, allowing the attackers to change the type of malware they deploy at any time.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1176 - Software Extensions.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "If the AI assistant extension intent does not relate to the reported behavior, investigate your development environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should stop using the AI assistant extension until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider replacing the AI assistant extension with an alternative.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16804": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous AI extensions",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of AI assistant extensions that can collect sensitive system information.",
+                    "description": "AI assistant extensions are commonly used by software developers to extend the functionality of AI coding assistants, agentic development tools, and other AI-powered developer tools. Extensions are typically distributed through public marketplaces as packages that bundle skill instruction files with supporting resources. Skill instruction files describe specialized capabilities that the AI assistant can invoke, such as guidance for handling specific file formats, performing domain-specific tasks, or interacting with particular services. The AI assistant loads instructions from these files into its context and follows them when relevant user requests or workflow events occur. These instructions are written by extension authors to guide the AI assistant toward the intended capability, or to provide additional context for nominal extension use. It is unusual for certain types of AI assistant extensions to direct the AI assistant to collect sensitive system information. Attackers often abuse AI assistant extensions to direct the AI assistant to collect identifiable system information such as hostnames, user names, folder structures, and other data points that could help them understand the environment in which their malicious instructions were loaded.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1176 - Software Extensions.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "If the AI assistant extension intent does not relate to the reported behavior, investigate your development environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should stop using the AI assistant extension until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider replacing the AI assistant extension with an alternative.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH16805": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "dangerous AI extensions",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of AI assistant extensions that can access sensitive system files.",
+                    "description": "AI assistant extensions are commonly used by software developers to extend the functionality of AI coding assistants, agentic development tools, and other AI-powered developer tools. Extensions are typically distributed through public marketplaces as packages that bundle skill instruction files with supporting resources. Skill instruction files describe specialized capabilities that the AI assistant can invoke, such as guidance for handling specific file formats, performing domain-specific tasks, or interacting with particular services. The AI assistant loads instructions from these files into its context and follows them when relevant user requests or workflow events occur. These instructions are written by extension authors to guide the AI assistant toward the intended capability, or to provide additional context for nominal extension use. It is unusual for certain types of AI assistant extensions to direct the AI assistant to collect sensitive system files. Attackers often abuse AI assistant extensions to direct the AI assistant to collect authentication details such as tokens and credentials, private keys, environment files, and other secrets that could help them gain unauthorized access to the system on which their malicious instructions were loaded.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1176 - Software Extensions.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "If the AI assistant extension intent does not relate to the reported behavior, investigate your development environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should stop using the AI assistant extension until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Consider replacing the AI assistant extension with an alternative.",
                             "type": "fix"
                         }
                     ]
@@ -3659,7 +4322,7 @@
             "localization": [
                 {
                     "label": "Detected presence of files containing URLs that link to Dropbox download pages.",
-                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. One or more embedded URLs were discovered to link to the Dropbox file-sharing service. Attackers often abuse popular web services to host malicious payloads. Since file-sharing services URLs are typically allowed by security solutions, using them for payload delivery increases the odds that the malicious code will reach the user. While the presence of file-sharing service locations does not imply malicious intent, all of their uses in a software package should be documented and approved. An increasing number of software supply chain attacks in the open source space leverages the Dropbox file-sharing service to deliver malicious payloads.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. One or more embedded URLs were discovered to link to the Dropbox file-sharing service. Attackers often abuse popular web services to host malicious payloads. Since file-sharing service URLs are typically allowed by security solutions, using them for payload delivery increases the odds that the malicious code will reach the user. While the presence of file-sharing service locations does not imply malicious intent, all of their uses in a software package should be documented and approved. An increasing number of software supply chain attacks in the open source space leverage the Dropbox file-sharing service to deliver malicious payloads.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -3704,7 +4367,7 @@
             "localization": [
                 {
                     "label": "Detected presence of files containing URLs related to Discord webhooks.",
-                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Webhooks are web callback interfaces that enable real-time event notifications. Applications provide a public-facing interface that the web service calls when an appropriate event occurs. Attackers often abuse Discord webhooks as a command and control mechanism that instructs the infected computer systems to perform malicious actions. While the presence of Discord webhooks does not imply malicious intent, all of their uses in a software package should be documented and approved. An increasing number of software supply chain attacks in the open source space leverages Discord webhooks for command and control.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Webhooks are web callback interfaces that enable real-time event notifications. Applications provide a public-facing interface that the web service calls when an appropriate event occurs. Attackers often abuse Discord webhooks as a command-and-control mechanism that instructs the infected computer systems to perform malicious actions. While the presence of Discord webhooks does not imply malicious intent, all of their uses in a software package should be documented and approved. An increasing number of software supply chain attacks in the open source space leverage Discord webhooks for command and control.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -3794,7 +4457,7 @@
             "localization": [
                 {
                     "label": "Detected presence of files containing URLs that link to raw files on GitHub.",
-                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. One or more embedded URLs were discovered to link to raw files hosted on GitHub. Attackers often abuse popular web services to host malicious payloads. Since code-sharing services URLs are typically allowed by security solutions, using them for payload delivery increases the odds that the malicious code will reach the user. While the presence of code-sharing service locations does not imply malicious intent, all of their uses in a software package should be documented and approved. An increasing number of software supply chain attacks in the open source space leverages the GitHub service to deliver malicious payloads.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. One or more embedded URLs were discovered to link to raw files hosted on GitHub. Attackers often abuse popular web services to host malicious payloads. Since code-sharing service URLs are typically allowed by security solutions, using them for payload delivery increases the odds that the malicious code will reach the user. While the presence of code-sharing service locations does not imply malicious intent, all of their uses in a software package should be documented and approved. An increasing number of software supply chain attacks in the open source space leverage the GitHub service to deliver malicious payloads.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -3839,7 +4502,7 @@
             "localization": [
                 {
                     "label": "Detected presence of files containing URLs that link to raw files on GitLab.",
-                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. One or more embedded URLs were discovered to link to raw files hosted on GitLab. Attackers often abuse popular web services to host malicious payloads. Since code-sharing services URLs are typically allowed by security solutions, using them for payload delivery increases the odds that the malicious code will reach the user. While the presence of code-sharing service locations does not imply malicious intent, all of their uses in a software package should be documented and approved. An increasing number of software supply chain attacks in the open source space leverages the GitLab service to deliver malicious payloads.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. One or more embedded URLs were discovered to link to raw files hosted on GitLab. Attackers often abuse popular web services to host malicious payloads. Since code-sharing service URLs are typically allowed by security solutions, using them for payload delivery increases the odds that the malicious code will reach the user. While the presence of code-sharing service locations does not imply malicious intent, all of their uses in a software package should be documented and approved. An increasing number of software supply chain attacks in the open source space leverage the GitLab service to deliver malicious payloads.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -3926,7 +4589,7 @@
             "localization": [
                 {
                     "label": "Detected presence of files containing domains related to coinmining services.",
-                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Digital currencies use a peer-to-peer technology to facilitate instant payments on the web. Coinmining is the process of creating new digital currency coins by solving extremely complicated math problems that verify transactions in the currency exchange. When a crypto coin is successfully mined, the miner receives a predetermined amount of digital currency. Coinmining is a lucrative, but expensive, venture. For that reason, malicious actors often try to hijack computer systems with the aim to make others cover the mining cost. While presence of coinmining references does not imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider mining for digital currency. An increasing number of software supply chain attacks in the open source space tries to install unauthorized coinmining software.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Digital currencies (cryptocurrencies) use a peer-to-peer technology to facilitate instant payments on the web. Coinmining is the process of creating new digital currency coins by solving extremely complicated math problems that verify transactions in the currency exchange. When a cryptocurrency coin is successfully mined, the miner receives a predetermined amount of digital currency. Coinmining is a lucrative but expensive venture. For that reason, malicious actors often try to hijack computer systems with the aim to make others cover the mining cost. While the presence of coinmining references does not imply malicious intent, all of its uses in a software package should be documented and approved. Only select applications should consider mining for digital currency. An increasing number of software supply chain attacks in the open source space try to install unauthorized coinmining software.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -4016,12 +4679,262 @@
             "localization": [
                 {
                     "label": "Detected presence of files containing URLs related to the Telegram API.",
-                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Telegram, like many other instant messaging solutions, provides a public-facing API that the chat client can invoke when an appropriate application event occurs. Attackers often abuse Telegram APIs as a command-and-control mechanism that instructs the infected computer systems to perform malicious actions. While the presence of Telegram APIs does not imply malicious intent, all of their uses in a software package should be documented and approved. An increasing number of software supply chain attacks in the open source space leverages Telegram infrastructure for command and control.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. Telegram, like many other instant messaging solutions, provides a public-facing API that the chat client can invoke when an appropriate application event occurs. Attackers often abuse Telegram APIs as a command-and-control mechanism that instructs the infected computer systems to perform malicious actions. While the presence of Telegram APIs does not imply malicious intent, all of their uses in a software package should be documented and approved. An increasing number of software supply chain attacks in the open source space leverage Telegram infrastructure for command and control.",
                     "language": "en-US",
                     "steps": [
                         {
                             "content": "Investigate reported detections.",
                             "type": "investigate"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Remove all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17133": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 3,
+            "rl-level": null,
+            "severity": "medium",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs related to the WhatsApp API.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. WhatsApp, like many other instant messaging solutions, provides a public-facing API that the chat client can invoke when an appropriate application event occurs. Attackers often abuse WhatsApp APIs as a command-and-control mechanism that instructs the infected computer systems to perform malicious actions. While the presence of WhatsApp APIs does not imply malicious intent, all of their uses in a software package should be documented and approved. An increasing number of software supply chain attacks in the open source space leverage WhatsApp infrastructure for command and control.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1102 - Web Service.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Remove all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17134": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "restricted network references",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs that are used to distribute hacktools.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs allow software developers to build complex applications that exchange data with servers that can be hosted in multiple geographical regions. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. One or more embedded URLs were discovered to link to an address known to distribute hacking tools. Hacking tools are commonly used by malicious actors to bypass security solutions, exploit system weaknesses, collect personal information, and exfiltrate data. Software components that contain links to network locations distributing hacking tools are reported as malicious.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1588.002 - Obtain Capabilities: Tool.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Remove all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17135": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs related to software package publishing.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. One or more embedded URLs were discovered to link to addresses related to software package publishing. These include package registry publishing endpoints, authentication endpoints used to obtain publishing tokens, and registry administration APIs used to manage or remove published packages. Attackers often abuse access to these network locations to publish malicious packages, tamper with existing releases, or remove legitimate packages under compromised maintainer identities. The presence of such network references in a software package is uncommon and may suggest worm-like behavior, where a compromised package attempts to propagate by publishing additional malicious packages to the same or related repositories.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.001 - Supply Chain Compromise: Compromise Software Dependencies and Development Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Remove all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17136": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs related to NPM package publishing API.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. One or more embedded URLs were discovered to link to addresses related to the Node Package Manager (NPM) publishing API. NPM is the default package registry for the NodeJS ecosystem and hosts JavaScript packages used across web, server, and tooling applications. Attackers often abuse access to NPM publishing endpoints to publish malicious packages, tamper with existing releases, or remove legitimate packages under compromised maintainer identities. The presence of such network references in a software package is uncommon and may suggest worm-like behavior, where a compromised package attempts to propagate by publishing additional malicious packages to the NPM registry.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.001 - Supply Chain Compromise: Compromise Software Dependencies and Development Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, or until the issue is risk accepted.",
+                            "type": "stop"
+                        },
+                        {
+                            "content": "Remove all references to flagged network locations.",
+                            "type": "fix"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH17137": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of files containing URLs related to PyPI package publishing API.",
+                    "description": "Uniform Resource Locators (URLs) are structured addresses that point to locations and assets on the internet. URLs can commonly be found embedded in documentation, configuration files, source code and compiled binaries. One or more embedded URLs were discovered to link to addresses related to the Python Package Index (PyPI) publishing API. PyPI is the default package registry for the Python ecosystem and hosts Python packages used across web, data science, automation, and tooling applications. Attackers often abuse access to PyPI publishing endpoints to publish malicious packages, tamper with existing releases, or remove legitimate packages under compromised maintainer identities. The presence of such network references in a software package is uncommon and may suggest worm-like behavior, where a compromised package attempts to propagate by publishing additional malicious packages to the PyPI registry.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.001 - Supply Chain Compromise: Compromise Software Dependencies and Development Tools.",
+                            "type": "consult"
                         },
                         {
                             "content": "If the software should not include these network references, investigate your build and release environment for software supply chain compromise.",
@@ -5356,6 +6269,60 @@
             ]
         }
     },
+    "TH20117": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "indicators of tampering found",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "diff-hunting",
+            "localization": [
+                {
+                    "label": "Detected indicators of tampering that resemble the CanisterWorm supply chain attack.",
+                    "description": "Publicly disclosed software supply chain compromises can be modeled through their unique set of indicators of tampering. These indicators form a heuristic signature that evaluates during differential analysis, ensuring no similar supply chain attack has affected a software package. Through inspection of changes in behaviors over subsequent versions, a match was made with the indicators of tampering that resemble the malware traits found in packages that were infected by the CanisterWorm. Malicious actors are known to re-use the attack patterns that were successful in the past. Some malicious actors are also known to emulate other attackers with the intent to misdirect incident responders. Therefore, having a positive tampering match is not sufficient for attack attribution. It is highly likely that the software package was tampered with by a malicious actor or a rogue insider.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Investigate reported detections.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.001 - Compromise Software Dependencies and Development Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "Investigate your build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider hiring an external incident response team to assist with finding the root cause of the compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "You should delay the software release until the investigation is completed, and the detection is verified.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
     "TH30101": {
         "quality": {
             "blocker": "pass",
@@ -5431,8 +6398,8 @@
             "category": "hunting",
             "localization": [
                 {
-                    "label": "Detected presence of software components that are quarantined in the public package repository.",
-                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Software developers publish components they have authored to public repositories. Open source repositories may place software packages into quarantine during an ongoing security incident investigation. When a software project is placed into quarantine, it is typically unavailable for installation. Repository maintainers may also hide quarantined software projects from users that might stumble upon them using repository search functions. Quarantine is typically raised for software projects that were reported for unusual code changes or unexpected software behaviors.",
+                    "label": "Detected presence of software components that are quarantined in the community package index.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Software developers publish components they have authored to public repositories. The ReversingLabs community package index may place software packages into quarantine during an ongoing security incident investigation. When a software project is placed into quarantine, it is typically unavailable for installation. Additionally, repository maintainers may also hide quarantined software projects from users that might stumble upon them using repository search functions. Quarantine is typically raised for software projects that were reported for unusual code changes or unexpected software behaviors.",
                     "language": "en-US",
                     "steps": [
                         {
@@ -5946,6 +6913,109 @@
                         },
                         {
                             "content": "Consider pinning the software component version to prevent accidental code updates.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH30114": {
+        "quality": {
+            "blocker": "pass",
+            "effort": "high",
+            "enabled": true,
+            "priority": 1,
+            "rl-level": null,
+            "severity": "medium",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "pass",
+            "localization": []
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components with uncommon remote dependency hosts.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Each of these components can have dozens or even hundreds of its own dependencies. When building applications, software developers download and install components from public repositories. For components to work properly, all of their dependencies also need to be installed. Some package repositories, like Node Package Manager (NPM), allow components to declare dependencies that are hosted remotely. Such dependencies are automatically downloaded from a specified location during software component installation. It was detected that a software component declares remote dependencies hosted outside commonly expected locations such as well-known code hosting platforms and official package registry content delivery networks. Threat actors often host malicious dependencies on attacker-controlled infrastructure, ephemeral file sharing services, or compromised legitimate sites to evade security review and retain control over the delivered content. It is uncommon to find open source components that resolve dependencies from such locations.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review software component remote dependency locations.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.001 - Supply Chain Compromise: Compromise Software Dependencies and Development Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "If the software component resolves dependencies from unusual locations, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider vendoring the software component with all of its dependencies.",
+                            "type": "fix"
+                        },
+                        {
+                            "content": "Avoid using this software package until it is vetted as safe.",
+                            "type": "stop"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "TH30115": {
+        "quality": {
+            "blocker": "fail",
+            "effort": "high",
+            "enabled": true,
+            "priority": 0,
+            "rl-level": 1,
+            "severity": "high",
+            "offline": true,
+            "flags": null
+        },
+        "assessment": {
+            "category": "tampering",
+            "status": "fail",
+            "localization": [
+                {
+                    "label": "restricted network references",
+                    "language": "en-US"
+                }
+            ]
+        },
+        "policy": {
+            "category": "hunting",
+            "localization": [
+                {
+                    "label": "Detected presence of software components with blacklisted remote dependency hosts.",
+                    "description": "Software developers use programming and design knowledge to build reusable software components. Software components are the basic building blocks for modern applications. Software consumed by an enterprise consists of hundreds, and sometimes even thousands of open source components. Each of these components can have dozens or even hundreds of its own dependencies. When building applications, software developers download and install components from public repositories. For components to work properly, all of their dependencies also need to be installed. Some package repositories, like Node Package Manager (NPM), allow components to declare dependencies that are hosted remotely. Such dependencies are automatically downloaded from a specified location during software component installation. It was detected that a software component declares remote dependencies hosted on addresses found on a proprietary ReversingLabs network reference blacklist. Threat actors often host malicious dependencies on infrastructure previously observed delivering malware, or other software supply chain attack components. Software components that resolve dependencies from such locations are reported as malicious.",
+                    "language": "en-US",
+                    "steps": [
+                        {
+                            "content": "Review software component remote dependency locations.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consult Mitre ATT&CK documentation: T1195.001 - Supply Chain Compromise: Compromise Software Dependencies and Development Tools.",
+                            "type": "consult"
+                        },
+                        {
+                            "content": "If the software component resolves dependencies from unusual locations, investigate the build and release environment for software supply chain compromise.",
+                            "type": "investigate"
+                        },
+                        {
+                            "content": "Consider vendoring the software component with all of its dependencies.",
                             "type": "fix"
                         },
                         {

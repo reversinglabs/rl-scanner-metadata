@@ -1,5 +1,5 @@
 {
-    "version": 5,
+    "version": 6,
     "ui-display": {
         "issues": [
             {
@@ -241,7 +241,7 @@
                         {
                             "id-label": "behaviors",
                             "id-first": 16101,
-                            "id-last": 16128
+                            "id-last": 16131
                         },
                         {
                             "id-label": "behaviors",
@@ -254,9 +254,19 @@
                             "id-last": 16605
                         },
                         {
+                            "id-label": "behaviors",
+                            "id-first": 16701,
+                            "id-last": 16705
+                        },
+                        {
+                            "id-label": "behaviors",
+                            "id-first": 16801,
+                            "id-last": 16805
+                        },
+                        {
                             "id-label": "networking",
                             "id-first": 17101,
-                            "id-last": 17132
+                            "id-last": 17137
                         },
                         {
                             "id-label": "sanctions",
@@ -271,7 +281,7 @@
                         {
                             "id-label": "community",
                             "id-first": 30101,
-                            "id-last": 30113
+                            "id-last": 30115
                         }
                     ]
                 },
@@ -296,7 +306,7 @@
                         {
                             "id-label": null,
                             "id-first": 20101,
-                            "id-last": 20116
+                            "id-last": 20117
                         }
                     ]
                 },
